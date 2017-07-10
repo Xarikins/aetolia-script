@@ -1,3 +1,4 @@
+from imp import reload
 from communicator import Communicator
 from alias_builder import AliasBuilder
 from trigger_builder import TriggerBuilder
@@ -6,8 +7,9 @@ from callback_handler import CallbackHandler
 
 def new():
     mud = Communicator()
-    alias_builder = AliasBuilder(mud)
-    trigger_builder = TriggerBuilder(mud)
+    callback_handler = CallbackHandler()
+    alias_builder = AliasBuilder(mud, callback_handler)
+    trigger_builder = TriggerBuilder(mud, callback_handler)
 
     player = {
             "balance": True,
@@ -34,5 +36,5 @@ def new():
             "alias_builder": alias_builder,
             "trigger_builder": trigger_builder,
             "cmd_queue": CommandQueue(player),
-            "callback_handler": CallbackHandler(),
+            "callback_handler": callback_handler,
             }

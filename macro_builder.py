@@ -1,7 +1,8 @@
 class MacroBuilder():
 
-    def __init__(self, mud):
+    def __init__(self, mud, cb_handler):
         self.mud = mud
+        self.cb_handler = cb_handler
 
     def _build(self, definition, macros, mType):
         for trig, cmd in macros.items():
@@ -20,7 +21,8 @@ class MacroBuilder():
         self.mud.eval(definition % (mType, trig, command))
 
     def __command_from_dict(self, cmd):
+        self.cb_handler.registerCallback(cmd["fun"])
         command = "/python_call main.cb %s" % cmd['fun'].__name__
-        if cmd["arg"]:
-            command += " " + cmd["arg"]
+        if "arg" in cmd:
+            command += " " + cmd["arg"].replace("%", "\\%")
         return command

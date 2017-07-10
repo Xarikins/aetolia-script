@@ -9,25 +9,23 @@ class CombatModule(Module, LineListener):
 
         ALIASES_REG = {
                 # Target alias
-                "^x ([\\\w\\\d]+)\\$": { "fun": self.target, "arg": "%1" }
+                "^x ([\\\w\\\d]+)\\$": { "fun": self.target, "arg": "%P1" }
                 }
         ALIASES_GLOB = {
                 # Bashing aliases
-                "at": { "fun": self.at, "arg": "" },
-                "hunt": { "fun": self.toggle_bash, "arg": "" }
+                "at": { "fun": self.at },
+                "hunt": { "fun": self.toggle_bash }
                 }
 
         builder = self.state["alias_builder"]
         builder.build(ALIASES_REG, "regexp")
         builder.build(ALIASES_GLOB)
 
-    def at(self, arg):
-        attack = "/send dhuriv combo %s slash stab" % self.state.combat["target"]
-        tf.eval(attack)
-        if self.state["mode"]["bashing"]:
-            self.state["command_queue"].append(attack)
+    def at(self):
+        attack = "/send dhuriv combo %s slash stab" % self.state["combat"]["target"]
+        self.state["communicator"].eval(attack)
 
-    def toggle_bash(self, arg):
+    def toggle_bash(self):
         self.state["mode"]["bashing"] = not self.state["mode"]["bashing"]
         print("Bashing %s" % ("enabled" if self.state["mode"]["bashing"] else "disabled"))
 

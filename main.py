@@ -59,3 +59,6 @@ reload(aliases)
 
 cState = state.new()
 install(cState)
+
+if __name__ == "__main__":
+    cb("target test")

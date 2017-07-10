@@ -5,6 +5,8 @@ import info_here_parser
 
 def build_modules(state):
     reload(prompt)
+    reload(combat)
+    reload(info_here_parser)
 
     combat_mod = combat.CombatModule(state)
 
