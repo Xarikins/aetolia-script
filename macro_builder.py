@@ -15,14 +15,19 @@ class MacroBuilder():
             command = "\\%;".join(cmd)
         elif type(cmd) == dict:
             command = self.__command_from_dict(cmd)
+        elif callable(cmd):
+            command = self.__command_from_cmd(cmd)
         else:
             command = cmd
 
         self.mud.eval(definition % (mType, trig, command))
 
     def __command_from_dict(self, cmd):
-        self.cb_handler.registerCallback(cmd["fun"])
-        command = "/python_call main.cb %s" % cmd['fun'].__name__
+        command = self.__command_from_cmd(cmd["fun"])
         if "arg" in cmd:
             command += " " + cmd["arg"].replace("%", "\\%")
         return command
+
+    def __command_from_cmd(self, cmd):
+        self.cb_handler.registerCallback(cmd)
+        return "/python_call main.cb %s" % cmd.__name__

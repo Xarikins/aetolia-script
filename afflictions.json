@@ -1,0 +1,5017 @@
+[
+    {
+        "name": "ablaze",
+        "diagnose": "ablaze.",
+        "cure_message": "The raging fire about your skin goes out.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "addiction",
+        "diagnose": "horribly addicted.",
+        "cure_message": "Your terrible addiction seems to wane.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "aeon",
+        "diagnose": "afflicted with the curse of the aeon.",
+        "cure_message": "The curse of the Aeon wears off and you return to the normal timestream.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "willow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "agoraphobia",
+        "diagnose": "agoraphobic.",
+        "cure_message": "You can handle the idea of open spaces again.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "allergies",
+        "diagnose": "incredibly allergic.",
+        "cure_message": "No longer will you suffer from allergies.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "anorexia",
+        "diagnose": "anorexic.",
+        "cure_message": "Food is no longer repulsive to you.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 90
+    },
+    {
+        "name": "asleep",
+        "diagnose": "sleeping.",
+        "cure_message": "You open your eyes and yawn mightily.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "wake",
+        "priority": 0
+    },
+    {
+        "name": "asphyxiation_weakness",
+        "diagnose": "susceptible to asphyxiation damage.",
+        "cure_message": "Your susceptibility to asphyxiation damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "asthma",
+        "diagnose": "afflicted by horrible asthma.",
+        "cure_message": "Your bronchial tubes open up and your asthma is cured.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 90
+    },
+    {
+        "name": "attuned",
+        "diagnose": "severn has attuned to you.",
+        "cure_message": "You have cured attuned.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "backstabbed",
+        "diagnose": "recently stabbed in the back.",
+        "cure_message": "Your back wound heals and you gain full motor control once more.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "baldness",
+        "diagnose": "unnaturally bald.",
+        "cure_message": "",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "battle_hunger",
+        "diagnose": "yearning for battle.",
+        "cure_message": "Ahhh, at last, your hunger for battle has been filled.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "berserking",
+        "diagnose": "frothing at the mouth.",
+        "cure_message": "Your insane rage calms.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "blackout",
+        "diagnose": "devoid of senses.",
+        "cure_message": "Your senses return to you as the blackout ends.",
+        "cure_message_obs": "Niuri blinks rapidly, rubbing Her eyes.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "blighted",
+        "diagnose": "blighted by venomous spines.",
+        "cure_message": "The venomous vines infecting you wither and die.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "blisters",
+        "diagnose": "covered in blisters.",
+        "cure_message": "The blisters upon your skin cease to weep fluids.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "blood_curse",
+        "diagnose": "affected by a circulatory curse.",
+        "cure_message": "You are able to once again control your concentration.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "blood_poison",
+        "diagnose": "affected by a circulatory poison.",
+        "cure_message": "You are relieved to catch up with the pace of reality.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "bloodlust",
+        "diagnose": "lusting for blood.",
+        "cure_message": "Your lust for blood subsides.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "blunt_weakness",
+        "diagnose": "susceptible to blunt damage.",
+        "cure_message": "Your susceptibility to blunt damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "blurry_vision",
+        "diagnose": "confounded with blurry vision.",
+        "cure_message": "Your vision clears.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "body_odor",
+        "diagnose": "rank.",
+        "cure_message": "Your body odor clears itself up.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "bulimia",
+        "diagnose": "feeling bulimic.",
+        "cure_message": "You feel capable of stomaching food once more.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "burnt_eyes",
+        "diagnose": "fire-damaged eyes.",
+        "cure_message": "The salve soothes your burnt eyes, returning your vision.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "burnt_skin",
+        "diagnose": "suffering from burnt skin.",
+        "cure_message": "Your burns heal as new grown flesh replaces the old.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "chaos_warp",
+        "diagnose": "afflicted with chaos_warp.",
+        "cure_message": "You have cured chaos_warp.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "claustrophobia",
+        "diagnose": "claustrophobic.",
+        "cure_message": "Small spaces no longer frighten you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "clumsiness",
+        "diagnose": "afflicted with clumsiness.",
+        "cure_message": "Thank Varian, the Celestine! Your clumsiness has been cured.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "cold_weakness",
+        "diagnose": "susceptible to cold damage.",
+        "cure_message": "Your susceptibility to cold damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "collapsed_lung",
+        "diagnose": "having trouble breathing.",
+        "cure_message": "As your lungs repair, you inhale untroubled once more.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "commitment_fear",
+        "diagnose": "fearful of commitment.",
+        "cure_message": "You vow that you shall never be fearful of commitment again.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "confusion",
+        "diagnose": "confused.",
+        "cure_message": "The confusion lifts from your mind and it is clear once again.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "conviction",
+        "diagnose": "suffering the conviction of severn.",
+        "cure_message": "The sparks fizzling across your body vanish.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "corsin_weight",
+        "diagnose": "strangely quite heavy.",
+        "cure_message": "You feel a lightness in your feet.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "cracked_ribs",
+        "diagnose": "suffering from a few cracked ribs.",
+        "cure_message": "Your rib cage mends as the fractures in the bones heal.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "crippled",
+        "diagnose": "suffering from crippled legs.",
+        "cure_message": "Your legs are no longer crippled.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "crippled_body",
+        "diagnose": "crippled.",
+        "cure_message": "You are no longer crippled.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "crippled_throat",
+        "diagnose": "afflicted by a crippled throat.",
+        "cure_message": "Your throat and voice are thankfully restored.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "crushed_chest",
+        "diagnose": "finding it hard to breathe due to a crushed chest.",
+        "cure_message": "As your chest heals, you find it easier to breathe.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "crushed_elbows",
+        "diagnose": "suffering from crushed elbow joints.",
+        "cure_message": "The bones forming your elbow joints mend.",
+        "cure_message_obs": "",
+        "body_part": "arms.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "crushed_kneecaps",
+        "diagnose": "suffering from crushed kneecaps.",
+        "cure_message": "As your patellas mend, strength returns to your legs.",
+        "cure_message_obs": "",
+        "body_part": "legs.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "cutting_weakness",
+        "diagnose": "susceptible to cutting damage.",
+        "cure_message": "Your susceptibility to cutting damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "dazed",
+        "diagnose": "dazed.",
+        "cure_message": "You narrow your eyes and focus on recovering your balance.",
+        "cure_message_obs": "Niuri narrows Her eyes with focus.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "recoup",
+        "priority": 0
+    },
+    {
+        "name": "deadening",
+        "diagnose": "of a deadened mind.",
+        "cure_message": "You are no longer deadened.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "willow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "dementia",
+        "diagnose": "demented.",
+        "cure_message": "Sanity returns to you and you are no longer demented.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "despair",
+        "diagnose": "surrounded by an aura of despair.",
+        "cure_message": "The despair lifts, and a sense of relief washes over you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "destroyed_throat",
+        "diagnose": "suffering from a crushed throat.",
+        "cure_message": "Air rushes back into your lungs as your throat mends.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disable",
+        "diagnose": "afflicted with disable.",
+        "cure_message": "You have cured disable.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disabled",
+        "diagnose": "afflicted with disabled.",
+        "cure_message": "You have cured disabled.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disfigurement",
+        "diagnose": "inspiring disloyalty in those nearby.",
+        "cure_message": "You no longer will inspire disloyalty among friends.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "yarrow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disorientated",
+        "diagnose": "afflicted with disorientated.",
+        "cure_message": "You have cured disorientated.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disrupt",
+        "diagnose": "afflicted with disrupt.",
+        "cure_message": "You have cured disrupt.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disrupted",
+        "diagnose": "disrupted.",
+        "cure_message": "You have cured disrupted.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "concentrate",
+        "priority": 0
+    },
+    {
+        "name": "dissonance",
+        "diagnose": "has a dissonant nature.",
+        "cure_message": "Your dissonant nature becomes harmonious.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "distortion",
+        "diagnose": "spiritually distorted.",
+        "cure_message": "Distortion has left you.",
+        "cure_message_obs": "Distortion has left Niuri.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "disturb_confidence",
+        "diagnose": "disturbed of confidence.",
+        "cure_message": "Your confidence is no longer disturbed.",
+        "cure_message_obs": "Niuri looks a little more confident.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "disturb_impulse",
+        "diagnose": "disturbed of impulse.",
+        "cure_message": "Your impulse is no longer disturbed.",
+        "cure_message_obs": "Niuri looks slightly less impulsive.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "disturb_inhibition",
+        "diagnose": "disturbed of inhibition.",
+        "cure_message": "Your inhibition is no longer disturbed.",
+        "cure_message_obs": "Niuri looks a little more in control.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "disturb_sanity",
+        "diagnose": "disturbed of sanity.",
+        "cure_message": "Your sanity is no longer disturbed.",
+        "cure_message_obs": "Niuri looks a little more sane.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "dizziness",
+        "diagnose": "overcome by dizziness.",
+        "cure_message": "You are no longer dizzy.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "effused_blood",
+        "diagnose": "being effused of blood.",
+        "cure_message": "You feel completely cured from your loss of blood condition.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "egocentric",
+        "diagnose": "egocentric.",
+        "cure_message": "Sometimes others are just as important as the self.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "eldritch_invocation",
+        "diagnose": "having your vitals disrupted by an eldritch invocation.",
+        "cure_message": "You will no longer be confounded by an eldritch invocation.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "electric_weakness",
+        "diagnose": "susceptible to electric damage.",
+        "cure_message": "Your susceptibility to electric damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "embedded_axe",
+        "diagnose": "bleeding harshly from an embedded axe.",
+        "cure_message": "The gaping wound where the axe was slowly mends as the bleeding begins to slow.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "pull axe from me",
+        "priority": 0
+    },
+    {
+        "name": "emberbrand",
+        "diagnose": "marked with the brand of the ember.",
+        "cure_message": "The Emberbrand fades away from your forehead.",
+        "cure_message_obs": "The Emberbrand fades away from Niuri's forehead.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "epilepsy",
+        "diagnose": "suffering from epilepsy.",
+        "cure_message": "Your nerves suddenly calm down.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "exhausted",
+        "diagnose": "physically exhausted.",
+        "cure_message": "Your body fills with energy again as you recover from your exhaustion.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "faintness",
+        "diagnose": "feeling light-headed.",
+        "cure_message": "You no longer feel so light-headed.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "farag_rot",
+        "diagnose": "cursed with farag's rot.",
+        "cure_message": "You feel relieved as a the curse of Farag's Rot is lifted from you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "fear",
+        "diagnose": "afflicted by fear.",
+        "cure_message": "There is nothing to fear but fear itself.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "compose",
+        "priority": 0
+    },
+    {
+        "name": "fire_weakness",
+        "diagnose": "susceptible to fire damage.",
+        "cure_message": "Your susceptibility to fire damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "flared",
+        "diagnose": "glowing brightly with magic.",
+        "cure_message": "The glow surrounding you vanishes suddenly.",
+        "cure_message_obs": "The glow surrounding Niuri vanishes suddenly.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "flash_blindness",
+        "diagnose": "blinded by a bright flash.",
+        "cure_message": "You blink as your vision slowly returns to you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "forestbrand",
+        "diagnose": "an enemy of the forests.",
+        "cure_message": "The forests forgive your transgressions once more.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "frozen",
+        "diagnose": "frozen stiff.",
+        "cure_message": "Though still shivering, you are no longer frozen solid.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "caloric",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "frozen_feet",
+        "diagnose": "frozen to the spot by your feet.",
+        "cure_message": "The ice chips away, releasing your feet.",
+        "cure_message_obs": "The ice chips away, releasing Niuri's feet.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "generosity",
+        "diagnose": "extremely generous.",
+        "cure_message": "",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "glasslimb",
+        "diagnose": "suffering from frail limbs.",
+        "cure_message": "The eerie wail from your painfully resonating bones dies down as you manage to shrug off the glass limb effect.",
+        "cure_message_obs": "The eerie wail from Niuri's resonating bones dies down as $HE$ manages to shrug off the glass limb effect.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "gorged",
+        "diagnose": "gorged.",
+        "cure_message": "You feel your appetite return to normal.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "grappled",
+        "diagnose": "grappling with severn.",
+        "cure_message": "You manage to free yourself from Severn's grasp.",
+        "cure_message_obs": "Niuri has freed Herself from the grappling.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "haemophilia",
+        "diagnose": "afflicted by haemophilia.",
+        "cure_message": "Your blood regains its ability to clot.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hallucinations",
+        "diagnose": "hallucinating.",
+        "cure_message": "Your hallucinations cease to plague you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "halted",
+        "diagnose": "afflicted with halted.",
+        "cure_message": "You have cured halted.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hatred",
+        "diagnose": "feeling intense hatred toward severn.",
+        "cure_message": "Your terrible hatred for Severn fades.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_amputated",
+        "diagnose": "afflicted with head_amputated.",
+        "cure_message": "You have cured head_amputated.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_broken",
+        "diagnose": "afflicted with head_broken.",
+        "cure_message": "You have cured head_broken.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_bruised",
+        "diagnose": "affected by a bruised head.",
+        "cure_message": "You have completely cured the bruising on your head.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_bruised_critical",
+        "diagnose": "affected by a critically bruised head.",
+        "cure_message": "You have healed the critical bruising on your head.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_bruised_moderate",
+        "diagnose": "affected by a moderately bruised head.",
+        "cure_message": "The bruising on your head has been reduced.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_damaged",
+        "diagnose": "has a partially damaged head.",
+        "cure_message": "You feel the bones of your head repair themselves, and the muscles knit back together.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_deepwound",
+        "diagnose": "suffering sliced arteries on your head.",
+        "cure_message": "Your arteries mend and close as the flesh of your head is repaired.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_mangled",
+        "diagnose": "has a serious concussion.",
+        "cure_message": "Your head is no longer mutilated.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "head_ravaged",
+        "diagnose": "torn by lacerations on your head.",
+        "cure_message": "The deep lacerations on your head mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "heartflutter",
+        "diagnose": "suffering an irregular heartbeat.",
+        "cure_message": "Your heart seems to stop skipping beats.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "heatspear",
+        "diagnose": "impaled with a spear of heat.",
+        "cure_message": "The spear of heat within you becomes cool and burns out.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hellsight",
+        "diagnose": "catching glimpses of hell.",
+        "cure_message": "Thankfully, the visions of Hell have left you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "willow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hubris",
+        "diagnose": "full of overwhelming pride.",
+        "cure_message": "Your ego has shriveled to that of the average mortal.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hunted",
+        "diagnose": "being hunted by the hounds of haern.",
+        "cure_message": "You have cured hunted.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hypersomnia",
+        "diagnose": "hypersomnic.",
+        "cure_message": "You feel a bit more alert and awake.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hypertension",
+        "diagnose": "thumping painfully with hypertension.",
+        "cure_message": "The fiery pain in your veins slowly fades away as the bloodburst ebbs from your system.",
+        "cure_message_obs": "The crimson glow in Niuri's veins slowly fades away as the bloodburst ebbs from Her system.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "hypochondria",
+        "diagnose": "a certified hypochondriac.",
+        "cure_message": "My, you feel healthier than you have in years.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "idiocy",
+        "diagnose": "afflicted with the mind power of an idiot.",
+        "cure_message": "Your mind feels free of its idiocy.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "anabiotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "impairment",
+        "diagnose": "suffering from bodily impairment.",
+        "cure_message": "Your body feels a little more like its old self.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "impatience",
+        "diagnose": "impatient.",
+        "cure_message": "You are patient once again.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "indifference",
+        "diagnose": "indifferent.",
+        "cure_message": "Your focus returns.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "infernal_seal",
+        "diagnose": "marked with the seal of the infernal.",
+        "cure_message": "The Infernal seal ceases to burn and fades from your chest.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "infernal_shroud",
+        "diagnose": "surrounded by an infernal shroud.",
+        "cure_message": "The crackling heat of the Infernal shroud finally dims and is snuffed out.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "infested",
+        "diagnose": "infested by a spiritual parasite.",
+        "cure_message": "One by the one, the parasites plaguing your body screech as they fall from your body.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "insomnia",
+        "diagnose": "afflicted with insomnia.",
+        "cure_message": "You have cured insomnia.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "intimidated",
+        "diagnose": "afflicted with intimidated.",
+        "cure_message": "You have cured intimidated.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "justice",
+        "diagnose": "surrounded by the aura of justice.",
+        "cure_message": "The curse of Justice leaves you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "laxity",
+        "diagnose": "incredibly lax.",
+        "cure_message": "Your mind sharpens as the inner cogs begin to whirl.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "leeched_aura",
+        "diagnose": "leeched of your life aura.",
+        "cure_message": "You feel warmed as your living aura is returned.",
+        "cure_message_obs": "Niuri appears to regain a little colour.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "meditate",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_amputated",
+        "diagnose": "missing a left arm.",
+        "cure_message": "You wince in agony as a new limb grows from the stump where your left arm was, the appendage weak and feeble.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_broken",
+        "diagnose": "afflicted by a crippled left arm.",
+        "cure_message": "The bones in your left arm mend.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_bruised",
+        "diagnose": "affected by a bruised left arm.",
+        "cure_message": "You have completely cured the bruising on your left arm.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_bruised_critical",
+        "diagnose": "affected by a critically bruised left arm.",
+        "cure_message": "You have healed the critical bruising on your left arm.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_bruised_moderate",
+        "diagnose": "affected by a moderately bruised left arm.",
+        "cure_message": "The bruising on your left arm has been reduced.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_damaged",
+        "diagnose": "has a partially damaged left arm.",
+        "cure_message": "You feel the bone of your left arm repair itself, and the muscles knit themselves back together.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_deepwound",
+        "diagnose": "suffering sliced arteries on your left arm.",
+        "cure_message": "Your arteries mend and close as the flesh of your left arm is repaired.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_dislocated",
+        "diagnose": "suffering from a dislocated left arm.",
+        "cure_message": "Your left arm painfully sets back into its socket once more.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_mangled",
+        "diagnose": "has a mangled left arm.",
+        "cure_message": "Your left arm is no longer mutilated.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_numbed",
+        "diagnose": "numb in the left arm.",
+        "cure_message": "The numbness in your left arm fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "left_arm_ravaged",
+        "diagnose": "torn by lacerations on your left arm.",
+        "cure_message": "The deep lacerations on your left arm mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_amputated",
+        "diagnose": "missing a left leg.",
+        "cure_message": "You wince in agony as a new limb grows from the stump where your left leg was, the appendage weak and feeble.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_broken",
+        "diagnose": "afflicted by a crippled left leg.",
+        "cure_message": "The bones in your left leg mend.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_bruised",
+        "diagnose": "affected by a bruised left leg.",
+        "cure_message": "You have completely cured the bruising on your left leg.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_bruised_critical",
+        "diagnose": "affected by a critically bruised left leg.",
+        "cure_message": "You have healed the critical bruising on your left leg.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_bruised_moderate",
+        "diagnose": "affected by a moderately bruised left leg.",
+        "cure_message": "The bruising on your left leg has been reduced.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_damaged",
+        "diagnose": "has a partially damaged left leg.",
+        "cure_message": "You feel the bone of your left leg repair itself, and the muscles knit themselves back together.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_deepwound",
+        "diagnose": "suffering sliced arteries on your left leg.",
+        "cure_message": "Your arteries mend and close as the flesh of your left leg is repaired.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_dislocated",
+        "diagnose": "suffering from a dislocated left leg.",
+        "cure_message": "Your left leg painfully sets back into its socket once more.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_mangled",
+        "diagnose": "has a mangled left leg.",
+        "cure_message": "Your left leg is no longer mutilated.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_numbed",
+        "diagnose": "numb in the left leg.",
+        "cure_message": "The numbness in your left leg fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "left_leg_ravaged",
+        "diagnose": "torn by lacerations on your left leg.",
+        "cure_message": "The deep lacerations on your left leg mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "lemniscate",
+        "diagnose": "caught within a time loop.",
+        "cure_message": "The passage of time returns to normal.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "lethargy",
+        "diagnose": "feeling rather lethargic.",
+        "cure_message": "The lethargy evaporates, leaving you full of energy.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "lifebane",
+        "diagnose": "cursed with the bane of life.",
+        "cure_message": "The curse of lifebane lifts.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "limp_veins",
+        "diagnose": "full of limp veins.",
+        "cure_message": "Your heart begins to beat strongly again, and your veins return to normal size.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "loneliness",
+        "diagnose": "very lonely.",
+        "cure_message": "The awful loneliness leaves you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "lovers_effect",
+        "diagnose": "desperately in love with severn.",
+        "cure_message": "You shake your head, wondering what you ever saw in Severn.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "magic_weakness",
+        "diagnose": "susceptible to magical damage.",
+        "cure_message": "Your susceptibility to magical damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "magnanimity",
+        "diagnose": "feeling magnanimous.",
+        "cure_message": "Your restraint relaxes as your state of magnanimity fades.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "masochism",
+        "diagnose": "masochistic.",
+        "cure_message": "You no longer enjoy pain.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "mauled_face",
+        "diagnose": "unrecognizable due to a mauled face.",
+        "cure_message": "Your facial tissue slowly knits itself back together, restoring your original appearance.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "mental_disruption",
+        "diagnose": "disrupted of mental equilibrium.",
+        "cure_message": "Your equilibrium returns to normal.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "mental_fatigue",
+        "diagnose": "mentally fatigued.",
+        "cure_message": "Your thoughts clear as the mental fatigue lifts.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "merciful",
+        "diagnose": "given to unreasoned mercy.",
+        "cure_message": "Your merciful bent leaves you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "migraine",
+        "diagnose": "struggling from a migraine.",
+        "cure_message": "You feel less tense as your throbbing migraine subsides.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "yarrow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "mind_blank",
+        "diagnose": "filled with a blank state of mind.",
+        "cure_message": "Thoughts rush back into your mind as the blankness is filled.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "mindclamped",
+        "diagnose": "mindclamped.",
+        "cure_message": "Your mind is no longer clamped.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "mindtether",
+        "diagnose": "mentally tethered to severn.",
+        "cure_message": "You are no longer mentally tethered with Severn.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "mirroring",
+        "diagnose": "cursed with mirrored attacks.",
+        "cure_message": "The mirroring curse has been lifted.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "mistbrand",
+        "diagnose": "marked with the brand of the mist.",
+        "cure_message": "The Mistbrand fades away from your forehead.",
+        "cure_message_obs": "The Mistbrand fades away from Niuri's forehead.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "muddled",
+        "diagnose": "suffering from muddled thoughts.",
+        "cure_message": "Your thoughts unscramble as your mind regains its clarity.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "mutation_sickness",
+        "diagnose": "weakened from a recent transformation.",
+        "cure_message": "Your body swells with strength as you recover from your recent transformation.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "numb_arms",
+        "diagnose": "suffering from numb arms.",
+        "cure_message": "The feeling in your arms slowly returns.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "numbed_skin",
+        "diagnose": "suffering from numbed skin.",
+        "cure_message": "The numbness in your limbs fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "oiled",
+        "diagnose": "covered in viscous oil.",
+        "cure_message": "The last of the oil coating you fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "scrub",
+        "priority": 0
+    },
+    {
+        "name": "omen",
+        "diagnose": "preparing for an omen.",
+        "cure_message": "The omen has come to pass, inflicting a powerful curse upon you.",
+        "cure_message_obs": "An omen descends upon Niuri, inflicting a powerful curse.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "pacifism",
+        "diagnose": "pacified.",
+        "cure_message": "You are capable of offensive acts once more.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "paralysis",
+        "diagnose": "paralysed.",
+        "cure_message": "Your muscles unlock; you are no longer paralysed.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "paranoia",
+        "diagnose": "paranoid.",
+        "cure_message": "Aaaahhh. No one is out to get you after all.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "paresis",
+        "diagnose": "suffering from numbed muscles.",
+        "cure_message": "Your body relaxes as your muscles are relieved of their numbness.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "patterns",
+        "diagnose": "entranced by twisting patterns.",
+        "cure_message": "The warping patterns pop out of view in a wink.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "panacea",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "peace",
+        "diagnose": "feeling unnaturally tranquil.",
+        "cure_message": "The unnatural feeling of peace leaves you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "penance",
+        "diagnose": "suffering an imposed penance.",
+        "cure_message": "The Penance imposed upon you has worn off.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "petrified",
+        "diagnose": "petrified.",
+        "cure_message": "You are no longer petrified.",
+        "cure_message_obs": "Niuri begins to move again, no longer petrified.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "physical_disruption",
+        "diagnose": "disrupted of physical balance.",
+        "cure_message": "Your balance returns to normal.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "plodding",
+        "diagnose": "plodding with slow movement.",
+        "cure_message": "Your body feels free of its heaviness and plodding.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "anabiotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "poison_weakness",
+        "diagnose": "susceptible to poison damage.",
+        "cure_message": "Your susceptibility to poison damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "pre_restore_head",
+        "diagnose": "afflicted with pre_restore_head.",
+        "cure_message": "You have cured pre_restore_head.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "pre_restore_left_arm",
+        "diagnose": "afflicted with pre_restore_left_arm.",
+        "cure_message": "You have cured pre_restore_left_arm.",
+        "cure_message_obs": "",
+        "body_part": "left arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "pre_restore_left_leg",
+        "diagnose": "afflicted with pre_restore_left_leg.",
+        "cure_message": "You have cured pre_restore_left_leg.",
+        "cure_message_obs": "",
+        "body_part": "left leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "pre_restore_right_arm",
+        "diagnose": "afflicted with pre_restore_right_arm.",
+        "cure_message": "You have cured pre_restore_right_arm.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "pre_restore_right_leg",
+        "diagnose": "afflicted with pre_restore_right_leg.",
+        "cure_message": "You have cured pre_restore_right_leg.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "pre_restore_torso",
+        "diagnose": "afflicted with pre_restore_torso.",
+        "cure_message": "You have cured pre_restore_torso.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "premonition",
+        "diagnose": "suffering from a premonition.",
+        "cure_message": "The premonition haunting your mind suddenly lifts.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "focus",
+        "priority": 0
+    },
+    {
+        "name": "psychic_weakness",
+        "diagnose": "susceptible to psychic damage.",
+        "cure_message": "Your susceptibility to psychic damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "punished_legs",
+        "diagnose": "suffering punished legs.",
+        "cure_message": "The muscles of your punished legs recover, restoring your full movement.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "quicksand",
+        "diagnose": "stuck within quicksand.",
+        "cure_message": "You have freed yourself from the trapping of quicksand.",
+        "cure_message_obs": "Niuri has freed Herself from the trappings of quicksand.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "ravaged",
+        "diagnose": "torn by lacerations on your body.",
+        "cure_message": "The deep lacerations on your body mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "recklessness",
+        "diagnose": "reckless.",
+        "cure_message": "Prudence rules your psyche once again.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "rend",
+        "diagnose": "suffering shredded flesh.",
+        "cure_message": "You watch as your shredded flesh knits together.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "resin_glauxe",
+        "diagnose": "afflicted with resin_glauxe.",
+        "cure_message": "You have cured resin_glauxe.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "resonance",
+        "diagnose": "resonating strangely.",
+        "cure_message": "The strange resonance fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_amputated",
+        "diagnose": "missing a right arm.",
+        "cure_message": "You wince in agony as a new limb grows from the stump where your right arm was, the appendage weak and feeble.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_broken",
+        "diagnose": "afflicted by a crippled right arm.",
+        "cure_message": "The bones in your right arm mend.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_bruised",
+        "diagnose": "affected by a bruised right arm.",
+        "cure_message": "You have completely cured the bruising on your right arm.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_bruised_critical",
+        "diagnose": "affected by a critically bruised right arm.",
+        "cure_message": "You have healed the critical bruising on your right arm.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_bruised_moderate",
+        "diagnose": "affected by a moderately bruised right arm.",
+        "cure_message": "The bruising on your right arm has been reduced.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_damaged",
+        "diagnose": "has a partially damaged right arm.",
+        "cure_message": "You feel the bone of your right arm repair itself, and the muscles knit themselves back together.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_deepwound",
+        "diagnose": "suffering sliced arteries on your right arm.",
+        "cure_message": "Your arteries mend and close as the flesh of your right arm is repaired.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_dislocated",
+        "diagnose": "suffering from a dislocated right arm.",
+        "cure_message": "Your right arm painfully sets back into its socket once more.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_mangled",
+        "diagnose": "has a mangled right arm.",
+        "cure_message": "Your right arm is no longer mutilated.",
+        "cure_message_obs": "",
+        "body_part": "right arm.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_missing",
+        "diagnose": "afflicted with right_arm_missing.",
+        "cure_message": "You have cured right_arm_missing.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_numbed",
+        "diagnose": "numb in the right arm.",
+        "cure_message": "The numbness in your right arm fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "right_arm_ravaged",
+        "diagnose": "torn by lacerations on your right arm.",
+        "cure_message": "The deep lacerations on your right arm mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_amputated",
+        "diagnose": "missing a right leg.",
+        "cure_message": "You wince in agony as a new limb grows from the stump where your right leg was, the appendage weak and feeble.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_broken",
+        "diagnose": "afflicted by a crippled right leg.",
+        "cure_message": "The bones in your right leg mend.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_bruised",
+        "diagnose": "affected by a bruised right leg.",
+        "cure_message": "You have completely cured the bruising on your right leg.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_bruised_critical",
+        "diagnose": "affected by a critically bruised right leg.",
+        "cure_message": "You have healed the critical bruising on your right leg.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_bruised_moderate",
+        "diagnose": "affected by a moderately bruised right leg.",
+        "cure_message": "The bruising on your right leg has been reduced.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_damaged",
+        "diagnose": "has a partially damaged right leg.",
+        "cure_message": "You feel the bone of your right leg repair itself, and the muscles knit themselves back together.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_deepwound",
+        "diagnose": "suffering sliced arteries on your right leg.",
+        "cure_message": "Your arteries mend and close as the flesh of your right leg is repaired.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_dislocated",
+        "diagnose": "suffering from a dislocated right leg.",
+        "cure_message": "Your right leg painfully sets back into its socket once more.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_mangled",
+        "diagnose": "has a mangled right leg.",
+        "cure_message": "Your right leg is no longer mutilated.",
+        "cure_message_obs": "",
+        "body_part": "right leg.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_numbed",
+        "diagnose": "numb in the right leg.",
+        "cure_message": "The numbness in your right leg fades away.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "right_leg_ravaged",
+        "diagnose": "torn by lacerations on your right leg.",
+        "cure_message": "The deep lacerations on your right leg mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "ringing_ears",
+        "diagnose": "troubled by a ringing in your ears.",
+        "cure_message": "The incessant ringing in your ears finally fades.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "ripped_groin",
+        "diagnose": "moving slowly due to a ripped groin.",
+        "cure_message": "A deep breath steals into your lungs as you feel your groin muscles heal at last.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "ripped_spleen",
+        "diagnose": "unable to clot properly with such a spleen.",
+        "cure_message": "Your spirit is strengthened and you know that your spleen is functioning again.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "ripped_throat",
+        "diagnose": "unfit due to a torn throat.",
+        "cure_message": "You swallow hard as you feel your ripped throat finally mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "ruptured_eardrum",
+        "diagnose": "ruptured in your eardrums.",
+        "cure_message": "With a small popping noise, your hearing returns to normal.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "sadness",
+        "diagnose": "somewhat unhappy.",
+        "cure_message": "",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "antipsychotic",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "sand_trapped",
+        "diagnose": "hindered by the sands.",
+        "cure_message": "Finally! The sand is no longer hindering your movement.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "sandrot",
+        "diagnose": "cursed with rotting skin.",
+        "cure_message": "Feeling the stabs of pain ebb away within your limbs, you sigh in relief as the sand rot is lifted.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "sapped_constitution",
+        "diagnose": "sapped of constitution.",
+        "cure_message": "Stamina burns within as your constitution rebolsters itself.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "sapped_dexterity",
+        "diagnose": "sapped of dexterity.",
+        "cure_message": "With a twitch, your dexterity rushes back into you.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "sapped_intelligence",
+        "diagnose": "sapped of intelligence.",
+        "cure_message": "Your mind surges as you recover your intelligence.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "sapped_stats",
+        "diagnose": "feeling incredibly drained.",
+        "cure_message": "You begin to feel more like your old self.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "sapped_strength",
+        "diagnose": "sapped of strength.",
+        "cure_message": "You feel your muscles bulge as your strength returns.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "sealing_circle",
+        "diagnose": "sealed by the circle.",
+        "cure_message": "The seal of the circle has been broken.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "sealing_square",
+        "diagnose": "sealed by the square.",
+        "cure_message": "The seal of the square has been broken.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "sealing_triangle",
+        "diagnose": "sealed by the triangle.",
+        "cure_message": "The seal of the triangle has been broken.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "seduction",
+        "diagnose": "has vampiric seduction.",
+        "cure_message": "You feel strength return to your mind.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "self-pity",
+        "diagnose": "full of self-pity.",
+        "cure_message": "You decide that you aren't that bad after all.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "sensitivity",
+        "diagnose": "sensitive to pain.",
+        "cure_message": "The stinging feeling fades.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "shadow_coat",
+        "diagnose": "coated with foul shadows.",
+        "cure_message": "The shadows gradually recede, slipping away from your skin.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "shadow_weakness",
+        "diagnose": "afflicted with shadow_weakness.",
+        "cure_message": "You have cured shadow_weakness.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "shadowbrand",
+        "diagnose": "marked with the brand of the shadow.",
+        "cure_message": "The Shadowbrand fades away from your forehead.",
+        "cure_message_obs": "The Shadowbrand fades away from Niuri's forehead.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "shadowed",
+        "diagnose": "at odds with the sun.",
+        "cure_message": "Your shadowed skin returns to normal.",
+        "cure_message_obs": "Niuri's shadowed skin returns to normal.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "shivering",
+        "diagnose": "shivering.",
+        "cure_message": "Your body warms up and you stop shivering.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "caloric",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "shyness",
+        "diagnose": "afflicted by unbearable shyness.",
+        "cure_message": "Your shyness has been cured. You can now face the world boldly.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "slickness",
+        "diagnose": "extremely oily.",
+        "cure_message": "Your glands cease their oily secretion.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "opiate",
+        "poultice": "",
+        "smoke": "yarrow",
+        "special": "",
+        "priority": 90
+    },
+    {
+        "name": "smashed_throat",
+        "diagnose": "suffering from a damaged throat.",
+        "cure_message": "You sigh with relief as the damage to your throat is cured.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "soul_disease",
+        "diagnose": "feeling sluggish and drained.",
+        "cure_message": "You feel more robust and healthy as you shake off your soul's disease.",
+        "cure_message_obs": "Niuri looks more robust and healthy as Her soul's disease fades away.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "soul_poison",
+        "diagnose": "suffering a poisoned soul.",
+        "cure_message": "The tenebrous souls plaguing you fade away with a wail.",
+        "cure_message_obs": "The tenebrous souls plaguing Niuri fade away with a wail.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "soulchill",
+        "diagnose": "made slow and sensitive by your chilled soul.",
+        "cure_message": "Your clenched chest eases as your soul warms.",
+        "cure_message_obs": "Colour returns to Niuri as the chill leaves Her.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "soulpuncture",
+        "diagnose": "leaking soul.",
+        "cure_message": "You draw in a ragged breath of relief as the wound in your torso knits together, stemming the spill of soul.",
+        "cure_message_obs": "Niuri draws in a ragged breath as the wound in Her torso knits together, stemming the spill of soul.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "soulroot",
+        "diagnose": "spiritually bound to this area.",
+        "cure_message": "Elation fills your being as your soul is set free.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "spinal_rip",
+        "diagnose": "in agony with a ripped spine.",
+        "cure_message": "You gasp as your spine is mended.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "spirit_weakness",
+        "diagnose": "susceptible to spirit damage.",
+        "cure_message": "Your susceptibility to spirit damage normalizes.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "spiritbane",
+        "diagnose": "baned of the spirit.",
+        "cure_message": "Your spirit lifts once more.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "spiritbrand",
+        "diagnose": "marked with the brand of the spirit.",
+        "cure_message": "The Spiritbrand fades away from your forehead.",
+        "cure_message_obs": "The Spiritbrand fades away from Niuri's forehead.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "squelched",
+        "diagnose": "coiled by a strange mist.",
+        "cure_message": "You breathe deeply, feeling a little more free.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "yarrow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "stonebrand",
+        "diagnose": "marked with the brand of the stone.",
+        "cure_message": "The Stonebrand fades away from your forehead.",
+        "cure_message_obs": "The Stonebrand fades away from Niuri's forehead.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "stonevice",
+        "diagnose": "suffering from a petrified gut.",
+        "cure_message": "You feel the stone-like vice on your innards fade.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "stormtouched",
+        "diagnose": "touched by the storm's curse.",
+        "cure_message": "The static around you dies down.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "stun",
+        "diagnose": "stunned.",
+        "cure_message": "You are no longer stunned.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "stupidity",
+        "diagnose": "unnaturally stupid.",
+        "cure_message": "You aren't such a complete idiot anymore.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "euphoriant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 100
+    },
+    {
+        "name": "stuttering",
+        "diagnose": "a stuttering fool.",
+        "cure_message": "Your tongue will finally obey your commands properly.",
+        "cure_message_obs": "",
+        "body_part": "head.",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "epidermal",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "superstition",
+        "diagnose": "superstitious of the abnormal.",
+        "cure_message": "You shake your head clear of superstitious fears.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "steroid",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "taunted",
+        "diagnose": "afflicted with taunted.",
+        "cure_message": "You have cured taunted.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "temptation",
+        "diagnose": "has vampiric temptation.",
+        "cure_message": "You feel strength return to your body.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "thin_blood",
+        "diagnose": "afflicted by thin blood.",
+        "cure_message": "You feel your blood thickening.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": true
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "thorns",
+        "diagnose": "invaded by shadowy thorns.",
+        "cure_message": "The shadowy thorns invading your throat dissipate.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "throatslice",
+        "diagnose": "afflicted with throatslice.",
+        "cure_message": "You have cured throatslice.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "thunderstorm",
+        "diagnose": "plagued by a thunderstorm.",
+        "cure_message": "The skies around you clear as the thunderstorm dissipates.",
+        "cure_message_obs": "The skies around Niuri clear as the thunderstorm dissipates.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "torso_broken",
+        "diagnose": "afflicted with torso_broken.",
+        "cure_message": "You have cured torso_broken.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_bruised",
+        "diagnose": "affected by a bruised torso.",
+        "cure_message": "You have completely cured the bruising on your torso.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_bruised_critical",
+        "diagnose": "affected by a critically bruised torso.",
+        "cure_message": "You have healed the critical bruising on your torso.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_bruised_moderate",
+        "diagnose": "affected by a moderately bruised torso.",
+        "cure_message": "The bruising on your torso has been reduced.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "mending",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_damaged",
+        "diagnose": "has mild internal trauma.",
+        "cure_message": "You feel the bones of your torso repair themselves, and the muscles knit back together.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_deepwound",
+        "diagnose": "suffering sliced arteries on your torso.",
+        "cure_message": "Your arteries mend and close as the flesh of your torso is repaired.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_mangled",
+        "diagnose": "has serious internal trauma.",
+        "cure_message": "Your torso is no longer mutilated.",
+        "cure_message_obs": "",
+        "body_part": "torso.",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "restoration",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "torso_ravaged",
+        "diagnose": "torn by lacerations on your torso.",
+        "cure_message": "The deep lacerations on your torso mend.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "troubled_breathing",
+        "diagnose": "having trouble breathing.",
+        "cure_message": "Your airways clear up, letting you breathe properly once more.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "unblockable_weakness",
+        "diagnose": "afflicted with unblockable_weakness.",
+        "cure_message": "You have cured unblockable_weakness.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "vertigo",
+        "diagnose": "afraid of heights.",
+        "cure_message": "Your fear of heights subsides.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": false
+        },
+        "pill": "depressant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "vinethorns",
+        "diagnose": "pricked by $stacks$ groups of thorns.",
+        "cure_message": "You feel relieved as the last group of thorns leaves your skin.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "pull thorn from body",
+        "priority": 0
+    },
+    {
+        "name": "vitalbane",
+        "diagnose": "suffering from poisoned vitals.",
+        "cure_message": "Your poisoned vitals have regained their health.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "void",
+        "diagnose": "within a shadowy void.",
+        "cure_message": "The void surrounding you weakens.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "vomiting",
+        "diagnose": "violently ill.",
+        "cure_message": "Your stomach becalms itself.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": true,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "coagulation",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "voyria",
+        "diagnose": "suffering from voyria.",
+        "cure_message": "The burning in your veins ceases.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "sip immunity",
+        "priority": 0
+    },
+    {
+        "name": "weakvoid",
+        "diagnose": "within a weakened, shadowy void.",
+        "cure_message": "The void surrounding you disappears.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "weariness",
+        "diagnose": "wearied in body.",
+        "cure_message": "Your limbs strengthen and you feel stronger.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": true,
+            "venom": true
+        },
+        "pill": "decongestant",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "windbrand",
+        "diagnose": "marked with the brand of the wind.",
+        "cure_message": "The Windbrand fades away from your forehead.",
+        "cure_message_obs": "The Windbrand fades away from Niuri's forehead.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "withering",
+        "diagnose": "withering rapidly.",
+        "cure_message": "You feel relief wash over you, the haunting presence gone.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "yarrow",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "wraith",
+        "diagnose": "infected by an insidious soul.",
+        "cure_message": "The sliver of soul infecting you slowly fades, its essence depleted.",
+        "cure_message_obs": "The sliver of soul infecting Niuri slowly fades, its essence depleted.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "time",
+        "priority": 0
+    },
+    {
+        "name": "writhe_armpitlock",
+        "diagnose": "jawlocked by the armpit.",
+        "cure_message": "You have writhed free of your armpit-jawlock.",
+        "cure_message_obs": "Niuri has writhed free of Her armpit-jawlock.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_bind",
+        "diagnose": "bound and tied.",
+        "cure_message": "You have writhed free of your entanglement by tied ropes.",
+        "cure_message_obs": "Niuri has writhed free of Her entanglement by tied ropes.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_feed",
+        "diagnose": "afflicted with writhe_feed.",
+        "cure_message": "You have cured writhe_feed.",
+        "cure_message_obs": "",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "writhe_hoist",
+        "diagnose": "trapped within the claws of severn.",
+        "cure_message": "You have writhed free of the claws gripping you.",
+        "cure_message_obs": "Niuri has writhed free of the claws gripping Her.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_impaled",
+        "diagnose": "impaled by severn.",
+        "cure_message": "You have writhed free of your impalement.",
+        "cure_message_obs": "Niuri has writhed free of Her impalement.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_lure",
+        "diagnose": "afflicted with writhe_lure.",
+        "cure_message": "You wrest your mind free of its unnatural attraction.",
+        "cure_message_obs": "Niuri's body ceases to move of its own accord.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "",
+        "priority": 0
+    },
+    {
+        "name": "writhe_necklock",
+        "diagnose": "jawlocked by the neck.",
+        "cure_message": "You have writhed free of your neck-jawlock.",
+        "cure_message_obs": "Niuri has writhed free of Her neck-jawlock.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_ropes",
+        "diagnose": "entangled in ropes.",
+        "cure_message": "You have writhed free of your entanglement by ropes.",
+        "cure_message_obs": "Niuri has writhed free of Her entanglement by ropes.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_tar",
+        "diagnose": "afflicted with writhe_tar.",
+        "cure_message": "You have writhed free of your sticky situation.",
+        "cure_message_obs": "Niuri has writhed free of Her sticky situation.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_thighlock",
+        "diagnose": "jawlocked by the thigh.",
+        "cure_message": "You have writhed free of your thigh-jawlock.",
+        "cure_message_obs": "Niuri has writhed free of Her thigh-jawlock.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_transfix",
+        "diagnose": "transfixed.",
+        "cure_message": "You have writhed free of your state of transfixion.",
+        "cure_message_obs": "Niuri has writhed free of Her state of transfixion.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_vines",
+        "diagnose": "entangled by forest vines.",
+        "cure_message": "You have writhed free of your entanglement by vines.",
+        "cure_message_obs": "Niuri has writhed free of Her entanglement by vines.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    },
+    {
+        "name": "writhe_web",
+        "diagnose": "entangled.",
+        "cure_message": "You have writhed free of your bindings.",
+        "cure_message_obs": "Niuri has writhed free of Her bindings.",
+        "body_part": "",
+        "type": {
+            "physical": false,
+            "mental": false,
+            "venom": false
+        },
+        "pill": "",
+        "poultice": "",
+        "smoke": "",
+        "special": "writhe",
+        "priority": 0
+    }
+]
