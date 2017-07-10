@@ -1,11 +1,12 @@
-import tf
 import imp
-import alias_builder
+
+"""
+Misc aliases for gameplay
+"""
 
 ALIAS_LIST = {
         # Script handling
         "reload": "/python_call main.reinstall",
-        "debug": "/python_call main.toggle_debug",
 
         # Mounts
         "mnt": ["recall mount","qmount 18597"],
@@ -25,9 +26,5 @@ ALIAS_LIST = {
         "clo": "say duanathar",
         }
 
-def install():
-    imp.reload(alias_builder)
-    alias_builder.build_aliases(ALIAS_LIST)
-
-install()
-    
+def install(builder):
+    builder.build(ALIAS_LIST)

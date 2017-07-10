@@ -1,67 +1,61 @@
-import tf
+import mud_wrapper as tf
 import sys
-import imp
+from imp import reload
 
-import globals
-import info_here_parser
+import state
+import aliases
+import module_builder as builder
+
+from core.prompt_listener import *
+from core.line_listener import *
 
 MACRO_LINE = "py_line"
-MODULES = [
-        "aliases",
-        "combat"
-        ]
-
-GLOBAL = {
-        "target": "",
-        }
+MODULES = []
 
 # Setup print to print to tf
 sys.stdout.output = tf.out
 
-# Variables
-debug = False
-
 def reinstall(arg):
-    tf.eval("***REMOVED***")
-
-def toggle_debug(arg):
-    global debug
-    debug = not debug
-    if debug:
-        print("Debug mode on")
-    else:
-        print("Debug mode off")
+    cState["communicator"].eval("***REMOVED***")
 
 def handle_line(line):
-    if debug:
-        print("Received line: %s" % line)
-    info_here_parser.parse_line(line)
-
-def _load_module(module):
-    print("---> %s" % module)
-    tf.eval("/python_load %s" % module)
-
-def _install():
-    # Reload modules
-    imp.reload(info_here_parser)
-
-    # Purge all macros
-    print("Purging existing macros...")
-    tf.eval("/purge")
-    print("...DONE")
-    print("")
-
-    print("Loading modules...")
     for mod in MODULES:
-        _load_module(mod)
-    print("")
+        if isinstance(mod, LineListener):
+            mod.parse_line(line)
 
-    print("Installing line listener...")
-    tf.eval("/def -p9 -F -q -mregexp -t'^.*\\$' = /python_call main.handle_line \\%*")
+def handle_prompt(line):
+    for mod in MODULES:
+        if isinstance(mod, PromptListener):
+            mod.parse_prompt(line)
+
+def cb(arg):
+    args = arg.split()
+    cState["callback_handler"].triggerCallback(args[0], args[1:])
+
+def install(cState):
+    print("Installing...")
+    mud = cState["communicator"]
+
+    # Clear existing
+    mud.eval("/purge")
+
+    # Install
+    load_modules(cState)
+    aliases.install(cState["alias_builder"])
+
+    mud.eval("/def -p9 -q -mregexp -t'^.*\\$' py_line = /python_call main.handle_line \\%*")
+    mud.eval("/def -p1 -mregexp -q -h'PROMPT ^.*\$' prompt_trigger = /python_call main.handle_prompt \\%*")
     print("...DONE")
-    print("")
 
     print("Python 'main' loaded")
 
-_install()
-globals.init()
+def load_modules(cState):
+    global MODULES
+    MODULES = builder.build_modules(cState)
+
+reload(state)
+reload(builder)
+reload(aliases)
+
+cState = state.new()
+install(cState)

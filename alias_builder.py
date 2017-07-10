@@ -1,16 +1,7 @@
-import tf
+from macro_builder import MacroBuilder
 
-def build_aliases(aliases, mType = "glob"):
-    for alias, cmd in aliases.items():
-        _register_alias(alias, cmd, mType)
+class AliasBuilder(MacroBuilder):
 
-def _register_alias(alias, cmd, mType = "glob"):
-    definition = "/def -p1 -m%s -h'SEND %s' = %s"
-    command = ""
-
-    if type(cmd) == list:
-        command = "\\%;".join(cmd)
-    else:
-        command = cmd
-
-    tf.eval(definition % (mType, alias, command))
+    def build(self, macros, mType = "glob"):
+        definition = "/def -p1 -m%s -h'SEND %s' = %s"
+        super(AliasBuilder, self)._build(definition, macros, mType)

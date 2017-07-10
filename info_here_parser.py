@@ -1,45 +1,51 @@
-import globals
 import re
-import combat
 
-PATTERN = "^You can see the following (\d+) objects\\:$"
-CPATTERN = re.compile(PATTERN)
+from core.module import Module
+from core.line_listener import LineListener
 
-running = False
-count = 0
+class InfoParser(Module, LineListener):
+    PATTERN = "^You can see the following (\d+) objects\\:$"
+    CPATTERN = re.compile(PATTERN)
 
-VALID_TARGETS = [
-        "forager",
-        "hunter",
-        "lumberjack",
-        "umbra",
-        "priest",
-        ]
+    VALID_TARGETS = [
+            "forager",
+            "hunter",
+            "lumberjack",
+            "umbra",
+            "priest",
+            ]
 
-def parse_line(line):
-    global running, count
+    def __init__(self, combat_module, *args):
+        super(InfoParser, self).__init__(*args)
+        self.running = False
+        self.count = 0
+        self.combat_module = combat_module
 
-    match = CPATTERN.match(line)
-    if match:
-        running = True
-        count = int(match.group(1))
-        return
+    def parse_line(self, line):
+        if not self.state["mode"]["bashing"]:
+            return
 
-    if not running:
-        return
+        match = InfoParser.CPATTERN.match(line)
+        if match:
+            self.running = True
+            self.count = int(match.group(1))
+            return
 
-    count -= 1
-    if _check_target(line):
-        count = 0
+        if not self.running:
+            return
 
-    if not count:
-        running = False
+        self.count -= 1
+        if self.__check_target(line):
+            self.count = 0
 
-def _check_target(line):
-    for tar in VALID_TARGETS:
-        if line.startswith(tar, 1):
-            combat.target(line.split()[0].strip('"'))
-            return True
+        if not self.count:
+            self.running = False
 
-    return False
+    def __check_target(self, line):
+        for tar in InfoParser.VALID_TARGETS:
+            if line.startswith(tar, 1):
+                self.combat_module.target(line.split()[0].strip('"'))
+                return True
+
+        return False
 

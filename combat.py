@@ -1,27 +1,39 @@
-import tf
 import imp
-import alias_builder
-import globals
 
-ALIASES_REG = {
-        # Target alias
-        "^x ([\\\w\\\d]+)\\$": "/python_call combat.target \\%2",
-        }
-ALIASES_GLOB = {
-        # Bashing aliases
-        "at": "/python_call combat.at",
-        }
+from core.module import Module
+from core.line_listener import LineListener
 
-def at(arg):
-    tf.eval("/send dhuriv combo %s slash stab" % globals.combat["target"])
+class CombatModule(Module, LineListener):
+    def __init__(self, *args, **kwargs):
+        super(CombatModule, self).__init__(*args, **kwargs)
 
-def target(target):
-    globals.combat["target"] = target
-    print("Current target: %s" % globals.combat["target"])
+        ALIASES_REG = {
+                # Target alias
+                "^x ([\\\w\\\d]+)\\$": { "fun": self.target, "arg": "%1" }
+                }
+        ALIASES_GLOB = {
+                # Bashing aliases
+                "at": { "fun": self.at, "arg": "" },
+                "hunt": { "fun": self.toggle_bash, "arg": "" }
+                }
 
-def _install():
-    imp.reload(alias_builder)
-    alias_builder.build_aliases(ALIASES_REG, "regexp")
-    alias_builder.build_aliases(ALIASES_GLOB)
+        builder = self.state["alias_builder"]
+        builder.build(ALIASES_REG, "regexp")
+        builder.build(ALIASES_GLOB)
 
-_install()
+    def at(self, arg):
+        attack = "/send dhuriv combo %s slash stab" % self.state.combat["target"]
+        tf.eval(attack)
+        if self.state["mode"]["bashing"]:
+            self.state["command_queue"].append(attack)
+
+    def toggle_bash(self, arg):
+        self.state["mode"]["bashing"] = not self.state["mode"]["bashing"]
+        print("Bashing %s" % ("enabled" if self.state["mode"]["bashing"] else "disabled"))
+
+    def target(self, target):
+        self.state["combat"]["target"] = target
+        print("Current target: %s" % self.state["combat"]["target"])
+
+    def parse_line(self, line):
+        pass
