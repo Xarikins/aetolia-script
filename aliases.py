@@ -24,6 +24,16 @@ ALIAS_LIST = {
         "nn": "gallop n",
         "ss": "gallop s",
         "clo": "say duanathar",
+
+        # Item handling
+        "pipeup": [
+            "outc reishi",
+            "outc yarrow",
+            "outc willow",
+            "put reishi in pipe139519",
+            "put yarrow in pipe144662",
+            "put willow in pipe147400",
+            ]
         }
 
 def install(builder):

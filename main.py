@@ -61,4 +61,5 @@ cState = state.new()
 install(cState)
 
 if __name__ == "__main__":
-    cb("target test")
+    handle_line("You are afflicted with clumsiness.")
+    handle_line("You have cured clumsiness.")
