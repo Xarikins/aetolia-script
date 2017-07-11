@@ -6,7 +6,7 @@ class CuringBalance():
     def __init__(self, mud, **kwargs):
         self.mud = mud
         self.name = kwargs["name"]
-        self.available = True
+        self.ready = True
         self.spam_guard = False
         self.fire_trigger = re.compile(kwargs["fire_trigger"])
         self.reset_trigger = re.compile(kwargs["reset_trigger"])
@@ -18,16 +18,18 @@ class CuringBalance():
             self.avilable = False
             self.spam_guard = False
         elif self.reset_trigger.match(line):
-            self.available = True
+            self.ready = True
             self.spam_guard = False
 
     def available(self):
-        return self.available and not self.spam_guard
+        return self.ready and not self.spam_guard
 
     def use(self, item = ""):
         if not self.available():
             return
-        self.mud.send(command % item)
+        cmd = self.command % item
+        print("Sending: %s" % cmd)
+        self.mud.send(cmd)
 
     def __spam_guard(self):
         self.spam_guard = True

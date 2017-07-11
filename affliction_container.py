@@ -39,6 +39,8 @@ class AfflictionContainer():
         if aff["special"] == "writhe":
             self.writhe_afflictions[name] = aff
 
+        print("Afflicted with: %s" % name)
+
     def __deactivate(self, name):
         if name not in self.active_afflictions:
             return
@@ -53,6 +55,7 @@ class AfflictionContainer():
             del self.poultice_afflictions[name]
         if aff["special"] == "writhe":
             del self.writhe_afflictions[name]
+        print("Cured: %s" % name)
 
     def parse_line(self, line):
         match = self.afflict_trigger.match(line)
