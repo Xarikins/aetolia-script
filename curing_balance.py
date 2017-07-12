@@ -15,7 +15,7 @@ class CuringBalance():
 
     def parse_line(self, line):
         if self.fire_trigger.match(line) or self.busy_trigger.match(line):
-            self.avilable = False
+            self.ready = False
             self.spam_guard = False
         elif self.reset_trigger.match(line):
             self.ready = True
@@ -25,10 +25,10 @@ class CuringBalance():
         return self.ready and not self.spam_guard
 
     def use(self, item = ""):
+        cmd = self.command % item
         if not self.available():
             return
-        cmd = self.command % item
-        print("Sending: %s" % cmd)
+        self.__spam_guard()
         self.mud.send(cmd)
 
     def __spam_guard(self):

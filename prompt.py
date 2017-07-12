@@ -9,7 +9,6 @@ class PromptParser(Module, PromptListener):
     def parse_prompt(self, prompt):
         match = self.CPATTERN.match(prompt)
         if not match:
-            print("No prompt match: %s" % prompt)
             return
 
         player = self.state["player"]

@@ -13,6 +13,12 @@ class InfoParser(Module, LineListener):
             "lumberjack",
             "umbra",
             "priest",
+            "syll",
+            "boru",
+            "boar",
+            "nazetu",
+            "shark",
+            "crab",
             ]
 
     def __init__(self, combat_module, *args):

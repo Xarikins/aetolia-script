@@ -1,5 +1,3 @@
-import imp
-
 """
 Misc aliases for gameplay
 """
@@ -9,10 +7,14 @@ ALIAS_LIST = {
         "reload": "/python_call main.reinstall",
 
         # Mounts
-        "mnt": ["recall mount","qmount 18597"],
+        "ms": ["recall mount","qmount 18597"],
         "dis": "qdmount",
         "wolf": "recall 18597",
         "returnm": "return mount duiranstable",
+
+        # Weapons
+        "dhurive": ["unwield sickle", "wield dhurive"],
+        "sickle": ["secure weapon", "wield sickle"],
 
         # Movement
         "ee": "gallop e",
@@ -24,6 +26,15 @@ ALIAS_LIST = {
         "nn": "gallop n",
         "ss": "gallop s",
         "clo": "say duanathar",
+        "cu": "climb up",
+        "cd": "climb down",
+
+        "go not": ["clo", "path find not", "ms", "path go gallop"],
+        "go duiran": ["clo", "path find duiran", "ms", "path go gallop"],
+        "go enorian": ["clo", "path find enorian", "ms", "path go gallop"],
+
+        # Misc
+        "sc": "sacrifice corpses",
 
         # Item handling
         "pipeup": [
@@ -33,8 +44,15 @@ ALIAS_LIST = {
             "put reishi in pipe139519",
             "put yarrow in pipe144662",
             "put willow in pipe147400",
-            ]
+            ],
+        "deathsight": ["outc thanatonin", "eat thanatonin"],
+        }
+
+REG_ALIAS_LIST = {
+        "^(sell .*)\$": "generosity;qeb \%P1",
+        "^(give .*)\$": "generosity;qeb \%P1",
         }
 
 def install(builder):
     builder.build(ALIAS_LIST)
+    builder.build(REG_ALIAS_LIST, "regexp")

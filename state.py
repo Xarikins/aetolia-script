@@ -31,6 +31,7 @@ def new():
             "player": player,
             "mode": {
                 "bashing": False,
+                "fight": False,
                 },
             "communicator": mud,
             "alias_builder": alias_builder,

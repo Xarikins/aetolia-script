@@ -1,0 +1,189 @@
+[
+	{
+		"name": "mindseye",
+		"special": "touch mindseye",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"defence_line": "Your senses are magically heightened."
+	},
+	{
+		"name": "deathsight",
+		"special": "",
+		"pill": "thanatonin",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"defence_line": "Your senses are magically heightened."
+	},
+	{
+		"name": "insulation",
+		"special": "",
+		"pill": "",
+		"poultice": "caloric",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"defence_line": "You are insulated against the harsh cold."
+	},
+	{
+		"name": "selfishness",
+		"special": "selfishness",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "You are feeling quite selfish."
+	},
+	{
+		"name": "venom_resistance",
+		"special": "sip venom",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"defence_line": "Your resistance to damage by poison has been increased."
+	},
+	{
+		"name": "thirdeye",
+		"special": "thirdeye",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"defence_line": "Your resistance to damage by poison has been increased."
+	},
+	{
+		"name": "levitation",
+		"special": "sip levitation",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"defence_line": "You walk on a small cushion of air."
+	},
+	{
+		"name": "barkskin",
+		"special": "barkskin",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "Your skin is hard and tough, like the bark of an oak tree."
+	},
+	{
+		"name": "hardiness",
+		"special": "hardiness",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "You are hardened against the cold."
+	},
+	{
+		"name": "foreststride",
+		"special": "foreststride",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "You are striding through the forests with ease."
+	},
+	{
+		"name": "lifesap",
+		"special": "lifesap",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "You are sapping the life energy of others."
+	},
+	{
+		"name": "clarity",
+		"special": "clarity",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "Your mind is filled with clarity."
+	},
+	{
+		"name": "insomnia",
+		"special": "insomnia",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"defence_line": "You have insomnia, and cannot easily go to sleep."
+	},
+	{
+		"name": "concealed",
+		"special": "conceal",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": true,
+		"defence_line": "You have the concealed defence."
+	},
+	{
+		"name": "hiding",
+		"special": "hide",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": true,
+		"defence_line": "You have used great guile to conceal yourself."
+	},
+	{
+		"name": "rebounding",
+		"special": "",
+		"pill": "",
+		"poultice": "mass",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": true,
+		"defence_line": "You are protected from hand-held weapons with an aura of rebounding."
+	},
+	{
+		"name": "density",
+		"special": "",
+		"pill": "",
+		"poultice": "mass",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": true,
+		"defence_line": "You are extremely heavy and difficult to move."
+	}
+]
