@@ -5,12 +5,15 @@ import info_here_parser
 import affliction_parser
 import curing_module
 import notification_module
+import map_module
 
 def build_modules(state):
     reload(prompt)
     reload(combat)
     reload(info_here_parser)
     reload(affliction_parser)
+    reload(notification_module)
+    reload(map_module)
 
     combat_mod = combat.CombatModule(state)
 
@@ -20,5 +23,6 @@ def build_modules(state):
     modules.append(info_here_parser.InfoParser(combat_mod, state))
     modules.append(curing_module.CuringModule(state))
     modules.append(notification_module.NotificationModule(state))
+    modules.append(map_module.MapModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

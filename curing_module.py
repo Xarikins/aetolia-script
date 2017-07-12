@@ -85,9 +85,6 @@ class CuringModule(Module, LineListener, PromptListener):
         full_balance = ba and eq
         balance_cmd_sent = False
 
-        if full_balance:
-            print("Full balance")
-
         mud = self.state["communicator"]
         for defence in missing:
             if defence["pill"] and self.pill.available():

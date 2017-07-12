@@ -27,7 +27,10 @@ class SpecialCure():
             self.spam_guards[command] = True
 
     def reset_guard(self, command):
-        del self.spam_guards[command]
+        if command.startswith("sip"):
+            del self.spam_guards["sip"]
+        else:
+            del self.spam_guards[command]
 
     def available(self, command):
         return command not in self.spam_guards

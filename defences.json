@@ -168,22 +168,22 @@
 		"name": "rebounding",
 		"special": "",
 		"pill": "",
-		"poultice": "mass",
-		"smoke": "",
+		"poultice": "",
+		"smoke": "reishi",
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": true,
 		"defence_line": "You are protected from hand-held weapons with an aura of rebounding."
 	},
 	{
-		"name": "density",
-		"special": "",
+		"name": "stability",
+		"special": "stability",
 		"pill": "",
-		"poultice": "mass",
+		"poultice": "",
 		"smoke": "",
 		"balance_required": false,
 		"balance_take": false,
-		"combat_defence": true,
+		"combat_defence": false,
 		"defence_line": "You are extremely heavy and difficult to move."
 	}
 ]

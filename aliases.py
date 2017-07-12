@@ -29,12 +29,20 @@ ALIAS_LIST = {
         "cu": "climb up",
         "cd": "climb down",
 
+        # Pathing
         "go not": ["clo", "path find not", "ms", "path go gallop"],
         "go duiran": ["clo", "path find duiran", "ms", "path go gallop"],
         "go enorian": ["clo", "path find enorian", "ms", "path go gallop"],
+        "go esterport": ["clo", "path find esterport", "ms", "path go gallop"],
+        "go tear": ["clo", "path find lleistear", "ms", "path go gallop"],
+        "go": ["ms", "path go gallop"],
+        "go *": ["ms", "/send say duanathar;path find \%2;path go gallop"],
 
         # Misc
         "sc": "sacrifice corpses",
+        "lip": "look in pack",
+        "gg *": "get \%2 gold from pack",
+        "pgip": "put gold in pack",
 
         # Item handling
         "pipeup": [
