@@ -176,7 +176,7 @@
 		"defence_line": "You are protected from hand-held weapons with an aura of rebounding."
 	},
 	{
-		"name": "stability",
+		"name": "density",
 		"special": "stability",
 		"pill": "",
 		"poultice": "",

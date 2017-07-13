@@ -35,7 +35,7 @@ class MapModule(Module, LineListener):
 
         self.triggers = [
                 re.compile("^You divine the location of this death as (.+) in +\.$"),
-                re.compile("^You pick up the faint scent of \w+ at (.+) in .+\.$"),
+                re.compile("^You pick up the faint scent of \w+ at (.+)\.$"),
                 re.compile("^You see that \w+ is at (.+) in .+\.$"),
                 ]
 

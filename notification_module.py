@@ -17,5 +17,5 @@ class NotificationModule(Module, LineListener):
         for trigger in self.triggers:
             match = trigger.match(line)
             if match:
-                subprocess.Popen(["notify-send", "-t", "4", "Aetolia", "%s %s" % (match.group(1), match.group(2))])
+                subprocess.Popen(["notify-send", "-t", "4", "-i", "/home/linus/muds/aetolia/aet_notify_icon.png", "Aetolia", "%s %s" % (match.group(1), match.group(2))])
 
