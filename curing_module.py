@@ -77,7 +77,7 @@ class CuringModule(Module, LineListener, PromptListener):
 
     def __cure_defs(self):
         missing = self.defences.get_missing()
-        if not missing:
+        if not missing or self.afflictions.get_active():
             return
 
         ba = self.state["player"]["balance"]
