@@ -8,6 +8,7 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "Your senses are magically heightened."
 	},
 	{
@@ -19,7 +20,8 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
-		"defence_line": "Your senses are magically heightened."
+		"cure_delay": 0,
+		"defence_line": "Your mind has been touched by the essence of the Underking."
 	},
 	{
 		"name": "insulation",
@@ -30,6 +32,7 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You are insulated against the harsh cold."
 	},
 	{
@@ -41,6 +44,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You are feeling quite selfish."
 	},
 	{
@@ -52,6 +56,7 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "Your resistance to damage by poison has been increased."
 	},
 	{
@@ -63,7 +68,44 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
-		"defence_line": "Your resistance to damage by poison has been increased."
+		"cure_delay": 0,
+		"defence_line": "You possess the sight of the third eye."
+	},
+	{
+		"name": "blindness",
+		"special": "",
+		"pill": "amaurosis",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You are blind."
+	},
+	{
+		"name": "deafness",
+		"special": "",
+		"pill": "ototoxin",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You are deaf."
+	},
+	{
+		"name": "fangbarrier",
+		"special": "outc paste;apply paste",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 8,
+		"defence_line": "You are protected from the fangs of serpents."
 	},
 	{
 		"name": "levitation",
@@ -74,6 +116,7 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You walk on a small cushion of air."
 	},
 	{
@@ -85,6 +128,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "Your skin is hard and tough, like the bark of an oak tree."
 	},
 	{
@@ -96,6 +140,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You are hardened against the cold."
 	},
 	{
@@ -107,6 +152,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You are striding through the forests with ease."
 	},
 	{
@@ -118,6 +164,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You are sapping the life energy of others."
 	},
 	{
@@ -129,6 +176,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "Your mind is filled with clarity."
 	},
 	{
@@ -140,6 +188,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You have insomnia, and cannot easily go to sleep."
 	},
 	{
@@ -151,6 +200,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": true,
+		"cure_delay": 0,
 		"defence_line": "You have the concealed defence."
 	},
 	{
@@ -162,6 +212,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": true,
+		"cure_delay": 0,
 		"defence_line": "You have used great guile to conceal yourself."
 	},
 	{
@@ -173,6 +224,7 @@
 		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": true,
+		"cure_delay": 8,
 		"defence_line": "You are protected from hand-held weapons with an aura of rebounding."
 	},
 	{
@@ -184,6 +236,7 @@
 		"balance_required": false,
 		"balance_take": false,
 		"combat_defence": false,
+		"cure_delay": 0,
 		"defence_line": "You are extremely heavy and difficult to move."
 	}
 ]

@@ -28,6 +28,7 @@ class CuringModule(Module, LineListener, PromptListener):
         self.poultice = PoulticeCure(self.state["communicator"])
         self.erase = EraseCure(self.state["communicator"])
         self.special = SpecialCure(self.state["communicator"])
+        self.cure_delays = {}
         self.enabled = False
 
     def parse_line(self, line):
@@ -87,19 +88,33 @@ class CuringModule(Module, LineListener, PromptListener):
 
         mud = self.state["communicator"]
         for defence in missing:
-            if defence["pill"] and self.pill.available():
+            if defence["pill"] and self.pill.available() and not self.__cure_delay(defence):
                 mud.send("outc %s" % defence["pill"])
                 self.pill.use(defence["pill"])
-            elif defence["poultice"] and self.poultice.available():
+            elif defence["poultice"] and self.poultice.available() and not self.__cure_delay(defence):
                 self.poultice.use(defence["poultice"])
-            elif defence["smoke"] and self.smoke.available():
+            elif defence["smoke"] and self.smoke.available() and not self.__cure_delay(defence):
                 self.smoke.use(defence["smoke"])
-            elif defence["special"]:
+            elif defence["special"] and not self.__cure_delay(defence):
                 if defence["balance_required"] and not balance_cmd_sent and full_balance:
                     self.special.use(defence["special"])
                     balance_cmd_sent = defence["balance_take"]
                 elif not defence["balance_required"]:
                     self.special.use(defence["special"])
+
+    def __cure_delay(self, aff):
+        if aff["name"] in self.cure_delays:
+            return True
+        
+        if aff["cure_delay"]:
+            self.cure_delays[aff["name"]] = True
+            Timer(aff["cure_delay"], self.__remove_cure_delay, [aff["name"]]).start()
+            return False
+        else:
+            return False
+
+    def __remove_cure_delay(self, name):
+        del self.cure_delays[name]
 
     def __priority_aff(self, data):
         return data[list(data)[0]]

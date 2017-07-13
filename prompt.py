@@ -17,13 +17,19 @@ class PromptParser(Module, PromptListener):
         player["bleeding"] = int(match.group(3))
 
         stats = match.group(4).split()
-        player["fangbarrier"] = "s" in stats[0]
-        player["prone"] = "p" in stats[0]
-        player["deaf"] = "d" in stats[0]
-        player["blind"] = "b" in stats[0]
-        player["balance"] = "b" in stats[1]
-        player["equilibrium"] = "e" in stats[1]
-        player["lbalance"] = "l" in stats[2]
-        player["rbalance"] = "r" in stats[2]
+        index = 0
+        if len(stats) > 2:
+            player["fangbarrier"] = "s" in stats[index]
+            player["prone"] = "p" in stats[index]
+            player["deaf"] = "d" in stats[index]
+            player["blind"] = "b" in stats[index]
+
+        index += 1
+        player["equilibrium"] = "e" in stats[index]
+        player["balance"] = "b" in stats[index]
+
+        index += 1
+        player["lbalance"] = "l" in stats[index]
+        player["rbalance"] = "r" in stats[index]
 
         #print(str(player))

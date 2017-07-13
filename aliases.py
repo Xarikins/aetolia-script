@@ -25,6 +25,8 @@ ALIAS_LIST = {
         "sww": "gallop sw",
         "nn": "gallop n",
         "ss": "gallop s",
+        "dd": "gallop d",
+        "uu": "gallop u",
         "clo": "say duanathar",
         "cu": "climb up",
         "cd": "climb down",
@@ -43,22 +45,38 @@ ALIAS_LIST = {
         "lip": "look in pack",
         "gg *": "get \%2 gold from pack",
         "pgip": "put gold in pack",
+        "part": "point ring51192 at ground",
+        "part *": "point ring51192 \%2",
+        "quit": [
+            "incall",
+            "ms",
+            "dis",
+            "returnm",
+            "pgip",
+            "/send quit"
+            ],
 
         # Item handling
-        "pipeup": [
+        "pipeup": ";".join([
             "outc reishi",
             "outc yarrow",
             "outc willow",
             "put reishi in pipe139519",
             "put yarrow in pipe144662",
             "put willow in pipe147400",
-            ],
+            "incall"
+            ]),
         "deathsight": ["outc thanatonin", "eat thanatonin"],
+
+        # Herbalism
+        "paste *": "outc \%2 berberis;outc \%2 yarrow;prepare \%2 paste",
+        "anabiotic *": "outc \%2 birthwort;outc \%2 yarrow;outc \%2 madder;prepare \%2 anabiotic",
         }
 
 REG_ALIAS_LIST = {
         "^(sell .*)\$": "generosity;qeb \%P1",
         "^(give .*)\$": "generosity;qeb \%P1",
+        "^h (.+)\$": "harvest all \%P1",
         }
 
 def install(builder):

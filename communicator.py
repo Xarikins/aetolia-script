@@ -7,3 +7,6 @@ class Communicator():
 
     def eval(self, script):
         return tf.eval(script)
+
+    def out(self, script):
+        return tf.out(script)
