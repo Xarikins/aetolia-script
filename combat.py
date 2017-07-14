@@ -18,7 +18,7 @@ class CombatModule(Module, LineListener):
                 "hunt": { "fun": self.toggle_bash },
                 "fight": { "fun": self.toggle_fight },
                 "oek": { "fun": self.oek },
-                "oep": "order entourage passive",
+                "oep": "qeb order entourage passive",
                 "ca": "call animals",
                 "targetlisten": self.toggle_target_listening,
 
@@ -71,7 +71,7 @@ class CombatModule(Module, LineListener):
         self.mud.send(msg)
 
     def oek(self):
-        self.mud.send("order entourage kill %s" % self.state["combat"]["target"])
+        self.mud.send("qeb order entourage kill %s" % self.state["combat"]["target"])
 
     def shoot(self, direction):
         self.load_crossbow()
@@ -83,14 +83,14 @@ class CombatModule(Module, LineListener):
 
     def quickshot(self):
         self.load_crossbow()
-        self.mud.send("crossbow quickshoot %s" % self.state["combat"]["target"])
+        self.mud.send("qeb crossbow quickshoot %s" % self.state["combat"]["target"])
 
     def slam_slit(self):
-        attack = "/send dhuriv combo %s slam slit" % self.state["combat"]["target"]
+        attack = "/send qeb dhuriv combo %s slam slit" % self.state["combat"]["target"]
         self.mud.eval(attack)
 
     def at(self):
-        attack = "/send qeb dhuriv combo %s slash thrust" % self.state["combat"]["target"]
+        attack = "/send qeb dhuriv combo %s throatcrush heartbreaker" % self.state["combat"]["target"]
         self.mud.eval(attack)
 
     def toggle_bash(self):
