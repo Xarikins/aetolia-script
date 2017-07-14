@@ -38,6 +38,7 @@ class MapModule(Module, LineListener):
                 re.compile("^You divine the location of this death as (.+) in +\.$"),
                 re.compile("^You pick up the faint scent of \w+ at (.+)\.$"),
                 re.compile("^You see that \w+ is at (.+) in .+\.$"),
+                re.compile("^You see \w+ at (.+)\.$"),
                 ]
 
         self.state["alias_builder"].build({
