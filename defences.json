@@ -49,7 +49,7 @@
 	},
 	{
 		"name": "venom_resistance",
-		"special": "sip venom",
+		"special": "sip antivenin",
 		"pill": "",
 		"poultice": "",
 		"smoke": "",
@@ -58,6 +58,18 @@
 		"combat_defence": false,
 		"cure_delay": 0,
 		"defence_line": "Your resistance to damage by poison has been increased."
+	},
+	{
+		"name": "masked_scent",
+		"special": "mask scent",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You have the masked_scent defence."
 	},
 	{
 		"name": "thirdeye",

@@ -27,6 +27,7 @@ class CombatModule(Module, LineListener):
                 "spike": "outc 1 rope;outc 1 wood;outc 1 iron;lay spike here",
                 "launch": "outc 1 rope;outc 1 wood;lay launcher here",
                 "dis *": "disarm trap \%2",
+                "sh *": { "fun": self.shoot, "arg": "%2" }
                 }
 
         builder = self.state["alias_builder"]
@@ -40,6 +41,10 @@ class CombatModule(Module, LineListener):
 
     def oek(self):
         self.mud.send("order entourage kill %s" % self.state["combat"]["target"])
+
+    def shoot(self, direction):
+        self.mud.send("qeb crossbow load with normal")
+        self.mud.send("qeb crossbow shoot %s %s" % (self.state["combat"]["target"], direction))
 
     def slam_slit(self):
         attack = "/send dhuriv combo %s slam slit" % self.state["combat"]["target"]

@@ -1,5 +1,6 @@
 import xml.sax as sax
 import re
+import urllib3 as urllib
 
 from core.module import Module
 from core.line_listener import LineListener
@@ -38,6 +39,22 @@ class MapModule(Module, LineListener):
                 re.compile("^You pick up the faint scent of \w+ at (.+)\.$"),
                 re.compile("^You see that \w+ is at (.+) in .+\.$"),
                 ]
+
+        self.state["alias_builder"].build({
+            "mupdate": self.update_map
+            })
+
+    def update_map(self):
+        """
+        Not working yet
+        """
+        http = urllib.PoolManager()
+        print("Downloading map...")
+        response = http.request("GET", "http://www.aetolia.com/maps/map.xml")
+        with open("/home/linus/muds/aetolia/map.xml", "w") as file:
+            file.write(response.data)
+        print("...DONE")
+        self.__load_map_data()
 
     def __load_map_data(self):
         handler = RoomHandler()
