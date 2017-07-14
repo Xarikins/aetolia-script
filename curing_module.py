@@ -40,6 +40,11 @@ class CuringModule(Module, LineListener, PromptListener):
         if self.enabled:
             self.__cure()
         self.__cure_defs()
+        self.__update_status_bar()
+
+    def __update_status_bar(self):
+        self.mud.eval("/set active_affs=%s" % " ".join(self.afflictions.get_active().keys()))
+        self.mud.eval("/set missing_defs=%s" % " ".join(map(lambda x: x["name"], self.defences.get_missing())))
 
     def __cure(self):
         active_affs = self.afflictions.get_active()

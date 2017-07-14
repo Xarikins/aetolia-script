@@ -9,7 +9,7 @@ class CombatModule(Module, LineListener):
 
         ALIASES_REG = {
                 # Target alias
-                "^x ([\\\w\\\d]+)\\$": { "fun": self.target, "arg": "%P1" }
+                "^x (.+)\$": { "fun": self.target, "arg": "%P1" }
                 }
         ALIASES_GLOB = {
                 # Bashing aliases
@@ -27,31 +27,70 @@ class CombatModule(Module, LineListener):
                 "spike": "outc 1 rope;outc 1 wood;outc 1 iron;lay spike here",
                 "launch": "outc 1 rope;outc 1 wood;lay launcher here",
                 "dis *": "disarm trap \%2",
-                "sh *": { "fun": self.shoot, "arg": "%2" }
+                "sh *": { "fun": self.shoot, "arg": "%2" },
+                "qs": self.quickshot,
+                "ct": "crossbow targets",
+                "sh": self.snipe,
+                "resin *": {"fun": self.set_resin, "arg": "%2"},
+                "noresin": self.no_resin,
+                "ts": "qeb touch shield",
                 }
 
         builder = self.state["alias_builder"]
         builder.build(ALIASES_REG, "regexp")
         builder.build(ALIASES_GLOB)
 
+        self.resin = "harimel"
+        self.venom1 = ""
+        self.venom2 = ""
         self.target_listening = False
         self.triggers = {
                 "target": re.compile("^\(.*\)\: \w+ says, \"Target\: (\w+)\"$"),
                 }
 
+    def no_resin(self):
+        self.set_resin()
+
+    def set_resin(self, resin = ""):
+        self.resin = resin
+
+    def set_venoms(self, v1, v2):
+        self.set_venom1(v1)
+        self.set_venom2(v1)
+
+    def set_venom_1(self, venom):
+        self.venom1 = venom
+
+    def set_venom_2(self, venom):
+        self.venom2 = venom
+
+    def load_crossbow(self):
+        msg = "qeb crossbow load with normal"
+        if (self.resin):
+            msg += " coat with %s" % self.resin
+        self.mud.send(msg)
+
     def oek(self):
         self.mud.send("order entourage kill %s" % self.state["combat"]["target"])
 
     def shoot(self, direction):
-        self.mud.send("qeb crossbow load with normal")
+        self.load_crossbow()
         self.mud.send("qeb crossbow shoot %s %s" % (self.state["combat"]["target"], direction))
+
+    def snipe(self):
+        self.load_crossbow()
+        self.mud.send("qeb crossbow shoot %s" % self.state["combat"]["target"])
+
+    def quickshot(self):
+        self.load_crossbow()
+        self.mud.send("crossbow quickshoot %s" % self.state["combat"]["target"])
 
     def slam_slit(self):
         attack = "/send dhuriv combo %s slam slit" % self.state["combat"]["target"]
         self.mud.eval(attack)
 
     def at(self):
-        attack = "/send dhuriv combo %s slash thrust" % self.state["combat"]["target"]
+        attack = "/send qeb dhuriv combo %s slash thrust" % self.state["combat"]["target"]
         self.mud.eval(attack)
 
     def toggle_bash(self):

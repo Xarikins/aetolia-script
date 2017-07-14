@@ -52,7 +52,7 @@ class MapModule(Module, LineListener):
         print("Downloading map...")
         response = http.request("GET", "http://www.aetolia.com/maps/map.xml")
         with open("/home/linus/muds/aetolia/map.xml", "w") as file:
-            file.write(response.data)
+            file.write(str(response.data, "utf-8"))
         print("...DONE")
         self.__load_map_data()
 

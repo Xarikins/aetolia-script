@@ -23,8 +23,8 @@ class PromptParser(Module, PromptListener):
             player["prone"] = "p" in stats[index]
             player["deaf"] = "d" in stats[index]
             player["blind"] = "b" in stats[index]
+            index += 1
 
-        index += 1
         player["equilibrium"] = "e" in stats[index]
         player["balance"] = "b" in stats[index]
 
