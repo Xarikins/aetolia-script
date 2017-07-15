@@ -61,6 +61,10 @@ ALIAS_LIST = {
         "wi *": "web invite %2",
         "wa": "web accept",
         "wq": "web quit",
+        "su": "survey",
+        "setup tent": "outc 3 cloth;outc 3 rope;outc 3 wood;tent setup",
+        "campfire": "outc 3 wood;campfire build;incall",
+        "stoke": "outc 1 wood;campfire stoke;incall",
 
         # Item handling
         "pipeup": ";".join([
