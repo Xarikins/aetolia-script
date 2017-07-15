@@ -1,5 +1,6 @@
 import mud_wrapper as tf
 import sys
+import shlex
 from imp import reload
 
 import state
@@ -29,7 +30,7 @@ def handle_prompt(line):
             mod.parse_prompt(line)
 
 def cb(arg):
-    args = arg.split()
+    args = shlex.split(arg)
     cState["callback_handler"].triggerCallback(args[0], args[1:])
 
 def install(cState):
@@ -41,10 +42,10 @@ def install(cState):
 
     # Install
     load_modules(cState)
-    aliases.install(cState["alias_builder"])
+    aliases.install(cState["alias_builder"], mud)
 
-    mud.eval("/def -p9 -q -mregexp -t'^.*\\$' py_line = /python_call main.handle_line \\%*")
-    mud.eval("/def -p1 -mregexp -q -h'PROMPT ^.*\$' prompt_trigger = /python_call main.handle_prompt \\%*")
+    mud.eval("/def -p9 -F -q -mregexp -t'^.*\\$' py_line = /python_call main.handle_line \\%*")
+    mud.eval("/def -p9 -F -mregexp -q -h'PROMPT ^.*\$' prompt_trigger = /python_call main.handle_prompt \\%*")
     print("...DONE")
 
     print("Python 'main' loaded")
@@ -72,3 +73,7 @@ if __name__ == "__main__":
     handle_prompt("test")
     handle_prompt("test")
     handle_prompt("test")
+    mud = cState["communicator"]
+    mud.info("Testing info")
+    mud.warn("Testing warn")
+    mud.panic("Testing panic")

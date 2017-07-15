@@ -32,21 +32,21 @@ ALIAS_LIST = {
         "cd": "climb down",
 
         # Pathing
-        "go not": ["clo", "path find not", "ms", "path go gallop"],
-        "go duiran": ["clo", "path find duiran", "ms", "path go gallop"],
-        "go enorian": ["clo", "path find enorian", "ms", "path go gallop"],
-        "go esterport": ["clo", "path find esterport", "ms", "path go gallop"],
-        "go tear": ["clo", "path find lleistear", "ms", "path go gallop"],
+        "go not": ["clo", "ms", "path track not"],
+        "go duiran": ["clo", "ms", "path track duiran"],
+        "go enorian": ["clo", "ms", "path track enorian"],
+        "go esterport": ["clo", "ms", "path track esterport"],
+        "go tear": ["clo", "path track lleistear"],
         "go": ["ms", "path go gallop"],
-        "go *": ["ms", "/send say duanathar;path find \%2;path go gallop"],
+        "go *": ["ms", "/send say duanathar;path track %2"],
 
         # Misc
         "sc": "sacrifice corpses",
         "lip": "look in pack",
-        "gg *": "get \%2 gold from pack",
+        "gg *": "get %2 gold from pack",
         "pgip": "put gold in pack",
         "part": "point ring51192 at ground",
-        "part *": "point ring51192 \%2",
+        "part *": "point ring51192 %2",
         "quit": [
             "incall",
             "ms",
@@ -55,6 +55,12 @@ ALIAS_LIST = {
             "pgip",
             "/send quit"
             ],
+        "fs *": "farsee %2",
+        "en *": "enemy %2",
+        "unen *": "unenemy %2",
+        "wi *": "web invite %2",
+        "wa": "web accept",
+        "wq": "web quit",
 
         # Item handling
         "pipeup": ";".join([
@@ -69,16 +75,18 @@ ALIAS_LIST = {
         "deathsight": ["outc thanatonin", "eat thanatonin"],
 
         # Herbalism
-        "paste *": "outc \%2 berberis;outc \%2 yarrow;prepare \%2 paste",
-        "anabiotic *": "outc \%2 birthwort;outc \%2 yarrow;outc \%2 madder;prepare \%2 anabiotic",
+        "paste *": "outc %2 berberis;outc %2 yarrow;prepare %2 paste",
+        "anabiotic *": "outc %2 birthwort;outc %2 yarrow;outc %2 madder;prepare %2 anabiotic",
         }
 
 REG_ALIAS_LIST = {
-        "^(sell .*)\$": "generosity;qeb \%P1",
-        "^(give .*)\$": "generosity;qeb \%P1",
-        "^h (.+)\$": "harvest all \%P1",
+        "^(sell .*)$": "generosity;qeb %P1",
+        "^(give .*)$": "generosity;qeb %P1",
+        "^h (.+)$": "harvest all %P1",
+        "^ooc (\w+) (.+)$": "/send tell %P1 ((ooc: %P2 ))",
         }
 
-def install(builder):
+def install(builder, mud):
     builder.build(ALIAS_LIST)
     builder.build(REG_ALIAS_LIST, "regexp")
+    mud.eval("/def key_tab = /complete")

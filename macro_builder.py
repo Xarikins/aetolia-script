@@ -9,18 +9,28 @@ class MacroBuilder():
             self.__register_macro(definition, trig, cmd, mType)
 
     def __register_macro(self, definition, trig, cmd, mType = "glob"):
+        trig = self.__escape_trigger(trig)
         command = ""
 
         if type(cmd) == list:
-            command = "\\%;".join(cmd)
+            command = "\%;".join(list(map(self.__escape_command, cmd)))
         elif type(cmd) == dict:
             command = self.__command_from_dict(cmd)
         elif callable(cmd):
             command = self.__command_from_cmd(cmd)
         else:
-            command = cmd
+            command = self.__escape_command(cmd)
 
         self.mud.eval(definition % (mType, trig, command))
+
+    def __escape_trigger(self, trig):
+        trig = trig.replace("$", "\$")
+        trig = trig.replace("\w", "\\\\w")
+        return trig
+
+    def __escape_command(self, cmd):
+        cmd = cmd.replace("%", "\%")
+        return cmd
 
     def __command_from_dict(self, cmd):
         command = self.__command_from_cmd(cmd["fun"])

@@ -4,19 +4,13 @@ except ImportError:
     tf = None
 
 def eval(string):
-    if tf:
-        tf.eval(string)
-    else:
-        print(string)
+    out = tf.eval if tf else print
+    out(string)
 
 def send(string):
-    if tf:
-        tf.send(string)
-    else:
-        print(string)
+    out = tf.send if tf else print
+    out(string)
 
 def out(string):
-    if tf:
-        tf.out(string)
-    else:
-        print(string)
+    out = tf.out if tf else print
+    out(string)

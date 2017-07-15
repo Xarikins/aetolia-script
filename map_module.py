@@ -27,28 +27,30 @@ class RoomHandler(sax.ContentHandler):
         return self.data
     
 
-class MapModule(Module, LineListener):
+class MapModule(Module):
 
     def __init__(self, *args):
         super(MapModule, self).__init__(*args)
         self.rooms = {}
         self.__load_map_data()
 
-        self.triggers = [
-                re.compile("^You divine the location of this death as (.+) in .+\.$"),
-                re.compile("^You pick up the faint scent of \w+ at (.+)\.$"),
-                re.compile("^You see that \w+ is at (.+) in .+\.$"),
-                re.compile("^You see \w+ at (.+)\.$"),
-                ]
+        callback_definition = {
+                "fun": self.show_room,
+                "arg": "'%P0' '%P1'",
+                }
+
+        self.state["gag_builder"].build({
+            "^You divine the location of this death as (.+) in .+\.$": callback_definition,
+            "^You pick up the faint scent of \w+ at (.+)\.$": callback_definition,
+            "^You see that \w+ is at (.+) in .+\.$": callback_definition,
+            "^You see \w+ at (.+)\.$": callback_definition,
+            })
 
         self.state["alias_builder"].build({
             "mupdate": self.update_map
             })
 
     def update_map(self):
-        """
-        Not working yet
-        """
         http = urllib.PoolManager()
         print("Downloading map...")
         response = http.request("GET", "http://www.aetolia.com/maps/map.xml")
@@ -63,8 +65,10 @@ class MapModule(Module, LineListener):
         sax.parse("/home/linus/muds/aetolia/map.xml", handler)
         self.rooms = handler.get_data()
 
-    def parse_line(self, line):
-        for reg in self.triggers:
-            match = reg.match(line)
-            if match and match.group(1) in self.rooms:
-                print("Room(s): %s" % ", ".join(self.rooms[match.group(1)]))
+    def show_room(self, line, room):
+        if room in self.rooms:
+            result = self.rooms[room]
+            if len(result) > 1:
+                self.mud.echop("%s ( Room(s): @{Cred}%s@{n} )" % (line, ", ".join(result)))
+            else:
+                self.mud.echop("%s ( Room: @{Cred}%s@{n} )" % (line, ", ".join(result)))

@@ -1,15 +1,15 @@
+from threading import Timer
 import re
 
 from core.module import Module
-from core.line_listener import LineListener
 
-class CombatModule(Module, LineListener):
+class CombatModule(Module):
     def __init__(self, *args, **kwargs):
         super(CombatModule, self).__init__(*args, **kwargs)
 
         ALIASES_REG = {
                 # Target alias
-                "^x (.+)\$": { "fun": self.target, "arg": "%P1" }
+                "^x (.+)$": { "fun": self.target, "arg": "%P1" }
                 }
         ALIASES_GLOB = {
                 # Bashing aliases
@@ -23,10 +23,10 @@ class CombatModule(Module, LineListener):
                 "targetlisten": self.toggle_target_listening,
 
                 # Tracking aliases
-                "no *": "outc 2 rope;lay noose \%2",
+                "no *": "outc 2 rope;lay noose %2",
                 "spike": "outc 1 rope;outc 1 wood;outc 1 iron;lay spike here",
                 "launch": "outc 1 rope;outc 1 wood;lay launcher here",
-                "dis *": "disarm trap \%2",
+                "dis *": "disarm trap %2",
                 "sh *": { "fun": self.shoot, "arg": "%2" },
                 "qs": self.quickshot,
                 "ct": "crossbow targets",
@@ -36,17 +36,50 @@ class CombatModule(Module, LineListener):
                 "ts": "qeb touch shield",
                 }
 
-        builder = self.state["alias_builder"]
-        builder.build(ALIASES_REG, "regexp")
-        builder.build(ALIASES_GLOB)
+        aBuilder = self.state["alias_builder"]
+        aBuilder.build(ALIASES_REG, "regexp")
+        aBuilder.build(ALIASES_GLOB)
 
         self.resin = "harimel"
         self.venom1 = ""
         self.venom2 = ""
         self.target_listening = False
-        self.triggers = {
-                "target": re.compile("^\(.*\)\: \w+ says, \"Target\: (\w+)\"$"),
+        self.attack_spamguard = False
+
+        tBuilder = self.state["trigger_builder"]
+        tBuilder.build({
+            "^\(.*\)\: \w+ says, \"Target\: (\w+)\"$": {
+                "fun": self.target,
+                "arg": "%P1",
+                },
+            "^You use Dhuriv .+ on .+$": self.registered_attack,
+            "^You stand up and stretch your arms out wide\.$": self.registered_attack,
+            })
+
+        gBuilder = self.state["gag_builder"]
+        gBuilder.build({
+            "^You will execute the following command when you next regain (.+)\\: (.+)$": {
+                "fun": self.queued_command,
+                "arg": "'%P1' '%P2'",
                 }
+            })
+
+    def queued_command(self, queue, command):
+        if "balance" in queue and "equilibrium" in queue:
+            self.mud.info("QEB: %s" % command)
+        elif balance in queue:
+            self.mud.info("QB: %s" % command)
+        elif equilibrium in queue:
+            self.mud.info("QE: %s" % command)
+
+    def __reset_attack_spamguard(self):
+        self.attack_spamguard = False
+
+    def registered_attack(self):
+        if self.state["mode"]["bashing"] and not self.attack_spamguard:
+            self.at()
+            self.attack_spamguard = True
+            Timer(1, self.__reset_attack_spamguard).start()
 
     def no_resin(self):
         self.set_resin()
@@ -95,21 +128,16 @@ class CombatModule(Module, LineListener):
 
     def toggle_bash(self):
         self.state["mode"]["bashing"] = not self.state["mode"]["bashing"]
-        print("Bashing %s" % ("enabled" if self.state["mode"]["bashing"] else "disabled"))
+        self.mud.info("Bashing %s" % ("enabled" if self.state["mode"]["bashing"] else "disabled"))
 
     def toggle_fight(self):
         self.state["mode"]["fight"] = not self.state["mode"]["fight"]
-        print("Fightmode %s" % ("enabled" if self.state["mode"]["fight"] else "disabled"))
+        self.mud.info("Fightmode %s" % ("enabled" if self.state["mode"]["fight"] else "disabled"))
 
     def toggle_target_listening(self):
         self.target_listening = not self.target_listening
-        self.mud.out("Target listening enabled" if self.target_listening else "Target listening disabled")
+        self.mud.info("Target listening enabled" if self.target_listening else "Target listening disabled")
 
     def target(self, target):
         self.state["combat"]["target"] = target
-        print("Current target: %s" % self.state["combat"]["target"])
-
-    def parse_line(self, line):
-        match = self.triggers["target"].match(line)
-        if match:
-            self.target(match.group(1))
+        self.mud.info("Current target: %s" % self.state["combat"]["target"])
