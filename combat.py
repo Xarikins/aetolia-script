@@ -73,7 +73,7 @@ class CombatModule(Module):
     def load_crossbow(self):
         msg = "qeb crossbow load with normal"
         if (self.resin):
-            msg += " coat with %s" % self.resin
+            msg += " coat %s" % self.resin
         self.mud.send(msg)
 
     def oek(self):

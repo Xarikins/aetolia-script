@@ -84,6 +84,12 @@ ALIAS_LIST = {
         # Herbalism
         "paste *": "outc %2 berberis;outc %2 yarrow;prepare %2 paste",
         "anabiotic *": "outc %2 birthwort;outc %2 yarrow;outc %2 madder;prepare %2 anabiotic",
+
+        # Summoning
+        "nightingale": "qeb summon nightingale",
+        "raloth": "qeb summon raloth",
+        "cockatrice": "qeb summon cockatrice",
+        "raven": "qeb summon raven",
         }
 
 REG_ALIAS_LIST = {

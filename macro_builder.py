@@ -26,6 +26,7 @@ class MacroBuilder():
     def __escape_trigger(self, trig):
         trig = trig.replace("$", "\$")
         trig = trig.replace("\w", "\\\\w")
+        trig = trig.replace("\.", "\\\\.")
         return trig
 
     def __escape_command(self, cmd):

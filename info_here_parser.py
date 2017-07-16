@@ -19,6 +19,7 @@ class InfoParser(Module, LineListener):
             "nazetu",
             "shark",
             "crab",
+            "eld",
             ]
 
     def __init__(self, combat_module, *args):

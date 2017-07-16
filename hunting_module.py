@@ -1,3 +1,4 @@
+from threading import Timer
 from core.module import Module
 
 class HuntingModule(Module):
@@ -22,7 +23,7 @@ class HuntingModule(Module):
 
         tBuilder = self.state["trigger_builder"]
         tBuilder.build({
-            "^You use Dhuriv .+ on .+$": self.registered_attack,
+            "^You use Dhuriv .+ on .+\.$": self.registered_attack,
             "^You stand up and stretch your arms out wide\.$": self.registered_attack,
             })
 

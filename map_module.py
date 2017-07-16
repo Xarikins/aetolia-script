@@ -44,6 +44,7 @@ class MapModule(Module):
             "^You pick up the faint scent of \w+ at (.+)\.$": callback_definition,
             "^You see that \w+ is at (.+) in .+\.$": callback_definition,
             "^You see \w+ at (.+)\.$": callback_definition,
+            "^ \-  (.+)$": callback_definition,
             })
 
         self.state["alias_builder"].build({
