@@ -13,9 +13,7 @@ class CombatModule(Module):
                 }
         ALIASES_GLOB = {
                 # Bashing aliases
-                "at": { "fun": self.at },
                 "slsl": { "fun": self.slam_slit },
-                "hunt": { "fun": self.toggle_bash },
                 "fight": { "fun": self.toggle_fight },
                 "oek": { "fun": self.oek },
                 "oep": "qeb order entourage passive",
@@ -29,7 +27,7 @@ class CombatModule(Module):
                 "dis *": "disarm trap %2",
                 "sh *": { "fun": self.shoot, "arg": "%2" },
                 "qs": self.quickshot,
-                "ct": "crossbow targets",
+                "ct": "qeb crossbow targets",
                 "sh": self.snipe,
                 "resin *": {"fun": self.set_resin, "arg": "%2"},
                 "noresin": self.no_resin,
@@ -44,7 +42,6 @@ class CombatModule(Module):
         self.venom1 = ""
         self.venom2 = ""
         self.target_listening = False
-        self.attack_spamguard = False
 
         tBuilder = self.state["trigger_builder"]
         tBuilder.build({
@@ -52,40 +49,14 @@ class CombatModule(Module):
                 "fun": self.target,
                 "arg": "%P1",
                 },
-            "^You use Dhuriv .+ on .+$": self.registered_attack,
-            "^You stand up and stretch your arms out wide\.$": self.registered_attack,
             })
-
-        gBuilder = self.state["gag_builder"]
-        gBuilder.build({
-            "^You will execute the following command when you next regain (.+)\\: (.+)$": {
-                "fun": self.queued_command,
-                "arg": "'%P1' '%P2'",
-                }
-            })
-
-    def queued_command(self, queue, command):
-        if "balance" in queue and "equilibrium" in queue:
-            self.mud.info("QEB: %s" % command)
-        elif balance in queue:
-            self.mud.info("QB: %s" % command)
-        elif equilibrium in queue:
-            self.mud.info("QE: %s" % command)
-
-    def __reset_attack_spamguard(self):
-        self.attack_spamguard = False
-
-    def registered_attack(self):
-        if self.state["mode"]["bashing"] and not self.attack_spamguard:
-            self.at()
-            self.attack_spamguard = True
-            Timer(1, self.__reset_attack_spamguard).start()
 
     def no_resin(self):
         self.set_resin()
 
     def set_resin(self, resin = ""):
         self.resin = resin
+        self.mud.info("Resin: %s" % self.resin)
 
     def set_venoms(self, v1, v2):
         self.set_venom1(v1)
@@ -93,9 +64,11 @@ class CombatModule(Module):
 
     def set_venom_1(self, venom):
         self.venom1 = venom
+        self.mud.info("Venom 1: %s" % self.venom1)
 
     def set_venom_2(self, venom):
         self.venom2 = venom
+        self.mud.info("Venom 2: %s" % self.venom2)
 
     def load_crossbow(self):
         msg = "qeb crossbow load with normal"
@@ -121,14 +94,6 @@ class CombatModule(Module):
     def slam_slit(self):
         attack = "/send qeb dhuriv combo %s slam slit" % self.state["combat"]["target"]
         self.mud.eval(attack)
-
-    def at(self):
-        attack = "/send qeb dhuriv combo %s throatcrush heartbreaker" % self.state["combat"]["target"]
-        self.mud.eval(attack)
-
-    def toggle_bash(self):
-        self.state["mode"]["bashing"] = not self.state["mode"]["bashing"]
-        self.mud.info("Bashing %s" % ("enabled" if self.state["mode"]["bashing"] else "disabled"))
 
     def toggle_fight(self):
         self.state["mode"]["fight"] = not self.state["mode"]["fight"]

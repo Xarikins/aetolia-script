@@ -6,6 +6,7 @@ import affliction_parser
 import curing_module
 import notification_module
 import map_module
+import hunting_module
 
 def build_modules(state):
     reload(prompt)
@@ -14,6 +15,7 @@ def build_modules(state):
     reload(affliction_parser)
     reload(notification_module)
     reload(map_module)
+    reload(hunting_module)
 
     combat_mod = combat.CombatModule(state)
 
@@ -24,5 +26,6 @@ def build_modules(state):
     modules.append(curing_module.CuringModule(state))
     modules.append(notification_module.NotificationModule(state))
     modules.append(map_module.MapModule(state))
+    modules.append(hunting_module.HuntingModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

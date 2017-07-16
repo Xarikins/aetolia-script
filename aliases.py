@@ -39,6 +39,8 @@ ALIAS_LIST = {
         "go tear": ["clo", "path track lleistear"],
         "go": ["ms", "path go gallop"],
         "go *": ["ms", "/send say duanathar;path track %2"],
+        "pt *": "/send path track %2",
+        "pf *": "/send path find %2",
 
         # Misc
         "sc": "sacrifice corpses",
@@ -65,6 +67,7 @@ ALIAS_LIST = {
         "setup tent": "outc 3 cloth;outc 3 rope;outc 3 wood;tent setup",
         "campfire": "outc 3 wood;campfire build;incall",
         "stoke": "outc 1 wood;campfire stoke;incall",
+        "cs *": "/send clan switch %2",
 
         # Item handling
         "pipeup": ";".join([
