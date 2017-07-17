@@ -30,8 +30,11 @@ def handle_prompt(line):
             mod.parse_prompt(line)
 
 def cb(arg):
-    args = shlex.split(arg)
-    cState["callback_handler"].triggerCallback(args[0], args[1:])
+    try:
+        args = shlex.split(arg)
+        cState["callback_handler"].triggerCallback(args[0], args[1:])
+    except:
+        pass
 
 def install(cState):
     print("Installing...")
@@ -77,3 +80,4 @@ if __name__ == "__main__":
     mud.info("Testing info")
     mud.warn("Testing warn")
     mud.panic("Testing panic")
+    handle_line("test with one quote' in it")

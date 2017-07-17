@@ -2,20 +2,29 @@ import subprocess
 import re
 
 from core.module import Module
-from core.line_listener import LineListener
 
-class NotificationModule(Module, LineListener):
+class NotificationModule(Module):
 
     def __init__(self, *args):
         super(NotificationModule, self).__init__(*args)
-        self.mud = self.state["communicator"]
+        self.notifications_enabled = True
 
-        self.triggers = []
-        self.triggers.append(re.compile("^(\(.+\))\: (.*)$"))
+        self.state["alias_builder"].build({
+            "notify": self.toggle_notifications,
+            })
 
-    def parse_line(self, line):
-        for trigger in self.triggers:
-            match = trigger.match(line)
-            if match:
-                subprocess.Popen(["notify-send", "-t", "4", "-i", "/home/linus/muds/aetolia/aet_notify_icon.png", "Aetolia", "%s %s" % (match.group(1), match.group(2))])
+        self.state["trigger_builder"].build({
+            "^(\(.+\))\: (.*)$": {
+                "fun": self.trigger_notification,
+                "arg": "'%P1' '%P2'",
+                },
+            })
+
+    def toggle_notifications(self):
+        self.notifications_enabled = not self.notifications_enabled
+        self.mud.info("Notifications enabled" if self.notifications_enabled else "Notifications disabled")
+
+    def trigger_notification(self, talker, line):
+        if self.notifications_enabled:
+            subprocess.Popen(["notify-send", "-t", "4", "-i", "/home/linus/muds/aetolia/aet_notify_icon.png", "Aetolia", "%s %s" % (talker, line)])
 

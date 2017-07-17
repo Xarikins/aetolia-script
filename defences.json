@@ -84,6 +84,18 @@
 		"defence_line": "You possess the sight of the third eye."
 	},
 	{
+		"name": "safeguard",
+		"special": "safeguard",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You have the safeguard of an Idreth."
+	},
+	{
 		"name": "blindness",
 		"special": "",
 		"pill": "amaurosis",

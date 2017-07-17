@@ -46,7 +46,7 @@ ALIAS_LIST = {
         "sc": "sacrifice corpses",
         "lip": "look in pack",
         "gg *": "get %2 gold from pack",
-        "pgip": "put gold in pack",
+        "pgip": "/send put gold in pack",
         "part": "point ring51192 at ground",
         "part *": "point ring51192 %2",
         "quit": [
@@ -95,6 +95,7 @@ ALIAS_LIST = {
 REG_ALIAS_LIST = {
         "^(sell .*)$": "generosity;qeb %P1",
         "^(give .*)$": "generosity;qeb %P1",
+        "^(put .*)$": "generosity;qeb %P1",
         "^h (.+)$": "harvest all %P1",
         "^ooc (\w+) (.+)$": "/send tell %P1 ((ooc: %P2 ))",
         }

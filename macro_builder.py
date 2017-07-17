@@ -27,6 +27,8 @@ class MacroBuilder():
         trig = trig.replace("$", "\$")
         trig = trig.replace("\w", "\\\\w")
         trig = trig.replace("\.", "\\\\.")
+        trig = trig.replace("\(", "\\\\(")
+        trig = trig.replace("\)", "\\\\)")
         return trig
 
     def __escape_command(self, cmd):
