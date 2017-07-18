@@ -40,11 +40,15 @@ class CuringModule(Module, LineListener, PromptListener):
         if self.enabled:
             self.__cure()
         self.__cure_defs()
-        self.__update_status_bar()
+        self.__update_status_bar_and_state()
 
-    def __update_status_bar(self):
-        self.mud.eval("/set active_affs=%s" % " ".join(self.afflictions.get_active().keys()))
-        self.mud.eval("/set missing_defs=%s" % " ".join(map(lambda x: x["name"], self.defences.get_missing())))
+    def __update_status_bar_and_state(self):
+        afflist = self.afflictions.get_active().keys()
+        deflist = list(map(lambda x: x["name"], self.defences.get_missing()))
+        self.mud.eval("/set active_affs=%s" % " ".join(afflist))
+        self.mud.eval("/set missing_defs=%s" % " ".join(deflist))
+        self.state["player"]["affs"] = afflist
+        self.state["player"]["missing_defs"] = deflist
 
     def __cure(self):
         active_affs = self.afflictions.get_active()
@@ -55,7 +59,7 @@ class CuringModule(Module, LineListener, PromptListener):
 
         cure_count = 0
         if pill_affs and self.pill.available():
-            self.state["communicator"].send("outc %s" % self.__priority_aff(pill_affs)["pill"])
+            self.mud.send("outc %s" % self.__priority_aff(pill_affs)["pill"])
             self.pill.use(self.__priority_aff(pill_affs)["pill"])
             cure_count += 1
         if smoke_affs and self.smoke.available():
@@ -91,10 +95,9 @@ class CuringModule(Module, LineListener, PromptListener):
         full_balance = ba and eq
         balance_cmd_sent = False
 
-        mud = self.state["communicator"]
         for defence in missing:
             if defence["pill"] and self.pill.available() and not self.__cure_delay(defence):
-                mud.send("outc %s" % defence["pill"])
+                self.mud.send("outc %s" % defence["pill"])
                 self.pill.use(defence["pill"])
             elif defence["poultice"] and self.poultice.available() and not self.__cure_delay(defence):
                 self.poultice.use(defence["poultice"])

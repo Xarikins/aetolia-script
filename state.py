@@ -30,6 +30,8 @@ def new():
             "deaf": True,
             "blind": True,
             "fangbarrier": True,
+            "affs": [],
+            "missing_defs": [],
             }
 
     return {
