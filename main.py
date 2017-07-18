@@ -30,6 +30,7 @@ def handle_prompt(line):
             mod.parse_prompt(line)
 
 def cb(arg):
+    # Shlex fails often. Perhaps write something better?
     try:
         args = shlex.split(arg)
         cState["callback_handler"].triggerCallback(args[0], args[1:])

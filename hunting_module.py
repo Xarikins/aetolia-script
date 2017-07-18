@@ -15,6 +15,11 @@ class HuntingModule(Module, PromptListener):
                 "hunt": { "fun": self.toggle_bash },
             })
 
+        aggro_definition = {
+                "fun": self.aggro_warn,
+                "arg": "'%P1'",
+                }
+
         gBuilder = self.state["gag_builder"]
         gBuilder.build({
             "^You will execute the following command when you next regain (.+)\: (.+)$": {
@@ -22,6 +27,8 @@ class HuntingModule(Module, PromptListener):
                 "arg": "'%P1' '%P2'",
                 },
             "^The final blow proves too much for .+$": self.check_for_target,
+            "^(A .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
+            "^(An .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
             })
 
         tBuilder = self.state["trigger_builder"]
@@ -51,6 +58,9 @@ class HuntingModule(Module, PromptListener):
 
     def __reset_attack_spamguard(self):
         self.attack_spamguard = False
+
+    def aggro_warn(self, attacker):
+        self.mud.warn("Aggro by %s" % attacker)
 
     def auto_at(self):
         if not self.attack_spamguard:
