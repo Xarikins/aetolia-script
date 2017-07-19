@@ -94,3 +94,5 @@ class MovementModule(Module):
         self.mud.info("Writing file: %s" % filename)
         with open(filename, "w") as f:
             f.write(json.dumps(self.recorded_path))
+        self.recording = False
+        self.recoreded_path = []
