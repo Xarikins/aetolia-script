@@ -105,4 +105,5 @@ class CombatModule(Module):
 
     def target(self, target):
         self.state["combat"]["target"] = target
-        self.mud.info("Current target: %s" % self.state["combat"]["target"])
+        if target:
+            self.mud.info("Current target: %s" % self.state["combat"]["target"])

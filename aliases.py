@@ -16,32 +16,6 @@ ALIAS_LIST = {
         "dhurive": ["unwield sickle", "wield dhurive"],
         "sickle": ["secure weapon", "wield sickle"],
 
-        # Movement
-        "ee": "gallop e",
-        "nee": "gallop ne",
-        "see": "gallop se",
-        "ww": "gallop w",
-        "nww": "gallop nw",
-        "sww": "gallop sw",
-        "nn": "gallop n",
-        "ss": "gallop s",
-        "dd": "gallop d",
-        "uu": "gallop u",
-        "clo": "say duanathar",
-        "cu": "climb up",
-        "cd": "climb down",
-
-        # Pathing
-        "go not": ["clo", "ms", "path track not"],
-        "go duiran": ["clo", "ms", "path track duiran"],
-        "go enorian": ["clo", "ms", "path track enorian"],
-        "go esterport": ["clo", "ms", "path track esterport"],
-        "go tear": ["clo", "path track lleistear"],
-        "go": ["ms", "path go gallop"],
-        "go *": ["ms", "/send say duanathar;path track %2"],
-        "pt *": "/send path track %2",
-        "pf *": "/send path find %2",
-
         # Misc
         "sc": "sacrifice corpses",
         "lip": "look in pack",
@@ -93,6 +67,7 @@ ALIAS_LIST = {
         "raloth": "qeb summon raloth",
         "cockatrice": "qeb summon cockatrice",
         "raven": "qeb summon raven",
+        "camo": "qeb camouflage",
         }
 
 REG_ALIAS_LIST = {

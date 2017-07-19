@@ -11,8 +11,7 @@ class SpecialCure():
             return
         self.__spam_guard(command)
         self.mud.send(command)
-        t = Timer(2, self.reset_guard, [command])
-        t.start()
+        Timer(2, self.reset_guard, [command]).start()
 
     def __spam_guarded(self, command):
         if command.startswith("sip"):

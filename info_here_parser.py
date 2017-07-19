@@ -1,11 +1,16 @@
 import re
+from threading import Timer
 
 from core.module import Module
 from core.line_listener import LineListener
+from core.spin_lock import SpinLock
 
 class InfoParser(Module, LineListener):
     PATTERN = "^You can see the following (\d+) objects\\:$"
     CPATTERN = re.compile(PATTERN)
+    NOTHING_PATTERN = "^There is nothing here\.$"
+    CNOTHING_PATTERN = re.compile(NOTHING_PATTERN)
+
 
     VALID_TARGETS = {
             "forager": 0,
@@ -17,6 +22,7 @@ class InfoParser(Module, LineListener):
             "boru": 0,
             "boar": 10,
             "nazetu": 0,
+            "Nazetu": 0,
             "shark": 10,
             "crab": 0,
             "eld": 0,
@@ -33,23 +39,28 @@ class InfoParser(Module, LineListener):
             "invoker": 0,
             "argobole": 10,
             "apparition": 0,
-            "priest": 0,
             "spirit": 0,
             "shade": 10,
             "luminary": 10,
             "darkwalker": 10,
             }
 
-    def __init__(self, combat_module, *args):
+    def __init__(self, combat_module, hunting_module, *args):
         super(InfoParser, self).__init__(*args)
         self.running = False
         self.count = 0
         self.combat_module = combat_module
+        self.hunting_module = hunting_module
         self.prio = -1
         self.selected_target = ""
 
     def parse_line(self, line):
         if not self.state["mode"]["bashing"]:
+            return
+
+        match = InfoParser.CNOTHING_PATTERN.match(line)
+        if match:
+            self.complete()
             return
 
         match = InfoParser.CPATTERN.match(line)
@@ -64,15 +75,18 @@ class InfoParser(Module, LineListener):
         self.count -= 1
         self.__check_target(line)
 
-        if self.count:
-            return
+        if not self.count:
+            self.complete()
 
+    def complete(self):
         self.running = False
         if self.selected_target:
             self.combat_module.target(self.selected_target)
 
         self.selected_target = ""
         self.prio = -1
+
+        self.hunting_module.at()
 
     def __check_target(self, line):
         for tar, prio in InfoParser.VALID_TARGETS.items():
