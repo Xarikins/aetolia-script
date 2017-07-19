@@ -82,8 +82,11 @@ ALIAS_LIST = {
         "deathsight": ["outc thanatonin", "eat thanatonin"],
 
         # Herbalism
-        "paste *": "outc %2 berberis;outc %2 yarrow;prepare %2 paste",
-        "anabiotic *": "outc %2 birthwort;outc %2 yarrow;outc %2 madder;prepare %2 anabiotic",
+        "paste *": "prepare %2 paste",
+        "anabiotic *": "prepare %2 anabiotic",
+
+        # Refining
+        "shackle *": "refining shackle %2",
 
         # Summoning
         "nightingale": "qeb summon nightingale",

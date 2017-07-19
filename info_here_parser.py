@@ -32,6 +32,12 @@ class InfoParser(Module, LineListener):
             "lumore": 0,
             "invoker": 0,
             "argobole": 10,
+            "apparition": 0,
+            "priest": 0,
+            "spirit": 0,
+            "shade": 10,
+            "luminary": 10,
+            "darkwalker": 10,
             }
 
     def __init__(self, combat_module, *args):
