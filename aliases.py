@@ -60,7 +60,7 @@ ALIAS_LIST = {
         "anabiotic *": "prepare %2 anabiotic",
 
         # Refining
-        "shackle *": "refining shackle %2",
+        "shackle": "icon whirl",
 
         # Summoning
         "nightingale": "qeb summon nightingale",
