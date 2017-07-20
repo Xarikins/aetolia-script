@@ -23,12 +23,14 @@ class Path():
         self.mud.info("Path %s loaded" % name)
 
     def has_step(self):
-        return len(self.path) > 0
+        return self.length() > 0
 
     def get_next(self):
         step = self.path.popleft()
-        self.mud.out("Remaining steps: %s" % ", ".join(self.path))
         return step
+
+    def length(self):
+        return len(self.path)
 
     def clear(self):
         self.mud.info("Clearing path")
