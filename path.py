@@ -29,9 +29,12 @@ class Path():
         step = self.path.popleft()
         return step
 
-    def length(self):
-        return len(self.path)
-
     def clear(self):
         self.mud.info("Clearing path")
         self.path = deque([])
+
+    def __len__(self):
+        return len(self.path)
+
+    def __bool__(self):
+        return len(self.path)

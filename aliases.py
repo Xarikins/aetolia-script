@@ -75,7 +75,6 @@ REG_ALIAS_LIST = {
         "^(give .*)$": "generosity;qeb %P1",
         "^(put .*)$": "generosity;qeb %P1",
         "^(drop .*)$": "generosity;qeb %P1",
-        "^h (.+)$": "harvest all %P1",
         "^ooc (\w+) (.+)$": "/send tell %P1 ((ooc: %P2 ))",
         }
 
