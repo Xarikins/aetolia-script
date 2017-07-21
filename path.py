@@ -23,7 +23,7 @@ class Path():
         self.mud.info("Path %s loaded" % name)
 
     def has_step(self):
-        return self.length() > 0
+        return len(self.path) > 0
 
     def get_next(self):
         step = self.path.popleft()

@@ -24,6 +24,10 @@ class MovementModule(Module):
             "nw": walk_definition,
             "se": walk_definition,
             "sw": walk_definition,
+            "in": walk_definition,
+            "out": walk_definition,
+            "u": walk_definition,
+            "d": walk_definition,
 
             "ee": "/send gallop e",
             "nee": "/send gallop ne",
