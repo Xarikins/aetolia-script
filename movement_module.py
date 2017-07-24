@@ -43,6 +43,8 @@ class MovementModule(Module):
             "cu": "/send climb up",
             "cd": "/send climb down",
 
+            "fo *": "/send follow %2",
+
             # Pathing
             "go not": ["clo", "ms", "/send path track not"],
             "go duiran": ["clo", "ms", "/send path track duiran"],
@@ -50,6 +52,7 @@ class MovementModule(Module):
             "go esterport": ["clo", "ms", "/send path track esterport"],
             "go tear": ["clo", "/send path track lleistear"],
             "go ollin": ["clo", "/send path track 19521"],
+            "go fracture": ["clo", "/send path track 10046"],
             "go": ["ms", "/send path go gallop"],
             "go *": ["ms", "/send say duanathar;path track %2"],
             "pt *": "/send path track %2",

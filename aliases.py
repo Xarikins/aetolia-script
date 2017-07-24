@@ -16,6 +16,9 @@ ALIAS_LIST = {
         "dhurive": ["unwield sickle", "wield dhurive"],
         "sickle": ["secure weapon", "wield sickle"],
 
+        # Emotes
+        "hb *": "/send heartbeat %2",
+
         # Misc
         "sc": "sacrifice corpses",
         "lip": "look in pack",
@@ -32,8 +35,6 @@ ALIAS_LIST = {
             "/send quit"
             ],
         "fs *": "farsee %2",
-        "en *": "enemy %2",
-        "unen *": "unenemy %2",
         "wi *": "web invite %2",
         "wa": "web accept",
         "wq": "web quit",
@@ -60,7 +61,7 @@ ALIAS_LIST = {
         "anabiotic *": "prepare %2 anabiotic",
 
         # Refining
-        "shackle": "icon whirl",
+        "shackle *": "qe refining shackle %2",
 
         # Summoning
         "nightingale": "qeb summon nightingale",

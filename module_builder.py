@@ -1,6 +1,7 @@
 from imp import reload
 import prompt
 import combat
+import combat_hilite_module
 import info_here_parser
 import affliction_parser
 import curing_module
@@ -13,6 +14,7 @@ import harvest_module
 def build_modules(state):
     reload(prompt)
     reload(combat)
+    reload(combat_hilite_module)
     reload(info_here_parser)
     reload(affliction_parser)
     reload(notification_module)
@@ -27,6 +29,7 @@ def build_modules(state):
     modules = []
     modules.append(prompt.PromptParser(state))
     modules.append(combat_mod)
+    modules.append(combat_hilite_module.CombatHiliteModule(state))
     modules.append(info_here_parser.InfoParser(combat_mod, hunting_mod, state))
     modules.append(curing_module.CuringModule(state))
     modules.append(notification_module.NotificationModule(state))

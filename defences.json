@@ -204,6 +204,18 @@
 		"defence_line": "Your mind is filled with clarity."
 	},
 	{
+		"name": "waterbreathing",
+		"special": "",
+		"pill": "waterbreathing",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You are surrounded by a pocket of air."
+	},
+	{
 		"name": "insomnia",
 		"special": "insomnia",
 		"pill": "",

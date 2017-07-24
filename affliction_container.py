@@ -13,6 +13,7 @@ class AfflictionContainer():
         self.__load_afflictions()
 
         self.afflict_trigger = re.compile("^You are afflicted with (.+)\.$")
+        self.discover_trigger = re.compile("^You have discovered (.+)\.$")
         self.cure_trigger = re.compile("^You have cured (.+)\.$")
 
 
@@ -56,6 +57,10 @@ class AfflictionContainer():
 
     def parse_line(self, line):
         match = self.afflict_trigger.match(line)
+        if (match):
+            self.__activate(match.group(1))
+            return
+        match = self.discover_trigger.match(line)
         if (match):
             self.__activate(match.group(1))
             return

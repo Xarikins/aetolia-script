@@ -48,8 +48,8 @@ def install(cState):
     load_modules(cState)
     aliases.install(cState["alias_builder"], mud)
 
-    mud.eval("/def -p9 -F -q -mregexp -t'^.*\\$' py_line = /python_call main.handle_line \\%*")
-    mud.eval("/def -p9 -F -mregexp -q -h'PROMPT ^.*\$' prompt_trigger = /python_call main.handle_prompt \\%*")
+    mud.eval("/def -waetolia -p9 -F -q -mregexp -t'^.*\\$' py_line = /python_call main.handle_line \\%*")
+    mud.eval("/def -waetolia -p9 -F -mregexp -q -h'PROMPT ^.*\$' prompt_trigger = /python_call main.handle_prompt \\%*")
     print("...DONE")
 
     print("Python 'main' loaded")
@@ -66,19 +66,4 @@ cState = state.new()
 install(cState)
 
 if __name__ == "__main__":
-    handle_line("You are afflicted with clumsiness.")
-    handle_line("You have cured clumsiness.")
-    handle_line("(Order): You have cured clumsiness.")
-    handle_line("Your mindseye defence has been stripped.")
-    handle_line("Your deathsight defence has been stripped.")
-    handle_line("Your insulation defence has been stripped.")
-    handle_line("Your venom_resistance defence has been stripped.")
-    handle_prompt("test")
-    handle_prompt("test")
-    handle_prompt("test")
-    handle_prompt("test")
-    mud = cState["communicator"]
-    mud.info("Testing info")
-    mud.warn("Testing warn")
-    mud.panic("Testing panic")
-    handle_line("test with one quote' in it")
+    handle_line("(Web): Serrice says, \"Target: leana.\"")

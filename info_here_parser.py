@@ -43,6 +43,7 @@ class InfoParser(Module, LineListener):
             "shade": 10,
             "luminary": 10,
             "darkwalker": 10,
+            "rojalli": 0,
             }
 
     def __init__(self, combat_module, hunting_module, *args):

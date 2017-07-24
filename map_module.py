@@ -48,8 +48,14 @@ class MapModule(Module):
             })
 
         self.state["alias_builder"].build({
-            "mupdate": self.update_map
+            "mupdate": self.update_map,
             })
+        self.state["alias_builder"].build({
+            "^rf (.*)$": {
+                "fun": self.room_find,
+                "arg": "'%P1'",
+                },
+            }, "regexp")
 
     def update_map(self):
         http = urllib.PoolManager()
@@ -66,6 +72,9 @@ class MapModule(Module):
         sax.parse("/home/linus/muds/aetolia/map.xml", handler)
         self.rooms = handler.get_data()
 
+    def room_find(self, room):
+        self.show_room(room, room)
+
     def show_room(self, line, room):
         if room in self.rooms:
             result = self.rooms[room]
@@ -73,3 +82,5 @@ class MapModule(Module):
                 self.mud.echop("%s ( Room(s): @{Cred}%s@{n} )" % (line, ", ".join(result)))
             else:
                 self.mud.echop("%s ( Room: @{Cred}%s@{n} )" % (line, ", ".join(result)))
+        else:
+            self.mud.echop("%s ( Room: @{Cred}none@{n} )" % line)

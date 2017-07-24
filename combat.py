@@ -32,6 +32,9 @@ class CombatModule(Module):
                 "resin *": {"fun": self.set_resin, "arg": "%2"},
                 "noresin": self.no_resin,
                 "ts": "qeb touch shield",
+                "en *": "enemy %2",
+                "en": self.enemy_target,
+                "unen *": "unenemy %2",
                 }
 
         aBuilder = self.state["alias_builder"]
@@ -45,7 +48,7 @@ class CombatModule(Module):
 
         tBuilder = self.state["trigger_builder"]
         tBuilder.build({
-            "^\(.*\)\: \w+ says, \"Target\: (\w+)\"$": {
+            "^\(.*\)\: \w+ says, \"Target\: (.+)\.\"$": {
                 "fun": self.target,
                 "arg": "%P1",
                 },
@@ -107,3 +110,6 @@ class CombatModule(Module):
         self.state["combat"]["target"] = target
         if target:
             self.mud.info("Current target: %s" % self.state["combat"]["target"])
+
+    def enemy_target(self):
+        self.mud.send("enemy %s" % self.state["combat"]["target"])
