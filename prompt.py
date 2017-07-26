@@ -19,6 +19,7 @@ class PromptParser(Module, PromptListener):
         stats = match.group(4).split()
         index = 0
         if len(stats) > 2:
+            player["cloaked"] = "c" in stats[index]
             player["fangbarrier"] = "s" in stats[index]
             player["prone"] = "p" in stats[index]
             player["deaf"] = "d" in stats[index]

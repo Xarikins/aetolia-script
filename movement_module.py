@@ -29,16 +29,17 @@ class MovementModule(Module):
             "u": walk_definition,
             "d": walk_definition,
 
-            "ee": "/send gallop e",
-            "nee": "/send gallop ne",
-            "see": "/send gallop se",
-            "ww": "/send gallop w",
-            "nww": "/send gallop nw",
-            "sww": "/send gallop sw",
-            "nn": "/send gallop n",
-            "ss": "/send gallop s",
-            "dd": "/send gallop d",
-            "uu": "/send gallop u",
+            "ee": self.__gallop_definition_for("e"),
+            "nee": self.__gallop_definition_for("ne"),
+            "see": self.__gallop_definition_for("se"),
+            "ww": self.__gallop_definition_for("w"),
+            "nww": self.__gallop_definition_for("nw"),
+            "sww": self.__gallop_definition_for("sw"),
+            "nn": self.__gallop_definition_for("n"),
+            "ss": self.__gallop_definition_for("s"),
+            "dd": self.__gallop_definition_for("d"),
+            "uu": self.__gallop_definition_for("u"),
+
             "clo": "/send say duanathar",
             "cu": "/send climb up",
             "cd": "/send climb down",
@@ -83,6 +84,17 @@ class MovementModule(Module):
             self.recorded_path.append(direction)
             self.mud.out("Path: %s" % ", ".join(self.recorded_path))
         self.mud.send(direction)
+
+    def __gallop_definition_for(self, direction):
+        return {
+                "fun": self.__gallop,
+                "arg": direction,
+                }
+
+    def __gallop(self, direction):
+        if not self.state["player"]["mounted"]:
+            self.mud.eval("ms")
+        self.mud.send("gallop %s" % direction)
 
     def toggle_recording(self):
         self.recording = not self.recording

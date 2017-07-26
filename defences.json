@@ -204,6 +204,18 @@
 		"defence_line": "Your mind is filled with clarity."
 	},
 	{
+		"name": "cloak",
+		"special": "touch cloak",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": true,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You are surrounded by a cloak of protection."
+	},
+	{
 		"name": "waterbreathing",
 		"special": "",
 		"pill": "waterbreathing",
@@ -235,7 +247,7 @@
 		"smoke": "",
 		"balance_required": true,
 		"balance_take": true,
-		"combat_defence": true,
+		"combat_defence": false,
 		"cure_delay": 0,
 		"defence_line": "You have the concealed defence."
 	},

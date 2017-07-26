@@ -10,6 +10,8 @@ import map_module
 import hunting_module
 import movement_module
 import harvest_module
+import mount_module
+import gmcp_module
 
 def build_modules(state):
     reload(prompt)
@@ -22,6 +24,8 @@ def build_modules(state):
     reload(hunting_module)
     reload(movement_module)
     reload(harvest_module)
+    reload(gmcp_module)
+    reload(mount_module)
 
     combat_mod = combat.CombatModule(state)
     hunting_mod = hunting_module.HuntingModule(state)
@@ -37,5 +41,7 @@ def build_modules(state):
     modules.append(hunting_mod)
     modules.append(movement_module.MovementModule(state))
     modules.append(harvest_module.HarvestModule(state))
+    modules.append(mount_module.MountModule(state))
+    modules.append(gmcp_module.GmcpModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

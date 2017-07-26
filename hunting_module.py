@@ -60,17 +60,15 @@ class HuntingModule(Module, PromptListener):
         eq = player["equilibrium"]
         ba = player["balance"]
         standing = not player["prone"]
-        paralyzed = "paralysis" in player["affs"]
-        impaled = "writhe_impaled" in player["affs"]
-        writhe = "writhe" in player["affs"]
+        writhing = player["writhing"]
         stun = "stun" in player["affs"]
+        paralyzed = "paralysis" in player["affs"]
 
         if ba and eq and standing and \
-                not paralyzed and \
                 self.next_move and \
-                not writhe and \
-                not stun and \
-                not impaled:
+                not paralyzed and \
+                not writhing and \
+                not stun:
             self.next_move()
 
     def check_for_target(self):

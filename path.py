@@ -38,3 +38,6 @@ class Path():
 
     def __bool__(self):
         return len(self.path)
+
+    def __str__(self):
+        return str(self.path)

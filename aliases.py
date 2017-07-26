@@ -6,12 +6,6 @@ ALIAS_LIST = {
         # Script handling
         "reload": "/python_call main.reinstall",
 
-        # Mounts
-        "ms": ["recall mount","qmount 18597"],
-        "dis": "qdmount",
-        "wolf": "recall 18597",
-        "returnm": "return mount duiranstable",
-
         # Weapons
         "dhurive": ["unwield sickle", "wield dhurive"],
         "sickle": ["secure weapon", "wield sickle"],
