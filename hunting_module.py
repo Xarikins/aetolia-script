@@ -61,14 +61,16 @@ class HuntingModule(Module, PromptListener):
         ba = player["balance"]
         standing = not player["prone"]
         writhing = player["writhing"]
+        writhe_affliction = any("writhe" in s for s in player["affs"])
         stun = "stun" in player["affs"]
         paralyzed = "paralysis" in player["affs"]
 
-        if ba and eq and standing and \
-                self.next_move and \
-                not paralyzed and \
-                not writhing and \
-                not stun:
+        if ba and eq and standing \
+                and self.next_move \
+                and not paralyzed \
+                and not writhing \
+                and not writhe_affliction \
+                and not stun:
             self.next_move()
 
     def check_for_target(self):
@@ -118,6 +120,7 @@ class HuntingModule(Module, PromptListener):
     def toggle_bash(self):
         self.state["mode"]["bashing"] = not self.state["mode"]["bashing"]
         self.mud.info("Bashing %s" % ("enabled" if self.state["mode"]["bashing"] else "disabled"))
+        self.mud.eval("/set bashing=%d" % int(self.state["mode"]["bashing"]))
 
     def queued_command(self, queue, command):
         if "balance" in queue and "equilibrium" in queue:

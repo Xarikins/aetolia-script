@@ -1,3 +1,4 @@
+from message_client import MessageClient
 import subprocess
 import re
 
@@ -8,6 +9,7 @@ class NotificationModule(Module):
     def __init__(self, *args):
         super(NotificationModule, self).__init__(*args)
         self.notifications_enabled = True
+        self.message_client = MessageClient("localhost", 12000)
 
         self.state["alias_builder"].build({
             "notify": self.toggle_notifications,
@@ -27,4 +29,21 @@ class NotificationModule(Module):
     def trigger_notification(self, talker, line):
         if self.notifications_enabled:
             subprocess.Popen(["notify-send", "-t", "4", "-i", "/home/linus/muds/aetolia/aet_notify_icon.png", "Aetolia", "%s %s" % (talker, line)])
+
+        color = "white"
+        if talker == "(web)":
+            color = "red"
+        elif talker == "(Sentinels)":
+            color = "blue"
+        elif talker == "(Duiran)":
+            color = "blue"
+        elif talker == "(Order)" or talker == "(Congregation)":
+            color = "blue"
+        elif talker == "(Market)":
+            color = "green"
+        else:
+            color = "yellow"
+
+        self.message_client.send("%s: %s" % (talker,line), color)
+
 

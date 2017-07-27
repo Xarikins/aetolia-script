@@ -66,4 +66,4 @@ cState = state.new()
 install(cState)
 
 if __name__ == "__main__":
-    handle_line("(Web): Serrice says, \"Target: leana.\"")
+    cb("trigger_notification '(Web)' 'Serrice says, \"Target: leana.\"'")

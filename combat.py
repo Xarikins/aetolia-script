@@ -101,6 +101,7 @@ class CombatModule(Module):
     def toggle_fight(self):
         self.state["mode"]["fight"] = not self.state["mode"]["fight"]
         self.mud.info("Fightmode %s" % ("enabled" if self.state["mode"]["fight"] else "disabled"))
+        self.mud.eval("/set fighting=%d" % int(self.state["mode"]["fight"]))
 
     def toggle_target_listening(self):
         self.target_listening = not self.target_listening

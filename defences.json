@@ -209,7 +209,7 @@
 		"pill": "",
 		"poultice": "",
 		"smoke": "",
-		"balance_required": false,
+		"balance_required": true,
 		"balance_take": true,
 		"combat_defence": false,
 		"cure_delay": 0,
