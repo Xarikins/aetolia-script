@@ -4,7 +4,6 @@ import communicator
 import alias_builder
 import trigger_builder
 import gag_builder
-import cmd_queue
 import callback_handler
 
 def new():
@@ -52,7 +51,6 @@ def new():
             "alias_builder": a_builder,
             "trigger_builder": t_builder,
             "gag_builder": g_builder,
-            "cmd_queue": cmd_queue.CommandQueue(player),
             "callback_handler": cb_handler,
             "cmd_queue": deque([]),
             }
