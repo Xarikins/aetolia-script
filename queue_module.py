@@ -19,12 +19,16 @@ class QueueModule(Module, PromptListener):
     def __queue_cmd(self, cmd):
         self.state["cmd_queue"].append(cmd)
         self.mud.info("Queued cmd: %s" % cmd)
+        self.trigger()
 
     def __clear_queue(self):
         self.state["cmd_queue"].clear()
         self.mud.info("Cleared command queue")
 
     def parse_prompt(self, line):
+        self.trigger()
+
+    def trigger(self):
         if not self.state["cmd_queue"]:
             return
 
@@ -32,4 +36,4 @@ class QueueModule(Module, PromptListener):
         balance = player["balance"] and player["equilibrium"]
 
         if balance:
-            self.mud.send(self.state["cmd_queue"].popleft())
+            self.mud.eval(self.state["cmd_queue"].popleft())
