@@ -31,7 +31,7 @@ class NotificationModule(Module):
             subprocess.Popen(["notify-send", "-t", "4", "-i", "/home/linus/muds/aetolia/aet_notify_icon.png", "Aetolia", "%s %s" % (talker, line)])
 
         color = "white"
-        if talker == "(web)":
+        if talker == "(Web)":
             color = "red"
         elif talker == "(Sentinels)":
             color = "blue"

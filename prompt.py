@@ -3,12 +3,13 @@ from core.module import *
 from core.prompt_listener import *
 
 class PromptParser(Module, PromptListener):
-    PATTERN = "^H\:(\d+) M\:(\d+) Bl\: (\d+) XP:\d+% \[(.+)\]$"
+    PATTERN = "^H\:(\d+) M\:(\d+) Mad\:\d+% Bl\: (\d+) XP:\d+% \[(.+)\]$"
     CPATTERN = re.compile(PATTERN)
 
     def parse_prompt(self, prompt):
         match = self.CPATTERN.match(prompt)
         if not match:
+            self.mud.out("Unmatched prompt: %s" % prompt)
             return
 
         player = self.state["player"]
