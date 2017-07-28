@@ -13,6 +13,7 @@ import harvest_module
 import mount_module
 import gmcp_module
 import statusbar_module
+import queue_module
 
 def build_modules(state):
     reload(prompt)
@@ -28,6 +29,7 @@ def build_modules(state):
     reload(gmcp_module)
     reload(mount_module)
     reload(statusbar_module)
+    reload(queue_module)
 
     combat_mod = combat.CombatModule(state)
     hunting_mod = hunting_module.HuntingModule(state)
@@ -46,5 +48,6 @@ def build_modules(state):
     modules.append(mount_module.MountModule(state))
     modules.append(gmcp_module.GmcpModule(state))
     modules.append(statusbar_module.StatusBarModule(state))
+    modules.append(queue_module.QueueModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

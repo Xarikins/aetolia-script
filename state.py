@@ -1,4 +1,5 @@
 from imp import reload
+from collections import deque
 import communicator
 import alias_builder
 import trigger_builder
@@ -53,4 +54,5 @@ def new():
             "gag_builder": g_builder,
             "cmd_queue": cmd_queue.CommandQueue(player),
             "callback_handler": cb_handler,
+            "cmd_queue": deque([]),
             }

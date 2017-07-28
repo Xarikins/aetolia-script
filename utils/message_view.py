@@ -14,6 +14,8 @@ def listen():
         if not data:
             continue
 
+        print("%s " % time.strftime("%H:%M:%S", time.localtime()), end="")
+
         message = json.loads(data.decode("UTF-8"))
         if message["color"].lower() == "red":
             print("\033[31m", end="")
@@ -24,7 +26,7 @@ def listen():
         elif message["color"].lower() == "blue":
             print("\033[34m", end="")
 
-        print("%s: %s" % (time.strftime("%H:%M:%S", time.localtime()), message["msg"]), end="")
+        print(message["msg"], end="")
         print("\033[0m")
 
 if __name__ == "__main__":
