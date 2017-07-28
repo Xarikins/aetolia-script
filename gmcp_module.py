@@ -1,5 +1,6 @@
 from core.module import Module
 from core.prompt_listener import PromptListener
+from message_client import MessageClient
 import json
 
 class GmcpModule(Module, PromptListener):
@@ -23,6 +24,7 @@ class GmcpModule(Module, PromptListener):
 
         self.prompt_count = 0
         self.gmcp_count = 0
+        self.message_client = MessageClient("localhost", 12000)
 
         self.mud.eval("/def -h'CONNECT aetolia' = /python_call main.cb register_gmcp")
         self.mud.eval("/def -waetolia -hGMCP = /python_call main.cb handle_gmcp '\%*'")
@@ -48,8 +50,11 @@ class GmcpModule(Module, PromptListener):
         key = lines[0]
         package = lines[1]
         data = json.loads(package)
-        self.state["gmcp"][key] = data
-        self.update_state()
+        if key == "Comm.Channel.Text":
+            self.message_client.send(data["text"])
+        else:
+            self.state["gmcp"][key] = data
+            self.update_state()
 
     def update_state(self):
         if not self.gmcp_count:

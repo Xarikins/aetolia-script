@@ -67,6 +67,7 @@ ALIAS_LIST = {
                 "q summon raven",
                 "q summon raloth",
                 "q summon crocodile",
+                "q camo",
                 ],
         "camo": "qeb camouflage",
         }
