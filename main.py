@@ -35,7 +35,11 @@ def cb(arg):
         args = shlex.split(arg)
         cState["callback_handler"].triggerCallback(args[0], args[1:])
     except:
-        pass
+        try:
+            args = arg.split()
+            cState["callback_handler"].triggerCallback(args[0], args[1:])
+        except:
+            pass
 
 def install(cState):
     print("Installing...")

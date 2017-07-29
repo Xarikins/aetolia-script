@@ -27,7 +27,7 @@ class GmcpModule(Module, PromptListener):
         self.message_client = MessageClient("localhost", 12000)
 
         self.mud.eval("/def -h'CONNECT aetolia' = /python_call main.cb register_gmcp")
-        self.mud.eval("/def -waetolia -hGMCP = /python_call main.cb handle_gmcp '\%*'")
+        self.mud.eval("/def -waetolia -hGMCP = /python_call main.cb handle_gmcp \%*")
         self.state["callback_handler"].registerCallback(self.handle_gmcp)
         self.state["callback_handler"].registerCallback(self.register_gmcp)
 
@@ -44,7 +44,8 @@ class GmcpModule(Module, PromptListener):
         self.mud.eval('/test gmcp(\\"Core.Hello %s\\")' % json.dumps(self.client_data).replace("\"", "\\\\\""))
         self.mud.eval('/test gmcp(\\"Core.Supports.Set %s\\")' % json.dumps(self.support_data).replace("\"", "\\\\\""))
 
-    def handle_gmcp(self, payload):
+    def handle_gmcp(self, *payloads):
+        payload = " ".join(payloads)
         self.gmcp_count += 1
         lines = payload.split(" ", 1)
         key = lines[0]

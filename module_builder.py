@@ -14,6 +14,7 @@ import mount_module
 import gmcp_module
 import statusbar_module
 import queue_module
+import aff_tracker_module
 
 def build_modules(state):
     reload(prompt)
@@ -30,6 +31,7 @@ def build_modules(state):
     reload(mount_module)
     reload(statusbar_module)
     reload(queue_module)
+    reload(aff_tracker_module)
 
     combat_mod = combat.CombatModule(state)
     hunting_mod = hunting_module.HuntingModule(state)
@@ -49,5 +51,6 @@ def build_modules(state):
     modules.append(gmcp_module.GmcpModule(state))
     modules.append(statusbar_module.StatusBarModule(state))
     modules.append(queue_module.QueueModule(state))
+    modules.append(aff_tracker_module.AffTrackerModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

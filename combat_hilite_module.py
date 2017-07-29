@@ -11,6 +11,13 @@ class CombatHiliteModule(Module):
             "^The attack rebounds back onto you!$": self.__warn_definition("Rebounding"),
             "^You begin to follow (\w+)\.$": self.__info_definition("'Following %P1'"),
             "^Your arrow strikes true\.$": self.__info_definition("'Arrow hit'"),
+            "^(\w+) has writhed free of \w+ bindings\.$": self.__info_definition("'%P1 writhed free'"),
+            "^You suddenly perceive the vague outline of an aura of rebounding around (\w+)\.$": \
+                    self.__warn_definition("'Rebounding around %P1'"),
+            "^The bone marrow coating (\w+)'s body sloughs off from \w+ skin\.$": \
+                    self.__info_definition("'%P1 lost fangbarrier'"),
+            "^(\w+)'s aura of weapons rebounding disappears\.$": \
+                    self.__info_definition("'%P1 lost rebounding'"),
             })
 
     def __warn_definition(self, args):
