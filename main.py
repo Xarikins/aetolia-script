@@ -30,16 +30,32 @@ def handle_prompt(line):
             mod.parse_prompt(line)
 
 def cb(arg):
-    # Shlex fails often. Perhaps write something better?
     try:
-        args = shlex.split(arg)
+        args = __arg_split(arg)
         cState["callback_handler"].triggerCallback(args[0], args[1:])
+        shlex_success = True
     except:
-        try:
-            args = arg.split()
-            cState["callback_handler"].triggerCallback(args[0], args[1:])
-        except:
-            pass
+        pass
+
+def __arg_split(arg):
+    args = arg.split(" ", 1)
+    if len(args) == 1:
+        return args
+    return [args[0]] + __arg_split_recursion(args[1])
+
+def __arg_split_recursion(args):
+    if args.startswith("'"):
+        arg_list = args.split("' ", 1)
+        arg_list[0] = arg_list[0][1:]
+        if len(arg_list) == 1:
+            arg_list[0] = arg_list[0][0:-1]
+            return arg_list
+    else:
+        arg_list = args.split(" ", 1)
+        if len(arg_list) == 1:
+            return arg_list
+
+    return [arg_list[0]] + __arg_split_recursion(arg_list[1])
 
 def install(cState):
     print("Installing...")
@@ -70,4 +86,4 @@ cState = state.new()
 install(cState)
 
 if __name__ == "__main__":
-    cb("trigger_notification '(Web)' 'Serrice says, \"Target: leana.\"'")
+    cb("trigger_notification '(Web)' 'Serrice says, \"Target: leana's.\"'")

@@ -47,10 +47,8 @@ class HuntingModule(Module, PromptListener):
             "^(An .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
             })
 
-        tBuilder = self.state["trigger_builder"]
-        tBuilder.build({
-            "^You use Dhuriv .+ on .+\.$": self.registered_attack,
-            })
+        self.state["callback_handler"].registerCallback(self.registered_attack)
+        self.mud.eval("/def -waetolia -p2 -F -mregexp -t'^You use Dhuriv .+ on .+\\\\.\$' = /python_call main.cb registered_attack")
 
     def parse_prompt(self, line):
         if not self.state["mode"]["bashing"] or not self.next_move:

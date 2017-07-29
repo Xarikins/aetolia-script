@@ -70,6 +70,9 @@ ALIAS_LIST = {
                 "q camo",
                 ],
         "camo": "qeb camouflage",
+
+        # Emotes
+        "pants *": "/send emote suddenly sneaks up behind \\$\%2 and in a rapid motion pulls down \\$\%2_\%3 pants for all to see"
         }
 
 REG_ALIAS_LIST = {

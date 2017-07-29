@@ -18,6 +18,8 @@ class CombatHiliteModule(Module):
                     self.__info_definition("'%P1 lost fangbarrier'"),
             "^(\w+)'s aura of weapons rebounding disappears\.$": \
                     self.__info_definition("'%P1 lost rebounding'"),
+            "^You recognize the song as a signal from a Sentinel\:$": \
+                    self.__info_definition("'Sentinel signal:'"),
             })
 
     def __warn_definition(self, args):

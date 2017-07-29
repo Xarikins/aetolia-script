@@ -11,6 +11,17 @@ class AffTrackerModule(Module, PromptListener):
             (" ", "_")
             ]
 
+    DHURIV_AFFLICTIONS = {
+            "slam": ["epilepsy", "indifference"],
+            "slit": ["crippled_throat"],
+            "twirl": ["confusion"],
+            "crosscut": ["haemophilia"],
+            "weaken": ["lethargy"],
+            "throatcrush": ["destroyed_throat"],
+            "heartbreaker": ["heartflutter"],
+            "gouge": ["impatience"],
+            }
+
     def __init__(self, *args):
         super(AffTrackerModule, self).__init__(*args)
         self.target_afflictions = {}
@@ -40,7 +51,18 @@ class AffTrackerModule(Module, PromptListener):
                 self.__trigger_definition("'%P2' '%P1'"),
             "^(\w+) suddenly seizes up, \w+ entire body locked by paralysis\.$": \
                 self.__trigger_definition("paralysis '%P1'"),
+            "^You use Dhuriv (\w+) on (\w+)\.$": {
+                "fun": self.__trigger_dhuriv_attack,
+                "arg": "'%P1' '%P2'",
+                },
             })
+
+    def __trigger_dhuriv_attack(self, attack, target):
+        attack = attack.lower()
+        if not attack in self.DHURIV_AFFLICTIONS:
+            return
+        for aff in self.DHURIV_AFFLICTIONS[attack]:
+            self.__register_aff(aff, target)
 
     def __trigger_definition(self, args):
         return {
@@ -59,7 +81,7 @@ class AffTrackerModule(Module, PromptListener):
         if affs and affs.get_pill():
             for a in affs.get_pill().values():
                 if a["pill"] == pill:
-                    affs.__deactivate(a["name"])
+                    affs.deactivate(a["name"])
                     return
 
     def __register_poultice(self, poultice, target, limb = ""):
@@ -69,7 +91,7 @@ class AffTrackerModule(Module, PromptListener):
         if affs and affs.get_poultice():
             for a in affs.get_poultice().values():
                 if a["poultice"] == poultice and a["body_part"] == limb:
-                    affs.__deactivate(a["name"])
+                    affs.deactivate(a["name"])
                     return
 
     def __register_smoke(self, herb, target):
@@ -77,7 +99,7 @@ class AffTrackerModule(Module, PromptListener):
         if affs and affs.get_smoke():
             for a in affs.get_poultice().values():
                 if a["smoke"] == smoke:
-                    affs.__deactivate(a["name"])
+                    affs.deactivate(a["name"])
                     return
 
     def __clear_aff(self, aff, target):
@@ -85,9 +107,9 @@ class AffTrackerModule(Module, PromptListener):
         affliction_deregistered = False
         for i in self.AFFLICTION_MANIPULATORS:
             if i == None:
-                affliction_deregistered = target_affs.__deactivate(aff)
+                affliction_deregistered = target_affs.deactivate(aff)
             else:
-                affliction_deregistered = target_affs.__deactivate(aff.replace(i[0], i[1]))
+                affliction_deregistered = target_affs.deactivate(aff.replace(i[0], i[1]))
 
             if affliction_deregistered:
                 break
@@ -97,22 +119,24 @@ class AffTrackerModule(Module, PromptListener):
             target = self.state["combat"]["target"]
         target = target.lower()
 
+
         if not target in self.target_afflictions:
-            target_afflictions[target] = AfflictionContainer()
+            self.target_afflictions[target] = AfflictionContainer()
 
         target_affs = self.target_afflictions[target]
         affliction_registered = False
         for i in self.AFFLICTION_MANIPULATORS:
             if i == None:
-                affliction_registered = target_affs.__activate(aff)
+                affliction_registered = target_affs.activate(aff)
             else:
-                affliction_registered = target_affs.__activate(aff.replace(i[0], i[1]))
+                affliction_registered = target_affs.activate(aff.replace(i[0], i[1]))
 
             if affliction_registered:
                 break
 
         if not affliction_registered:
             self.mud.warn("No affliction '%s' found" % aff)
+
 
     def clear_target_affs(self):
         self.target_afflictions = {}

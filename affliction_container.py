@@ -25,7 +25,7 @@ class AfflictionContainer():
         for aff in affs:
             self.afflictions[aff["name"]] = aff
 
-    def __activate(self, name):
+    def activate(self, name):
         if name not in self.afflictions:
             return False
 
@@ -42,7 +42,7 @@ class AfflictionContainer():
 
         return True
 
-    def __deactivate(self, name):
+    def deactivate(self, name):
         if name not in self.active_afflictions:
             return False
 
@@ -62,15 +62,15 @@ class AfflictionContainer():
     def parse_line(self, line):
         match = self.afflict_trigger.match(line)
         if (match):
-            self.__activate(match.group(1))
+            self.activate(match.group(1))
             return
         match = self.discover_trigger.match(line)
         if (match):
-            self.__activate(match.group(1))
+            self.activate(match.group(1))
             return
         match = self.cure_trigger.match(line)
         if (match):
-            self.__deactivate(match.group(1))
+            self.deactivate(match.group(1))
             return
 
     def get_active(self):
@@ -87,3 +87,6 @@ class AfflictionContainer():
 
     def get_writhe(self):
         return self.writhe_afflictions
+
+    def __str__(self):
+        return " ".join(self.active_afflictions.keys())
