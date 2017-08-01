@@ -44,6 +44,7 @@ class InfoParser(Module, LineListener):
             "luminary": 10,
             "darkwalker": 10,
             "rojalli": 0,
+            "spirit": 0,
             }
 
     def __init__(self, combat_module, hunting_module, *args):

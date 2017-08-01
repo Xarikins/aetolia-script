@@ -52,7 +52,8 @@ class CombatModule(Module):
                 "fun": self.target,
                 "arg": "%P1",
                 },
-            })
+            "^\w+ has offered you a chance at resurrection. Use REVIVE to accept, you will return to .+\.$": "/send revive",
+            }, prio=2)
 
     def no_resin(self):
         self.set_resin()
@@ -111,6 +112,7 @@ class CombatModule(Module):
         self.state["combat"]["target"] = target
         if target:
             self.mud.info("Current target: %s" % self.state["combat"]["target"])
+        self.mud.eval("/set target=%s" % target)
 
     def enemy_target(self):
         self.mud.send("enemy %s" % self.state["combat"]["target"])

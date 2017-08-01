@@ -4,12 +4,14 @@ class MacroBuilder():
         self.mud = mud
         self.cb_handler = cb_handler
 
-    def _build(self, definition, macros, mType):
+    def _build(self, definition, macros, **kwargs):
         for trig, cmd in macros.items():
-            self.__register_macro(definition, trig, cmd, mType)
+            self.__register_macro(definition, trig, cmd, **kwargs)
 
-    def __register_macro(self, definition, trig, cmd, mType = "glob"):
+    def __register_macro(self, definition, trig, cmd, **kwargs):
         trig = self.__escape_trigger(trig)
+        prio = kwargs.get("prio", 1)
+        mType = kwargs.get("mType", "glob")
         command = ""
 
         if type(cmd) == list:
@@ -21,7 +23,7 @@ class MacroBuilder():
         else:
             command = self.__escape_command(cmd)
 
-        self.mud.eval(definition % (mType, trig, command))
+        self.mud.eval(definition % (prio, mType, trig, command))
 
     def __escape_trigger(self, trig):
         trig = trig.replace("$", "\$")

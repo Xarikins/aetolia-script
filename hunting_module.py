@@ -11,7 +11,7 @@ class HuntingModule(Module, PromptListener):
 
         self.attack_spamguard = SpamGuard(2)
         self.step_spamguard = SpamGuard(0.2)
-        self.notarget_spamguard = SpamGuard(1)
+        self.notarget_spamguard = SpamGuard(0.2)
 
         self.path = path.Path(self.mud)
         self.next_move = None
@@ -47,8 +47,9 @@ class HuntingModule(Module, PromptListener):
             "^(An .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
             })
 
-        self.state["callback_handler"].registerCallback(self.registered_attack)
-        self.mud.eval("/def -waetolia -p2 -F -mregexp -t'^You use Dhuriv .+ on .+\\\\.\$' = /python_call main.cb registered_attack")
+        self.state["trigger_builder"].build({
+            "^You use Dhuriv .+ on .+\.$": self.registered_attack,
+            })
 
     def parse_prompt(self, line):
         if not self.state["mode"]["bashing"] or not self.next_move:
@@ -113,6 +114,7 @@ class HuntingModule(Module, PromptListener):
 
     def at(self):
         attack = "/send qeb dhuriv combo %s throatcrush heartbreaker" % self.state["combat"]["target"]
+        self.notarget_spamguard.reset()
         self.mud.eval(attack)
 
     def toggle_bash(self):

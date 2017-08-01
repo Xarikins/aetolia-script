@@ -55,7 +55,7 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.__trigger_dhuriv_attack,
                 "arg": "'%P1' '%P2'",
                 },
-            })
+            }, prio=2)
 
     def __trigger_dhuriv_attack(self, attack, target):
         attack = attack.lower()

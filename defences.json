@@ -108,6 +108,18 @@
 		"defence_line": "You are blind."
 	},
 	{
+		"name": "vigor",
+		"special": "sip vigor",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You have been invigorated with strength."
+	},
+	{
 		"name": "deafness",
 		"special": "",
 		"pill": "ototoxin",
