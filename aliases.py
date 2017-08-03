@@ -39,7 +39,7 @@ ALIAS_LIST = {
         "cs *": "/send clan switch %2",
 
         # Item handling
-        "pipeup": ";".join([
+        "pu": ";".join([
             "outc reishi",
             "outc yarrow",
             "outc willow",
