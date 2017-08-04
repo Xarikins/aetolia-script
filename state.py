@@ -40,6 +40,7 @@ def new():
     return {
             "combat": {
                 "target": "",
+                "target_affs": [],
                 },
             "player": player,
             "mode": {

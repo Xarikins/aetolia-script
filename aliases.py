@@ -29,9 +29,9 @@ ALIAS_LIST = {
             "/send quit"
             ],
         "fs *": "farsee %2",
-        "wi *": "web invite %2",
-        "wa": "web accept",
-        "wq": "web quit",
+        "wi *": "/send web invite %2",
+        "wa": "/send web accept",
+        "wq": "/send web quit",
         "su": "survey",
         "setup tent": "outc 3 cloth;outc 3 rope;outc 3 wood;tent setup",
         "campfire": "outc 3 wood;campfire build;incall",
@@ -70,6 +70,9 @@ ALIAS_LIST = {
                 "q camo",
                 ],
         "camo": "qeb camouflage",
+
+        # Shopping
+        "buy cask*": "buy refill from %2 into fluidcache",
 
         # Emotes
         "pants *": "/send emote suddenly sneaks up behind \\$\%2 and in a rapid motion pulls down \\$\%2_\%3 pants for all to see"

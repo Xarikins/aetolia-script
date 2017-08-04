@@ -16,6 +16,7 @@ import statusbar_module
 import queue_module
 import aff_tracker_module
 import target_skills_module
+import combat_attacks_module
 
 def build_modules(state):
     reload(prompt)
@@ -34,6 +35,7 @@ def build_modules(state):
     reload(queue_module)
     reload(aff_tracker_module)
     reload(target_skills_module)
+    reload(combat_attacks_module)
 
     combat_mod = combat.CombatModule(state)
     hunting_mod = hunting_module.HuntingModule(state)
@@ -55,5 +57,6 @@ def build_modules(state):
     modules.append(queue_module.QueueModule(state))
     modules.append(aff_tracker_module.AffTrackerModule(state))
     modules.append(target_skills_module.TargetSkillsModule(state))
+    modules.append(combat_attacks_module.CombatAttacksModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

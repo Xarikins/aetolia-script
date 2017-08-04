@@ -35,6 +35,10 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.__clear_aff,
                 "arg": "'%P2' '%P1'",
                 },
+            "^You discern that (\w+) has resisted the (.+) affliction\.$": {
+                "fun": self.__clear_aff,
+                "arg": "'%P2' '%P1'",
+                },
             "^(\w+) presses a (\w+) poultice against \w+ (.+), rubbing the poultice into \w+ flesh\.$": {
                 "fun": self.__register_poultice,
                 "arg": "'%P2' '%P1' '%P3'",
@@ -43,7 +47,7 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.__register_smoke,
                 "arg": "'%P2' '%P1'",
                 },
-            "^(\w+) swallows a (\w+) pill\.$": {
+            "^(\w+) swallows .+ (\w+) pill\.$": {
                 "fun": self.__register_pill,
                 "arg": "'%P2' '%P1'",
                 },
@@ -54,6 +58,10 @@ class AffTrackerModule(Module, PromptListener):
             "^You use Dhuriv (\w+) on (\w+)\.$": {
                 "fun": self.__trigger_dhuriv_attack,
                 "arg": "'%P1' '%P2'",
+                },
+            "^You discern that a layer of (\w+) has rubbed off your weapon\.$": {
+                "fun": self.venom_afflict,
+                "arg": "'%P1'",
                 },
             }, prio=2)
 
@@ -72,9 +80,9 @@ class AffTrackerModule(Module, PromptListener):
 
     def __get_affs_for(self, target):
         target = target.lower()
-        if target in self.target_afflictions:
-            return self.target_afflictions[target]
-        return None
+        if not target in self.target_afflictions:
+            self.target_afflictions[target] = AfflictionContainer()
+        return self.target_afflictions[target]
 
     def __register_pill(self, pill, target):
         affs = self.__get_affs_for(target)
@@ -86,8 +94,12 @@ class AffTrackerModule(Module, PromptListener):
 
     def __register_poultice(self, poultice, target, limb = ""):
         affs = self.__get_affs_for(target)
-        if limb == skin:
+
+        if limb == "skin":
             limb = ""
+        else:
+            limb += "."
+
         if affs and affs.get_poultice():
             for a in affs.get_poultice().values():
                 if a["poultice"] == poultice and a["body_part"] == limb:
@@ -97,7 +109,7 @@ class AffTrackerModule(Module, PromptListener):
     def __register_smoke(self, herb, target):
         affs = self.__get_affs_for(target)
         if affs and affs.get_smoke():
-            for a in affs.get_poultice().values():
+            for a in affs.get_smoke().values():
                 if a["smoke"] == smoke:
                     affs.deactivate(a["name"])
                     return
@@ -114,16 +126,14 @@ class AffTrackerModule(Module, PromptListener):
             if affliction_deregistered:
                 break
 
+        self.__print_target_affs(target)
+
     def __register_aff(self, aff, target = ""):
         if not target:
             target = self.state["combat"]["target"]
         target = target.lower()
 
-
-        if not target in self.target_afflictions:
-            self.target_afflictions[target] = AfflictionContainer()
-
-        target_affs = self.target_afflictions[target]
+        target_affs = self.__get_affs_for(target)
         affliction_registered = False
         for i in self.AFFLICTION_MANIPULATORS:
             if i == None:
@@ -137,12 +147,50 @@ class AffTrackerModule(Module, PromptListener):
         if not affliction_registered:
             self.mud.warn("No affliction '%s' found" % aff)
 
+        self.__print_target_affs(target)
+
+    def __print_target_affs(self, target):
+        affs = self.__get_affs_for(target)
+        self.mud.echop("@{Cgreen}%s afflictions: [@{Cred} %s @{Cgreen}]@{n}" % (target, ", ".join(affs.get_active())))
 
     def clear_target_affs(self):
         self.target_afflictions = {}
+
+    def venom_afflict(self, venom):
+        target = self.state["combat"]["target"]
+        t_affs = self.__get_affs_for(target).get_active()
+        
+        if venom == "epteth":
+            if "left_arm_broken" in t_affs:
+                self.__register_aff("right_arm_broken")
+            else:
+                self.__register_aff("left_arm_broken")
+        elif venom == "epseth":
+            if "left_leg_broken" in t_affs:
+                self.__register_aff("right_leg_broken")
+            else:
+                self.__register_aff("left_leg_broken")
+        elif venom == "aconite":
+            self.__register_aff("stupidity")
+        elif venom == "xentio":
+            self.__register_aff("confusion")
+        elif venom == "kalmia":
+            self.__register_aff("asthma")
+        elif venom == "gecko":
+            self.__register_aff("slickness")
+        elif venom == "slike":
+            self.__register_aff("anorexia")
+        elif venom == "curare":
+            self.__register_aff("paralysis")
+        else:
+            self.mud.warn("Unknown venom: %s" % venom)
 
     def parse_prompt(self, line):
         target = self.state["combat"]["target"]
         if target in self.target_afflictions:
             affs = self.target_afflictions[target]
+            self.state["combat"]["target_affs"] = affs.get_active()
             self.mud.eval("/set target_affs=%s" % " ".join(affs.get_active()))
+        else:
+            self.state["combat"]["target_affs"] = []
+            self.mud.eval("/set target_affs=")

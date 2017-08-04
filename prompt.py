@@ -9,7 +9,7 @@ class PromptParser(Module, PromptListener):
     def parse_prompt(self, prompt):
         match = self.CPATTERN.match(prompt)
         if not match:
-            self.mud.out("Unmatched prompt: %s" % prompt)
+            #self.mud.out("Unmatched prompt: %s" % prompt)
             return
 
         player = self.state["player"]

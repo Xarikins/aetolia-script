@@ -180,6 +180,18 @@
 		"defence_line": "You are hardened against the cold."
 	},
 	{
+		"name": "fitness",
+		"special": "fitness",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": true,
+		"balance_take": true,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "You are utilising your bodily control to make yourself more fit."
+	},
+	{
 		"name": "foreststride",
 		"special": "foreststride",
 		"pill": "",
@@ -204,8 +216,8 @@
 		"defence_line": "You are sapping the life energy of others."
 	},
 	{
-		"name": "clarity",
-		"special": "clarity",
+		"name": "flexibility",
+		"special": "flexibility",
 		"pill": "",
 		"poultice": "",
 		"smoke": "",
@@ -213,7 +225,7 @@
 		"balance_take": true,
 		"combat_defence": false,
 		"cure_delay": 0,
-		"defence_line": "Your mind is filled with clarity."
+		"defence_line": "Your flexibility allows you to unentangle more easily."
 	},
 	{
 		"name": "cloak",
