@@ -31,6 +31,10 @@ class GmcpModule(Module, PromptListener):
         self.state["callback_handler"].registerCallback(self.handle_gmcp)
         self.state["callback_handler"].registerCallback(self.register_gmcp)
 
+        self.state["alias_builder"].build({
+            "gmcp_dump": self.dump_gmcp
+            })
+
     def parse_prompt(self, line):
         if self.gmcp_count:
             return
@@ -56,6 +60,11 @@ class GmcpModule(Module, PromptListener):
         else:
             self.state["gmcp"][key] = data
             self.update_state()
+
+    def dump_gmcp(self):
+        self.mud.info("Dumping GMCP to gmcp_dump.json")
+        with open("gmcp_dump.json", "w") as f:
+            f.write(json.dumps(self.state["gmcp"], indent=4, sort_keys=True, separators=(",",": ")))
 
     def update_state(self):
         if not self.gmcp_count:

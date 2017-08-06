@@ -101,6 +101,7 @@ class HuntingModule(Module, PromptListener):
             self.step_spamguard.lock()
             step = self.path.get_next()
             self.mud.info("Auto stepping, %d steps left" % len(self.path))
+            self.mud.eval("ms")
             self.mud.send(step)
             self.mud.send("info here")
             self.next_move = None

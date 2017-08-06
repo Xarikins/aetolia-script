@@ -39,7 +39,7 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.__clear_aff,
                 "arg": "'%P2' '%P1'",
                 },
-            "^(\w+) presses a (\w+) poultice against \w+ (.+), rubbing the poultice into \w+ flesh\.$": {
+            "^(\w+) presses \w+ (\w+) poultice against \w+ (.+), rubbing the poultice into \w+ flesh\.$": {
                 "fun": self.__register_poultice,
                 "arg": "'%P2' '%P1' '%P3'",
                 },
@@ -63,6 +63,7 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.venom_afflict,
                 "arg": "'%P1'",
                 },
+            #"^A look of extreme focus crosses the face of (\w+)\.$":
             }, prio=2)
 
     def __trigger_dhuriv_attack(self, attack, target):
@@ -85,14 +86,16 @@ class AffTrackerModule(Module, PromptListener):
         return self.target_afflictions[target]
 
     def __register_pill(self, pill, target):
+        self.mud.info("PILL: %s" % pill)
         affs = self.__get_affs_for(target)
         if affs and affs.get_pill():
             for a in affs.get_pill().values():
                 if a["pill"] == pill:
-                    affs.deactivate(a["name"])
+                    self.__clear_aff(a["name"], target)
                     return
 
     def __register_poultice(self, poultice, target, limb = ""):
+        self.mud.info("POULTICE: %s %s" % (poultice, limb))
         affs = self.__get_affs_for(target)
 
         if limb == "skin":
@@ -103,15 +106,16 @@ class AffTrackerModule(Module, PromptListener):
         if affs and affs.get_poultice():
             for a in affs.get_poultice().values():
                 if a["poultice"] == poultice and a["body_part"] == limb:
-                    affs.deactivate(a["name"])
+                    self.__clear_aff(a["name"], target)
                     return
 
     def __register_smoke(self, herb, target):
+        self.mud.info("SMOKE: %s" % herb)
         affs = self.__get_affs_for(target)
         if affs and affs.get_smoke():
             for a in affs.get_smoke().values():
-                if a["smoke"] == smoke:
-                    affs.deactivate(a["name"])
+                if a["smoke"] == herb:
+                    self.__clear_aff(a["name"], target)
                     return
 
     def __clear_aff(self, aff, target):
