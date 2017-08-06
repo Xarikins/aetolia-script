@@ -181,7 +181,7 @@ class AffTrackerModule(Module, PromptListener):
         elif venom == "slike":
             self.__register_aff("anorexia")
         elif venom == "curare":
-            self.__register_aff("paralysis")
+            self.__register_aff("paresis")
         else:
             self.mud.warn("Unknown venom: %s" % venom)
 
