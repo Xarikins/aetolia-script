@@ -41,6 +41,7 @@ def new():
             "combat": {
                 "target": "",
                 "target_affs": [],
+                "target_rebounding": False,
                 },
             "player": player,
             "mode": {

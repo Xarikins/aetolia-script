@@ -9,18 +9,21 @@ class CombatAttacksModule(Module, PromptListener):
         self.auto_hit = False
         
         self.required_affs = [
-                ("stupidity", "aconite"),
                 ("paralysis", "curare"),
                 ("anorexia", "slike"),
+                ("stupidity", "aconite"),
                 ("asthma", "kalmia"),
                 ("slickness", "gecko"),
                 ("confusion", "xentio"),
                 ("left_leg_broken", "epseth"),
                 ("right_leg_broken", "epseth"),
+                ("left_arm_broken", "epteth"),
+                ("right_arm_broken", "epteth"),
                 ]
 
         self.state["alias_builder"].build({
             "hit": self.hit,
+            "raz": self.dualraze,
             "ah": self.toggle_auto_hit,
             "vlock": self.venom_lock,
             "spc": self.spinecut,
@@ -45,13 +48,23 @@ class CombatAttacksModule(Module, PromptListener):
 
         return (aff1, aff2)
 
+    def dualraze(self):
+        self.mud.send("dhuriv dualraze %s" % self.state["combat"]["target"])
+
     def hit(self):
         affs = self.get_afflictions()
-        if len(affs) > 1:
+        if self.state["combat"]["target_rebounding"]:
             commands = [
                     "qeb wipe dhurive",
                     "envenom dhurive with %s" % affs[0][1],
+                    "dhuriv combo %s reave thrust" % self.state["combat"]["target"]
+                    ]
+            self.mud.send(";".join(commands))
+        elif len(affs) > 1:
+            commands = [
+                    "qeb wipe dhurive",
                     "envenom dhurive with %s" % affs[1][1],
+                    "envenom dhurive with %s" % affs[0][1],
                     "dhuriv combo %s slash stab" % self.state["combat"]["target"]
                     ]
             self.mud.send(";".join(commands))
