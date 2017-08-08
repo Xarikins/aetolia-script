@@ -1,4 +1,5 @@
 import mud_wrapper as tf
+import json
 
 class Communicator():
 
@@ -25,6 +26,13 @@ class Communicator():
 
     def panic(self, msg):
         self.print_box(msg, "red")
+
+    def gmcp(self, key, body):
+        payload = body
+        if type(body) == dict or type(body) == list:
+            payload = json.dumps(body)
+        payload = payload.replace("\"", "\\\\\"")
+        tf.eval('/test gmcp(\\"%s %s\\")' % (key, payload))
 
     def print_box(self, msg, color):
         border = "+-" + ("-" * len(msg)) + "-+"

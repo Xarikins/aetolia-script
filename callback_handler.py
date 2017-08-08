@@ -5,6 +5,7 @@ class CallbackHandler():
     def __init__(self):
         self.callbacks = {}
         self.sources = {}
+        self.gmcp_callbacks = {}
 
     def registerCallback(self, function):
         name = function.__name__
@@ -18,3 +19,15 @@ class CallbackHandler():
             return
         else:
             self.callbacks[name](*arguments)
+
+    def registerGmcpCallback(self, key, function):
+        if key not in self.gmcp_callbacks:
+            self.gmcp_callbacks[key] = []
+        self.gmcp_callbacks[key].append(function)
+
+    def triggerGmcpCallback(self, key, body):
+        if key not in self.gmcp_callbacks:
+            return
+        for fun in self.gmcp_callbacks[key]:
+            fun(body)
+

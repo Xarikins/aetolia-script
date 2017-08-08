@@ -37,6 +37,7 @@ ALIAS_LIST = {
         "campfire": "outc 3 wood;campfire build;incall",
         "stoke": "outc 1 wood;campfire stoke;incall",
         "cs *": "/send clan switch %2",
+        "letter": "/send get letter from satchel",
 
         # Item handling
         "pu": ";".join([

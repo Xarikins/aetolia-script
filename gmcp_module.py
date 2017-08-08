@@ -17,6 +17,7 @@ class GmcpModule(Module, PromptListener):
             "Comm.Channel 1",
             "Char.Afflictions 1",
             "Char.Defences 1",
+            "IRE.Composer 1",
             ]
 
     def __init__(self, *args):
@@ -45,8 +46,8 @@ class GmcpModule(Module, PromptListener):
 
     def register_gmcp(self):
         self.mud.info("Registering for GMCP")
-        self.mud.eval('/test gmcp(\\"Core.Hello %s\\")' % json.dumps(self.client_data).replace("\"", "\\\\\""))
-        self.mud.eval('/test gmcp(\\"Core.Supports.Set %s\\")' % json.dumps(self.support_data).replace("\"", "\\\\\""))
+        self.mud.gmcp("Core.Hello", self.client_data)
+        self.mud.gmcp("Core.Supports.Set", self.support_data)
 
     def handle_gmcp(self, *payloads):
         payload = " ".join(payloads)
@@ -55,21 +56,13 @@ class GmcpModule(Module, PromptListener):
         key = lines[0]
         package = lines[1]
         data = json.loads(package)
+        self.state["callback_handler"].triggerGmcpCallback(key, data)
         if key == "Comm.Channel.Text":
             self.message_client.send(data["text"])
         else:
             self.state["gmcp"][key] = data
-            self.update_state()
 
     def dump_gmcp(self):
         self.mud.info("Dumping GMCP to gmcp_dump.json")
         with open("gmcp_dump.json", "w") as f:
             f.write(json.dumps(self.state["gmcp"], indent=4, sort_keys=True, separators=(",",": ")))
-
-    def update_state(self):
-        if not self.gmcp_count:
-            return
-
-        vitals = self.state["gmcp"]["Char.Vitals"]
-        self.state["player"]["mounted"] = bool(int(vitals["mounted"]))
-        self.state["player"]["writhing"] = bool(int(vitals["writhing"]))

@@ -6,6 +6,12 @@ class PromptParser(Module, PromptListener):
     PATTERN = "^H\:(\d+) M\:(\d+) Mad\:\d+% Bl\: (\d+) XP:\d+% \[(.+)\]$"
     CPATTERN = re.compile(PATTERN)
 
+    def __init__(self, *args):
+        super(PromptParser, self).__init__(*args)
+
+        self.state["callback_handler"].registerGmcpCallback(\
+                "Char.Vitals", self.update_gmcp_state)
+
     def parse_prompt(self, prompt):
         match = self.CPATTERN.match(prompt)
         if not match:
@@ -35,3 +41,8 @@ class PromptParser(Module, PromptListener):
         player["rbalance"] = "r" in stats[index]
 
         #print(str(player))
+
+    def update_gmcp_state(self, vitals):
+        self.state["player"]["mounted"] = bool(int(vitals["mounted"]))
+        self.state["player"]["writhing"] = bool(int(vitals["writhing"]))
+
