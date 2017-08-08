@@ -1,6 +1,6 @@
 from core.module import Module
 import tempfile
-from subprocess import run
+from subprocess import call
 
 class ComposerModule(Module):
 
@@ -23,8 +23,11 @@ class ComposerModule(Module):
         self.mud.out(text)
 
         with tempfile.NamedTemporaryFile(suffix=".txt") as tf:
+            self.filename = tf.name
+            self.mud.out("Created tempfile: %s" % self.filename)
             tf.write(text)
-            run(["gvim", tf.name])
+            tf.flush()
+            call(["gvim", tf.name])
 
     def send_buffer(self):
         if not self.filename:

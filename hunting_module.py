@@ -45,6 +45,7 @@ class HuntingModule(Module, PromptListener):
             "^The final blow proves too much for .+$": self.registered_kill,
             "^(A .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
             "^(An .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
+            "^Your vision distorts briefly, light scattering subtly as ylem energy diffuses into the surrounding atmosphere\.$": self.registered_ylem,
             })
 
         self.state["trigger_builder"].build({
@@ -77,7 +78,7 @@ class HuntingModule(Module, PromptListener):
         self.mud.send("info here")
 
     def registered_kill(self):
-        if self.state["mode"]["bashing"]:
+        if self.state["mode"]["bashing"] and not self.next_move:
             self.mud.info("Checking for new target")
             self.next_move = self.check_for_target
 
@@ -133,3 +134,11 @@ class HuntingModule(Module, PromptListener):
 
     def load_path(self, name):
         self.path.load(name)
+
+    def registered_ylem(self):
+        self.mud.info("Absorbing ylem next")
+        self.next_move = self.absorb_ylem
+
+    def absorb_ylem(self):
+        self.mud.send("absorb ylem")
+        self.next_move = self.check_for_target

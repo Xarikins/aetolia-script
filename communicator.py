@@ -28,9 +28,11 @@ class Communicator():
         self.print_box(msg, "red")
 
     def gmcp(self, key, body):
-        payload = body
         if type(body) == dict or type(body) == list:
             payload = json.dumps(body)
+        else:
+            payload = "\"%s\"" % body
+
         payload = payload.replace("\"", "\\\\\"")
         tf.eval('/test gmcp(\\"%s %s\\")' % (key, payload))
 
