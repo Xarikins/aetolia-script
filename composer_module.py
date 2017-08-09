@@ -1,6 +1,7 @@
 from core.module import Module
-import tempfile
 from subprocess import call
+import tempfile
+import state
 
 class ComposerModule(Module):
 
@@ -22,12 +23,13 @@ class ComposerModule(Module):
         self.mud.out("Received text:")
         self.mud.out(text)
 
-        with tempfile.NamedTemporaryFile(suffix=".txt") as tf:
+        with tempfile.NamedTemporaryFile(suffix=".txt", mode="wt") as tf:
             self.filename = tf.name
             self.mud.out("Created tempfile: %s" % self.filename)
             tf.write(text)
             tf.flush()
             call(["gvim", tf.name])
+            tf.seek(0)
 
     def send_buffer(self):
         if not self.filename:
@@ -38,3 +40,7 @@ class ComposerModule(Module):
             self.mud.out("Written content: %s" % content)
             self.mud.gmcp("IRE.Composer.SetBuffer", content)
 
+if __name__ == "__main__":
+    st = state.new()
+    comp = ComposerModule(st)
+    comp.content_received({"title": "Title", "text": "Some random content"})
