@@ -15,6 +15,10 @@ class CombatHiliteModule(Module):
                     self.__info_definition("'%P1 lost fangbarrier'"),
             "^You recognize the song as a signal from a Sentinel\:$": \
                     self.__info_definition("'Sentinel signal:'"),
+            "^(\w+) appears suddenly in your location, looking disoriented\.$": \
+                    self.__info_definition("'%P1 summoned'"),
+            "^Your pipe is now empty\.$": \
+                    self.__warn_definition("'PIPE EMPTY'"),
             })
 
     def __warn_definition(self, args):

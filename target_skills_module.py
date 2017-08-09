@@ -5,10 +5,12 @@ class TargetSkillsModule(Module):
     def __init__(self, *args):
         super(TargetSkillsModule, self).__init__(*args)
 
-        self.register("tp", "touch prism")
-        self.register("braz", "touch brazier")
-        self.register("web", "touch web")
-        self.register("ten", "touch tentacle")
+        self.register("tp", "qeb touch prism")
+        self.register("braz", "qeb touch brazier")
+        self.register("web", "qeb touch web")
+        self.register("ten", "qeb touch tentacle")
+
+        self.register("comb", "qeb resin combust")
         
     def register(self, alias, skill):
         data = {}

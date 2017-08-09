@@ -7,11 +7,12 @@ ALIAS_LIST = {
         "reload": "/python_call main.reinstall",
 
         # Weapons
-        "dhurive": ["unwield sickle", "wield dhurive"],
+        "dhurive": ["secure sickle", "wield dhurive"],
         "sickle": ["secure weapon", "wield sickle"],
 
         # Emotes
         "hb *": "/send heartbeat %2",
+        "hb": "/send heartbeat",
 
         # Misc
         "sc": "sacrifice corpses",

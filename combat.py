@@ -26,11 +26,15 @@ class CombatModule(Module):
                 "launch": "outc 1 rope;outc 1 wood;lay launcher here",
                 "dis *": "disarm trap %2",
                 "sh *": { "fun": self.shoot, "arg": "%2" },
+                "pow *": { "fun": self.powershot, "arg": "%2" },
                 "qs": self.quickshot,
+                "fis *": {"fun": self.fireshot, "arg": "%2" },
                 "ct": "qeb crossbow targets",
                 "sh": self.snipe,
                 "resin *": {"fun": self.set_resin, "arg": "%2"},
                 "noresin": self.no_resin,
+
+                # Misc
                 "ts": "qeb touch shield",
                 "en *": "enemy %2",
                 "en": self.enemy_target,
@@ -87,6 +91,10 @@ class CombatModule(Module):
         self.load_crossbow()
         self.mud.send("qeb crossbow shoot %s %s" % (self.state["combat"]["target"], direction))
 
+    def powershot(self, direction):
+        self.load_crossbow()
+        self.mud.send("qeb crossbow powershoot %s %s" % (self.state["combat"]["target"], direction))
+
     def snipe(self):
         self.load_crossbow()
         self.mud.send("qeb crossbow shoot %s" % self.state["combat"]["target"])
@@ -94,6 +102,10 @@ class CombatModule(Module):
     def quickshot(self):
         self.load_crossbow()
         self.mud.send("qeb crossbow quickshoot %s" % self.state["combat"]["target"])
+
+    def fireshot(self, direction):
+        self.load_crossbow()
+        self.mud.send("qeb crossbow fireshoot %s %s" % (self.state["combat"]["target"], direction))
 
     def slam_slit(self):
         attack = "/send qeb dhuriv combo %s slam slit" % self.state["combat"]["target"]
