@@ -6,10 +6,6 @@ ALIAS_LIST = {
         # Script handling
         "reload": "/python_call main.reinstall",
 
-        # Weapons
-        "dhurive": ["secure sickle", "wield dhurive"],
-        "sickle": ["secure weapon", "wield sickle"],
-
         # Emotes
         "hb *": "/send heartbeat %2",
         "hb": "/send heartbeat",
@@ -75,6 +71,7 @@ ALIAS_LIST = {
 
         # Shopping
         "buy cask*": "buy refill from %2 into fluidcache",
+        "refill *": "buy refill from %2 into fluidcache",
 
         # Emotes
         "pants *": "/send emote suddenly sneaks up behind \\$\%2 and in a rapid motion pulls down \\$\%2_\%3 pants for all to see"

@@ -19,6 +19,8 @@ class CombatHiliteModule(Module):
                     self.__info_definition("'%P1 summoned'"),
             "^Your pipe is now empty\.$": \
                     self.__warn_definition("'PIPE EMPTY'"),
+            "^You raise your gauntlet, extending your fingers and allowing the latent ylem around you to absorb into the reserve chambers\.$": \
+                    self.__info_definition("'ABSORBED YLEM'"),
             })
 
     def __warn_definition(self, args):

@@ -8,12 +8,12 @@ class CombatAttacksModule(Module, PromptListener):
 
         self.auto_hit = False
         
-        self.required_affs = [
-                ("paralysis", "curare"),
-                ("anorexia", "slike"),
+        self.locking_affs = [
                 ("stupidity", "aconite"),
-                ("asthma", "kalmia"),
+                ("anorexia", "slike"),
                 ("slickness", "gecko"),
+                ("paresis", "curare"),
+                ("asthma", "kalmia"),
                 ("confusion", "xentio"),
                 ("left_leg_broken", "epseth"),
                 ("right_leg_broken", "epseth"),
@@ -21,13 +21,37 @@ class CombatAttacksModule(Module, PromptListener):
                 ("right_arm_broken", "epteth"),
                 ]
 
+        self.salve_affs = [
+                ("left_leg_broken", "epseth"),
+                ("right_leg_broken", "epseth"),
+                ("left_arm_broken", "epteth"),
+                ("right_arm_broken", "epteth"),
+                ("paresis", "curare"),
+                ("slickness", "gecko"),
+                ("paresis", "curare"),
+                ("asthma", "kalmia"),
+                ("confusion", "xentio"),
+                ]
+
+        self.current_affs = self.locking_affs
+
         self.state["alias_builder"].build({
             "hit": self.hit,
             "raz": self.dualraze,
             "ah": self.toggle_auto_hit,
             "vlock": self.venom_lock,
             "spc": self.spinecut,
+            "fsalve": self.use_salve_affs,
+            "freg": self.use_locking_affs,
             })
+
+    def use_salve_affs(self):
+        self.mud.info("Using salve affliction scheme")
+        self.current_affs = self.salve_affs
+
+    def use_locking_affs(self):
+        self.mud.info("Using locking affliction scheme")
+        self.current_affs = self.locking_affs
 
     def toggle_auto_hit(self):
         self.auto_hit = not self.auto_hit
@@ -37,7 +61,7 @@ class CombatAttacksModule(Module, PromptListener):
         affs = self.state["combat"]["target_affs"]
         aff1 = ""
         aff2 = ""
-        for affliction in self.required_affs:
+        for affliction in self.current_affs:
             aff = affliction[0]
             if aff not in affs:
                 if not aff1:

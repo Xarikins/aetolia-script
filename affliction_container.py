@@ -11,10 +11,26 @@ class AfflictionContainer():
         self.smoke_afflictions = {}
         self.writhe_afflictions = {}
         self.__load_afflictions()
+        self.predictions = set([])
 
-        self.afflict_trigger = re.compile("^You are afflicted with (.+)\.$")
-        self.discover_trigger = re.compile("^You have discovered (.+)\.$")
-        self.cure_trigger = re.compile("^You have cured (.+)\.$")
+        self.group_triggers = [
+                (re.compile("^You are afflicted with (.+)\.$"), self.activate),
+                (re.compile("^You have discovered (.+)\.$"), self.activate),
+                (re.compile("^You have cured (.+)\.$"), self.deactivate),
+                ]
+        self.triggers = [
+                (re.compile("^You are\:$"), self.clear_all_affs),
+                ]
+        self.predict_triggers = [
+                (re.compile("^The Sun tarot is shadowed by the sickly glow of the Eclipse\.$"), [
+                    "paresis",
+                    "asthma"
+                    ]),
+                (re.compile("^The Moon tarot is shadowed by the sickly glow of the Eclipse\.$"), [
+                    "stupidity",
+                    "anorexia"
+                    ]),
+                ]
 
 
     def __load_afflictions(self):
@@ -40,6 +56,8 @@ class AfflictionContainer():
         if aff["special"] == "writhe":
             self.writhe_afflictions[name] = aff
 
+        self.unpredict(aff)
+
         return True
 
     def deactivate(self, name):
@@ -57,21 +75,41 @@ class AfflictionContainer():
         if aff["special"] == "writhe":
             del self.writhe_afflictions[name]
 
+        self.unpredict(aff)
+
         return True
 
+    def clear_all_affs(self):
+        for aff in self.get_active().keys():
+            self.deactivate(aff)
+
+    def predict(self, aff):
+        if aff in self.predictions:
+            return
+        self.predictions.append(aff)
+        self.mud.send("firstaid predict %s" % aff)
+
+    def unpredict(self, aff):
+        if aff in self.predictions:
+            del self.predictions[aff]
+
     def parse_line(self, line):
-        match = self.afflict_trigger.match(line)
-        if (match):
-            self.activate(match.group(1))
-            return
-        match = self.discover_trigger.match(line)
-        if (match):
-            self.activate(match.group(1))
-            return
-        match = self.cure_trigger.match(line)
-        if (match):
-            self.deactivate(match.group(1))
-            return
+        for trig in self.group_triggers:
+            match = trig[0].match(line)
+            if (match):
+                trig[1](match.group(1))
+                return
+        for trig in self.triggers:
+            match = trig[0].match(line)
+            if (match):
+                trig[1]()
+                return
+        for trig in self.predict_triggers:
+            match = trig[0].match(line)
+            if (match):
+                for aff in trig[1]:
+                    self.predict(aff)
+                return
 
     def get_active(self):
         return self.active_afflictions

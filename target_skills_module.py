@@ -11,6 +11,10 @@ class TargetSkillsModule(Module):
         self.register("ten", "qeb touch tentacle")
 
         self.register("comb", "qeb resin combust")
+        self.register("lp", "qeb dhuriv pierce <target> left")
+        self.register("rp", "qeb dhuriv pierce <target> right")
+        self.register("ls", "qeb dhuriv sever <target> left")
+        self.register("rs", "qeb dhuriv sever <target> right")
         
     def register(self, alias, skill):
         data = {}
@@ -31,4 +35,9 @@ class TargetSkillsModule(Module):
         if not target:
             target = self.state["combat"]["target"]
 
-        self.mud.send("%s %s" % (skill, target))
+        if "<target>" in skill:
+            skill = skill.replace("<target>", target)
+        else:
+            skill += " %s" % target
+
+        self.mud.send(skill)

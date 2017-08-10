@@ -1,5 +1,5 @@
 from core.module import Module
-from subprocess import call
+from subprocess import run
 import tempfile
 import state
 
@@ -28,7 +28,7 @@ class ComposerModule(Module):
             self.mud.out("Created tempfile: %s" % self.filename)
             tf.write(text)
             tf.flush()
-            call(["gvim", tf.name])
+            run(["gvim", tf.name])
             tf.seek(0)
 
     def send_buffer(self):

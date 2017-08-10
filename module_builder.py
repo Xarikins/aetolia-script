@@ -18,6 +18,7 @@ import aff_tracker_module
 import target_skills_module
 import combat_attacks_module
 import composer_module
+import wield_module
 
 def build_modules(state):
     reload(prompt)
@@ -38,6 +39,7 @@ def build_modules(state):
     reload(target_skills_module)
     reload(combat_attacks_module)
     reload(composer_module)
+    reload(wield_module)
 
     combat_mod = combat.CombatModule(state)
     hunting_mod = hunting_module.HuntingModule(state)
@@ -61,5 +63,6 @@ def build_modules(state):
     modules.append(target_skills_module.TargetSkillsModule(state))
     modules.append(combat_attacks_module.CombatAttacksModule(state))
     modules.append(composer_module.ComposerModule(state))
+    modules.append(wield_module.WieldModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

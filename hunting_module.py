@@ -53,7 +53,7 @@ class HuntingModule(Module, PromptListener):
             })
 
     def parse_prompt(self, line):
-        if not self.state["mode"]["bashing"] or not self.next_move:
+        if not self.state["mode"]["bashing"]:
             return
 
         player = self.state["player"]
@@ -84,10 +84,10 @@ class HuntingModule(Module, PromptListener):
 
     def no_target_found(self, target):
         self.mud.info("No target: %s" % target)
-        if not self.notarget_spamguard.locked():
+        if not self.notarget_spamguard.locked() and not self.next_move:
             self.notarget_spamguard.lock()
             self.next_move = self.check_for_target
-        else:
+        elif self.notarget_spamguard.locked():
             self.next_move = self.auto_step
 
     def registered_attack(self):
