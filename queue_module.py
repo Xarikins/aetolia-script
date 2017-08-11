@@ -22,7 +22,6 @@ class QueueModule(Module, PromptListener):
     def __queue_cmd(self, cmd):
         self.state["cmd_queue"].append(cmd)
         self.mud.info("Queued cmd: %s" % cmd)
-        self.trigger()
 
     def __clear_queue(self):
         self.state["cmd_queue"].clear()
@@ -40,4 +39,6 @@ class QueueModule(Module, PromptListener):
 
         if balance and not self.spam_guard.locked():
             self.spam_guard.lock()
-            self.mud.eval(self.state["cmd_queue"].popleft())
+            cmd = self.state["cmd_queue"].popleft()
+            self.mud.info("Popping cmd: %s" % cmd)
+            self.mud.eval(cmd)

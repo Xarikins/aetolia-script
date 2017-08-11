@@ -61,9 +61,9 @@ ALIAS_LIST = {
         "cockatrice": "qeb summon cockatrice",
         "raven": "qeb summon raven",
         "animals": [
-                "q summon nightingale",
+                "summon raccon",
                 "q summon raven",
-                "q summon raloth",
+                "q summon bear",
                 "q summon crocodile",
                 "q camo",
                 ],

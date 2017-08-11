@@ -45,14 +45,14 @@ class InfoParser(Module, LineListener):
             "darkwalker": 10,
             "rojalli": 0,
             "spirit": 0,
+            "rat": 0,
+            "lichosphere": 0,
             }
 
-    def __init__(self, combat_module, hunting_module, *args):
+    def __init__(self, *args):
         super(InfoParser, self).__init__(*args)
         self.running = False
         self.count = 0
-        self.combat_module = combat_module
-        self.hunting_module = hunting_module
         self.prio = -1
         self.selected_target = ""
 
@@ -83,12 +83,12 @@ class InfoParser(Module, LineListener):
     def complete(self):
         self.running = False
         if self.selected_target:
-            self.combat_module.target(self.selected_target)
+            self.mud.eval("x %s" % self.selected_target)
 
         self.selected_target = ""
         self.prio = -1
 
-        self.hunting_module.at()
+        self.mud.eval("at")
 
     def __check_target(self, line):
         for tar, prio in InfoParser.VALID_TARGETS.items():

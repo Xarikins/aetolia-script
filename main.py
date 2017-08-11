@@ -45,8 +45,7 @@ def __arg_split(arg):
 
 def __arg_split_recursion(args):
     if args.startswith("'"):
-        arg_list = args.split("' ", 1)
-        arg_list[0] = arg_list[0][1:]
+        arg_list = args[1:].split("' ", 1)
         if len(arg_list) == 1:
             arg_list[0] = arg_list[0][0:-1]
             return arg_list

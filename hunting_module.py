@@ -55,6 +55,8 @@ class HuntingModule(Module, PromptListener):
     def parse_prompt(self, line):
         if not self.state["mode"]["bashing"]:
             return
+        if self.state["cmd_queue"]:
+            return
 
         player = self.state["player"]
         eq = player["equilibrium"]
@@ -78,16 +80,16 @@ class HuntingModule(Module, PromptListener):
         self.mud.send("info here")
 
     def registered_kill(self):
-        if self.state["mode"]["bashing"] and not self.next_move:
+        if self.state["mode"]["bashing"]:
             self.mud.info("Checking for new target")
             self.next_move = self.check_for_target
 
     def no_target_found(self, target):
         self.mud.info("No target: %s" % target)
-        if not self.notarget_spamguard.locked() and not self.next_move:
+        if not self.notarget_spamguard.locked():
             self.notarget_spamguard.lock()
             self.next_move = self.check_for_target
-        elif self.notarget_spamguard.locked():
+        else:
             self.next_move = self.auto_step
 
     def registered_attack(self):
@@ -136,9 +138,4 @@ class HuntingModule(Module, PromptListener):
         self.path.load(name)
 
     def registered_ylem(self):
-        self.mud.info("Absorbing ylem next")
-        self.next_move = self.absorb_ylem
-
-    def absorb_ylem(self):
-        self.mud.send("absorb ylem")
-        self.next_move = self.check_for_target
+        self.mud.eval("q absorb ylem")

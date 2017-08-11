@@ -56,7 +56,7 @@ class AfflictionContainer():
         if aff["special"] == "writhe":
             self.writhe_afflictions[name] = aff
 
-        self.unpredict(aff)
+        self.unpredict(aff["name"])
 
         return True
 
@@ -75,7 +75,7 @@ class AfflictionContainer():
         if aff["special"] == "writhe":
             del self.writhe_afflictions[name]
 
-        self.unpredict(aff)
+        self.unpredict(aff["name"])
 
         return True
 
