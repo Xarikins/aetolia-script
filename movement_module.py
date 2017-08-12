@@ -47,15 +47,11 @@ class MovementModule(Module):
             "fo *": "/send follow %2",
 
             # Pathing
-            "go not": ["clo", "ms", "/send path track not"],
-            "go duiran": ["clo", "ms", "/send path track duiran"],
-            "go enorian": ["clo", "ms", "/send path track enorian"],
-            "go esterport": ["clo", "ms", "/send path track esterport"],
-            "go tear": ["clo", "/send path track lleistear"],
-            "go ollin": ["clo", "/send path track 19521"],
-            "go fracture": ["clo", "/send path track 10046"],
+            "go tear": ["clo", "/send path find lleistear;path go gallop"],
+            "go ollin": ["clo", "/send path find 19521;path go gallop"],
+            "go fracture": ["clo", "/send path find 10046;path go gallop"],
             "go": ["ms", "/send path go gallop"],
-            "go *": ["ms", "/send say duanathar;path track %2"],
+            "go *": ["ms", "/send say duanathar;path find %2;path go gallop"],
             "pt *": "/send path track %2",
             "pf *": "/send path find %2",
 

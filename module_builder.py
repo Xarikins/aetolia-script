@@ -1,7 +1,7 @@
 from imp import reload
 import prompt
 import combat
-import combat_hilite_module
+import hilite_module
 import info_here_parser
 import affliction_parser
 import curing_module
@@ -19,11 +19,13 @@ import target_skills_module
 import combat_attacks_module
 import composer_module
 import wield_module
+import path_queue_module
+import refining_module
 
 def build_modules(state):
     reload(prompt)
     reload(combat)
-    reload(combat_hilite_module)
+    reload(hilite_module)
     reload(info_here_parser)
     reload(affliction_parser)
     reload(notification_module)
@@ -40,6 +42,8 @@ def build_modules(state):
     reload(combat_attacks_module)
     reload(composer_module)
     reload(wield_module)
+    reload(path_queue_module)
+    reload(refining_module)
 
     combat_mod = combat.CombatModule(state)
     hunting_mod = hunting_module.HuntingModule(state)
@@ -47,7 +51,7 @@ def build_modules(state):
     modules = []
     modules.append(prompt.PromptParser(state))
     modules.append(combat_mod)
-    modules.append(combat_hilite_module.CombatHiliteModule(state))
+    modules.append(hilite_module.HiliteModule(state))
     modules.append(info_here_parser.InfoParser(state))
     modules.append(curing_module.CuringModule(state))
     modules.append(notification_module.NotificationModule(state))
@@ -64,5 +68,7 @@ def build_modules(state):
     modules.append(composer_module.ComposerModule(state))
     modules.append(wield_module.WieldModule(state))
     modules.append(queue_module.QueueModule(state))
+    modules.append(path_queue_module.PathQueueModule(state))
+    modules.append(refining_module.RefiningModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
     return modules

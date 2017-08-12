@@ -1,9 +1,9 @@
 from core.module import Module
 
-class CombatHiliteModule(Module):
+class HiliteModule(Module):
 
     def __init__(self, *args):
-        super(CombatHiliteModule, self).__init__(*args)
+        super(HiliteModule, self).__init__(*args)
 
         self.state["gag_builder"].build({
             "^(\w+) parries the attack on \w+ (.+) with a deft maneuver\.$": self.__warn_definition("%P1 'parried %P2'"),
@@ -21,6 +21,8 @@ class CombatHiliteModule(Module):
                     self.__warn_definition("'PIPE EMPTY'"),
             "^You raise your gauntlet, extending your fingers and allowing the latent ylem around you to absorb into the reserve chambers\.$": \
                     self.__info_definition("'ABSORBED YLEM'"),
+            "^You infuse .+ with \d+ doses of (.+) from your fluidcache\.$": \
+                    self.__info_definition("'Filled %P1'")
             })
 
     def __warn_definition(self, args):
