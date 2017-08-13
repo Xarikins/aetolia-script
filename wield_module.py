@@ -17,7 +17,15 @@ class WieldModule(Module):
             "sickle": {
                 "fun": self.wield,
                 "arg": "sickle",
-                }
+                },
+            "icon": {
+                "fun": self.wield,
+                "arg": "icon",
+                },
+            "wield *": {
+                "fun": self.wield,
+                "arg": "%2",
+                },
         })
 
         self.state["callback_handler"].registerGmcpCallback("Char.Vitals", self.update)
@@ -31,6 +39,8 @@ class WieldModule(Module):
 
     def wield(self, item):
         command = []
+        if item in self.left_hand or item in self.right_hand:
+            return
         if self.left_hand:
             command.append("secure %s" % self.left_hand)
         if self.right_hand:

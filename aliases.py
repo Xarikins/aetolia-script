@@ -53,7 +53,9 @@ ALIAS_LIST = {
         "anabiotic *": "prepare %2 anabiotic",
 
         # Refining
+        "shall": ["icon", "icon whirl"],
         "shackle *": "qe refining shackle %2",
+        "hand in mist": [ "remove gauntlet293814", "give gauntlet293814 to barakin", "qeb wear gauntlet293814"],
 
         # Summoning
         "nightingale": "qeb summon nightingale",
@@ -61,7 +63,7 @@ ALIAS_LIST = {
         "cockatrice": "qeb summon cockatrice",
         "raven": "qeb summon raven",
         "animals": [
-                "summon raccon",
+                "summon raccoon",
                 "q summon raven",
                 "q summon bear",
                 "q summon crocodile",
