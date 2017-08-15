@@ -33,6 +33,7 @@ class CombatModule(Module):
                 "sh": self.snipe,
                 "resin *": {"fun": self.set_resin, "arg": "%2"},
                 "noresin": self.no_resin,
+                "do *": ["divert %2", "dodge %2"],
 
                 # Misc
                 "ts": "qeb touch shield",
@@ -115,6 +116,8 @@ class CombatModule(Module):
         self.state["mode"]["fight"] = not self.state["mode"]["fight"]
         self.mud.info("Fightmode %s" % ("enabled" if self.state["mode"]["fight"] else "disabled"))
         self.mud.eval("/set fighting=%d" % int(self.state["mode"]["fight"]))
+        if self.state["mode"]["fight"]:
+            self.mud.eval("do all")
 
     def toggle_target_listening(self):
         self.target_listening = not self.target_listening

@@ -45,11 +45,12 @@ class HuntingModule(Module, PromptListener):
             "^The final blow proves too much for .+$": self.registered_kill,
             "^(A .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
             "^(An .+) snarls angrily at you and moves in for the kill\.$": aggro_definition,
-            "^Your vision distorts briefly, light scattering subtly as ylem energy diffuses into the surrounding atmosphere\.$": self.registered_ylem,
+            "^Your vision distorts briefly, light scattering subtly as ylem energy diffuses into the surrounding atmosphere\.$": "q absorb ylem",
             })
 
         self.state["trigger_builder"].build({
             "^You use Dhuriv .+ on .+\.$": self.registered_attack,
+            "^Spectral essence tumbles out of the corpse of .+\.$": "q g essence",
             })
 
     def parse_prompt(self, line):
@@ -136,6 +137,3 @@ class HuntingModule(Module, PromptListener):
 
     def load_path(self, name):
         self.path.load(name)
-
-    def registered_ylem(self):
-        self.mud.eval("q absorb ylem")

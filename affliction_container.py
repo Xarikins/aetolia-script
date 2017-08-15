@@ -10,6 +10,7 @@ class AfflictionContainer():
         self.poultice_afflictions = {}
         self.smoke_afflictions = {}
         self.writhe_afflictions = {}
+        self.focus_afflictions = {}
         self.__load_afflictions()
         self.predictions = set([])
 
@@ -55,6 +56,8 @@ class AfflictionContainer():
             self.poultice_afflictions[name] = aff
         if aff["special"] == "writhe":
             self.writhe_afflictions[name] = aff
+        if aff["type"]["mental"]:
+            self.focus_afflictions[name] = aff
 
         self.unpredict(aff["name"])
 
@@ -74,14 +77,21 @@ class AfflictionContainer():
             del self.poultice_afflictions[name]
         if aff["special"] == "writhe":
             del self.writhe_afflictions[name]
+        if aff["type"]["mental"]:
+            del self.focus_afflictions[name]
 
         self.unpredict(aff["name"])
 
         return True
 
     def clear_all_affs(self):
-        for aff in self.get_active().keys():
-            self.deactivate(aff)
+        self.active_afflictions = {}
+        self.smoke_afflictions = {}
+        self.pill_afflictions = {}
+        self.poultice_afflictions = {}
+        self.writhe_afflictions = {}
+        self.focus_afflictions = {}
+        self.predictions = []
 
     def predict(self, aff):
         if aff in self.predictions:
@@ -125,6 +135,9 @@ class AfflictionContainer():
 
     def get_writhe(self):
         return self.writhe_afflictions
+
+    def get_focus(self):
+        return self.focus_afflictions
 
     def __str__(self):
         return " ".join(self.active_afflictions.keys())

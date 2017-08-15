@@ -22,7 +22,9 @@ class HiliteModule(Module):
             "^You raise your gauntlet, extending your fingers and allowing the latent ylem around you to absorb into the reserve chambers\.$": \
                     self.__info_definition("'ABSORBED YLEM'"),
             "^You infuse .+ with \d+ doses of (.+) from your fluidcache\.$": \
-                    self.__info_definition("'Filled %P1'")
+                    self.__info_definition("'Filled %P1'"),
+            "^Your enhanced senses inform you that (\w+) has appeared to the (.+)\.$": self.__warn_definition("'%P1 is %P2'"),
+            "^Your enhanced senses inform you that (\w+) has entered your current location\.$": self.__warn_definition("'%P1 here'"),
             })
 
     def __warn_definition(self, args):

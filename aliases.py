@@ -46,7 +46,6 @@ ALIAS_LIST = {
             "put willow in pipe147400",
             "incall"
             ]),
-        "deathsight": ["outc thanatonin", "eat thanatonin"],
 
         # Herbalism
         "paste *": "prepare %2 paste",

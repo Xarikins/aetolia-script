@@ -120,6 +120,18 @@
 		"defence_line": "You have been invigorated with strength."
 	},
 	{
+		"name": "nightsight",
+		"special": "nightsight",
+		"pill": "",
+		"poultice": "",
+		"smoke": "",
+		"balance_required": false,
+		"balance_take": false,
+		"combat_defence": false,
+		"cure_delay": 0,
+		"defence_line": "Your vision is heightened to see in the dark."
+	},
+	{
 		"name": "deafness",
 		"special": "",
 		"pill": "ototoxin",

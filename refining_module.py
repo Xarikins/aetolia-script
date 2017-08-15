@@ -9,6 +9,7 @@ class RefiningModule(Module):
         self.room_queue = deque([])
         self.foci_located = False
         self.searching = False
+        self.last_room = 0
         
         foci_definition = {
                 "fun": self.foci_trigger,
@@ -18,6 +19,7 @@ class RefiningModule(Module):
         self.state["trigger_builder"].build({
             "^You detect (\d+) (lesser|minor) (foci|focus).$": foci_definition,
             "^There are a total of \d+ foci globally\.$": self.complete_check,
+            "^You have moved away from your path\.$": self.path_fail,
             })
 
         self.state["alias_builder"].build({
@@ -58,10 +60,15 @@ class RefiningModule(Module):
         if not self.room_queue or not self.searching:
             return
 
-        vnum = self.room_queue.popleft()
-        self.mud.info("Tracking to %d (%d)" % (vnum, len(self.room_queue)))
+        self.last_room = self.room_queue.popleft()
+        self.mud.info("Tracking to %d (%d)" % (self.last_room, len(self.room_queue)))
         self.mud.eval("mq leylines")
-        self.mud.eval("q go %d" % vnum)
+        self.mud.eval("q go %d" % self.last_room)
+
+    def path_fail(self):
+        if self.last_room:
+            self.mud.info("Pathing failed, retrying")
+            self.mud.send("path track %d" % self.last_room)
 
     def load_path_rooms(self):
         self.mud.info("Loading rooms to queue")
