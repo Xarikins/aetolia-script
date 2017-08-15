@@ -1,32 +1,32 @@
 /test addworld("aetolia", "lp.*", "aetolia.com", 23)
 
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
-***REMOVED***
+/def build_status=%; \
+	/set status_pad=%; \
+	/set status_attr=Cbgblack%; \
+	/set huntLabel=Bash:%; \
+	/set bashing=%; \
+	/set fightLabel=Fight:%; \
+	/set fighting=%; \
+	/set targetLabel=Target:%; \
+	/set target=%; \
+	/set taffName=Target affs:%; \
+	/set target_affs=%; \
+	/set defName=Missing defs:%; \
+	/set missing_defs=%; \
+	/set affName=Afflictions:%; \
+	/set active_affs=%; \
+	/set status_height=6%; \
+	/status_add -r2 huntLabel:5:BCgreen :1 bashing:1:BCred :1 fightLabel:6:BCgreen :1 fighting:1:BCred :1 targetLabel:7:BCgreen :1 target::BCred%; \
+	/status_add -r3 taffName:12:BCred :1 target_affs::BCyellow%; \
+	/status_add -r4 defName:13:BCred :1 missing_defs::BCblue%; \
+	/status_add -r5 affName:12:BCred :1 active_affs::BCred
+/build_status
 
-***REMOVED***
+/python import sys
 /python sys.path.append("<path to python files>")
-***REMOVED***
+/python import os
 /python os.chdir("<path to python files>")
-***REMOVED***
+/python_load main
 
 /eval /log -i <path to logs>.$[ftime("%Y.%m.%d")].log
 /eval /log -g <path to logs>.$[ftime("%Y.%m.%d")].log

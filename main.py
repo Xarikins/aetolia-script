@@ -77,7 +77,7 @@ def load_modules(cState):
 
 def reinstall(arg):
     global cState
-    cState["communicator"].eval("***REMOVED***")
+    cState["communicator"].eval("/python_load main")
 
 reload(state)
 reload(builder)
