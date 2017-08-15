@@ -60,8 +60,8 @@ class MapModule(Module):
     def update_map(self):
         http = urllib.PoolManager()
         print("Downloading map...")
-        response = http.request("GET", "http://www.aetolia.com/maps/map.xml")
-        with open("/home/linus/muds/aetolia/map.xml", "w") as file:
+        response = http.request("GET", self.state["settings"]["map_url"])
+        with open(self.state["settings"]["map_file"], "w") as file:
             file.write(str(response.data, "utf-8"))
         print("...DONE")
         self.__load_map_data()
@@ -69,7 +69,7 @@ class MapModule(Module):
     def __load_map_data(self):
         handler = RoomHandler()
         print(" - Parsing map")
-        sax.parse("/home/linus/muds/aetolia/map.xml", handler)
+        sax.parse(self.state["settings"]["map_file"], handler)
         self.rooms = handler.get_data()
 
     def room_find(self, room):

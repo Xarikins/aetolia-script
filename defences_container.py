@@ -15,7 +15,7 @@ class DefencesContainer():
 
     def __load_defences(self):
         defs = []
-        with open("/home/linus/muds/aetolia/defences.json") as file:
+        with open(self.state["settings"]["defences_file"]) as file:
             defs = json.loads(file.read())
 
         for defence in defs:

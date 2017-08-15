@@ -26,4 +26,4 @@ class NotificationModule(Module):
 
     def trigger_notification(self, talker, line):
         if self.notifications_enabled:
-            subprocess.Popen(["notify-send", "-t", "4", "-i", "/home/linus/muds/aetolia/aet_notify_icon.png", "Aetolia", "%s %s" % (talker, line)])
+            subprocess.Popen(["notify-send", "-t", "4", "-i", self.state["settings"]["notifications"]["icon_file"], "Aetolia", "%s %s" % (talker, line)])

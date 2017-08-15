@@ -1,0 +1,33 @@
+/test addworld("aetolia", "lp.*", "aetolia.com", 23)
+
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+***REMOVED***
+
+***REMOVED***
+/python sys.path.append("<path to python files>")
+***REMOVED***
+/python os.chdir("<path to python files>")
+***REMOVED***
+
+/eval /log -i <path to logs>.$[ftime("%Y.%m.%d")].log
+/eval /log -g <path to logs>.$[ftime("%Y.%m.%d")].log
+;/eval /log -l <path to logs>.$[ftime("%Y.%m.%d")].log

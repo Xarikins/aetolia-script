@@ -21,6 +21,7 @@ import composer_module
 import wield_module
 import path_queue_module
 import refining_module
+import settings_module
 
 def build_modules(state):
     reload(prompt)
@@ -44,8 +45,10 @@ def build_modules(state):
     reload(wield_module)
     reload(path_queue_module)
     reload(refining_module)
+    reload(settings_module)
 
     modules = []
+    modules.append(settings_module.Settings(state)) # Needs to be first
     modules.append(prompt.PromptParser(state))
     modules.append(combat_module.CombatModule(state))
     modules.append(hilite_module.HiliteModule(state))

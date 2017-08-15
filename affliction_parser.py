@@ -75,7 +75,7 @@ class AfflictionParser(Module, LineListener, PromptListener):
 
     def __load_afflictions(self):
         print("Reading afflictions from file")
-        with open("/home/linus/muds/aetolia/afflictions.list", "r") as f:
+        with open(self.state["settings"]["affliction_list_file"], "r") as f:
             for aff in f:
                 self.afflictions.append(aff.strip())
         print("Done")

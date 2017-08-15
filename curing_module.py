@@ -19,7 +19,7 @@ class CuringModule(Module, LineListener, PromptListener):
 
     def __init__(self, *args):
         super(CuringModule, self).__init__(*args)
-        self.afflictions = AfflictionContainer()
+        self.afflictions = AfflictionContainer(self.state["settings"]["afflictions_file"])
         self.defences = DefencesContainer(self.state)
         self.focus = FocusCure(self.state["communicator"])
         self.tree = TreeCure(self.state["communicator"])

@@ -1,6 +1,7 @@
 import mud_wrapper as tf
 import sys
-import shlex
+import os
+import state
 from imp import reload
 
 import state
@@ -15,9 +16,6 @@ MODULES = []
 
 # Setup print to print to tf
 sys.stdout.output = tf.out
-
-def reinstall(arg):
-    cState["communicator"].eval("***REMOVED***")
 
 def handle_line(line):
     for mod in MODULES:
@@ -77,6 +75,10 @@ def load_modules(cState):
     global MODULES
     MODULES = builder.build_modules(cState)
 
+def reinstall(arg):
+    global cState
+    cState["communicator"].eval("***REMOVED***")
+
 reload(state)
 reload(builder)
 reload(aliases)
@@ -85,4 +87,4 @@ cState = state.new()
 install(cState)
 
 if __name__ == "__main__":
-    cb("trigger_notification '(Web)' 'Serrice says, \"Target: leana's.\"'")
+    pass

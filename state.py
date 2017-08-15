@@ -54,5 +54,6 @@ def new():
             "trigger_builder": t_builder,
             "gag_builder": g_builder,
             "callback_handler": cb_handler,
+            "settings": {},
             "cmd_queue": deque([]),
             }

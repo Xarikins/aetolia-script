@@ -100,7 +100,7 @@ class AffTrackerModule(Module, PromptListener):
     def __get_affs_for(self, target):
         target = target.lower()
         if not target in self.target_afflictions:
-            self.target_afflictions[target] = AfflictionContainer()
+            self.target_afflictions[target] = AfflictionContainer(self.state["settings"]["afflictions_file"])
         return self.target_afflictions[target]
 
     def rebounding(self):

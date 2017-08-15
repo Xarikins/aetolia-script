@@ -1,0 +1,13 @@
+{
+	"afflictions_file": "afflictions.json",
+	"defences_file": "defences.json",
+	"map_file": "map.xml",
+	"map_url": "http://www.aetolia.com/maps/map.xml",
+	"affliction_list_file": "afflictions.list",
+	"paths": {
+		"path_dir": "paths"
+	},
+	"notifications": {
+		"icon_file": "aet_notify_icon.png"
+	}
+}

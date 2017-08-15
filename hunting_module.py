@@ -13,7 +13,7 @@ class HuntingModule(Module, PromptListener):
         self.step_spamguard = SpamGuard(0.2)
         self.notarget_spamguard = SpamGuard(0.2)
 
-        self.path = path.Path(self.mud)
+        self.path = path.Path(self.mud, self.state["settings"]["paths"]["path_dir"])
         self.next_move = None
 
         aBuilder = self.state["alias_builder"]

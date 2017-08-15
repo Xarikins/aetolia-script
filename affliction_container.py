@@ -3,7 +3,8 @@ import re
 
 class AfflictionContainer():
 
-    def __init__(self):
+    def __init__(self, filename):
+        self.file = filename
         self.afflictions = {}
         self.active_afflictions = {}
         self.pill_afflictions = {}
@@ -36,7 +37,7 @@ class AfflictionContainer():
 
     def __load_afflictions(self):
         affs = []
-        with open("/home/linus/muds/aetolia/afflictions.json") as file:
+        with open(self.file) as file:
             affs = json.loads(file.read())
 
         for aff in affs:

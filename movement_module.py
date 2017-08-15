@@ -105,7 +105,7 @@ class MovementModule(Module):
         self.mud.send(action)
 
     def save_path(self, name):
-        filename = "/home/linus/muds/aetolia/paths/%s.json" % name
+        filename = "%s/%s.json" % (self.state["settings"]["paths"]["path_dir"], name)
         self.mud.info("Writing file: %s" % filename)
         with open(filename, "w") as f:
             f.write(json.dumps(self.recorded_path))

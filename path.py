@@ -4,12 +4,13 @@ from collections import deque
 
 class Path():
 
-    def __init__(self, mud):
+    def __init__(self, mud, path_dir):
         self.mud = mud
+        self.path_dir = path_dir
         self.path = deque([])
 
     def load(self, name):
-        filename = "/home/linus/muds/aetolia/paths/%s.json" % name
+        filename = "%s/%s.json" % (self.path_dir, name)
         if not os.path.isfile(filename):
             self.mud.warn("File: %s doesn't exist" % filename)
             return
