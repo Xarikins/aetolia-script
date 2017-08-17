@@ -1,5 +1,6 @@
 from core.module import Module
 from core.prompt_listener import PromptListener
+from core.spam_guard import SpamGuard
 
 class CombatAttacksModule(Module, PromptListener):
 
@@ -7,14 +8,15 @@ class CombatAttacksModule(Module, PromptListener):
         super(CombatAttacksModule, self).__init__(*args)
 
         self.auto_hit = False
+        self.auto_hit_guard = SpamGuard(0.5)
         
         self.locking_affs = [
-                ("stupidity", "aconite"),
-                ("anorexia", "slike"),
-                ("slickness", "gecko"),
                 ("paresis", "curare"),
                 ("asthma", "kalmia"),
-                ("confusion", "xentio"),
+                ("clumsiness", "xentio"),
+                ("slickness", "gecko"),
+                ("anorexia", "slike"),
+                ("stupidity", "aconite"),
                 ("left_leg_broken", "epseth"),
                 ("right_leg_broken", "epseth"),
                 ("left_arm_broken", "epteth"),
@@ -30,7 +32,7 @@ class CombatAttacksModule(Module, PromptListener):
                 ("slickness", "gecko"),
                 ("paresis", "curare"),
                 ("asthma", "kalmia"),
-                ("confusion", "xentio"),
+                ("clumsiness", "xentio"),
                 ]
 
         self.current_affs = self.locking_affs
@@ -118,6 +120,13 @@ class CombatAttacksModule(Module, PromptListener):
     def parse_prompt(self, prompt):
         if not self.auto_hit:
             return
+
+        if self.state["cmd_queue"]:
+            return
+
+        if self.auto_hit_guard.locked():
+            return
+        self.auto_hit_guard.lock()
 
         player = self.state["player"]
         eq = player["equilibrium"]

@@ -37,6 +37,9 @@ class CuringModule(Module, LineListener, PromptListener):
         self.focus.parse_line(line)
 
     def parse_prompt(self, prompt):
+        if self.state["player"]["health"] == 0:
+            return
+
         if self.enabled:
             self.__cure()
         self.__cure_defs()
@@ -85,7 +88,7 @@ class CuringModule(Module, LineListener, PromptListener):
 
     def __cure_defs(self):
         missing = self.defences.get_missing()
-        if not missing or self.afflictions.get_active():
+        if not missing or self.afflictions.get_active() or self.state["cmd_queue"]:
             return
 
         ba = self.state["player"]["balance"]

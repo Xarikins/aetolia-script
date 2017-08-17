@@ -13,12 +13,12 @@
 	},
 	{
 		"name": "deathsight",
-		"special": "",
-		"pill": "thanatonin",
+		"special": "deathsight",
+		"pill": "",
 		"poultice": "",
 		"smoke": "",
-		"balance_required": false,
-		"balance_take": false,
+		"balance_required": true,
+		"balance_take": true,
 		"combat_defence": false,
 		"cure_delay": 0,
 		"defence_line": "Your mind has been touched by the essence of the Underking."

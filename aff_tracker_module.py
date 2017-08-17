@@ -82,6 +82,10 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.__trigger_dhuriv_attack,
                 "arg": "'%P1' '%P2'",
                 },
+            "^\(.*\)\: \w+ says, \"Battering\: (.+)\.\"$": {
+                "fun": self.team_affliction,
+                "arg": "'%P1'",
+                },
             }, prio=2)
 
     def __trigger_dhuriv_attack(self, attack, target):
@@ -192,6 +196,10 @@ class AffTrackerModule(Module, PromptListener):
 
         self.__print_target_affs(target, effect)
 
+    def team_affliction(self, aff):
+        target = self.state["combat"]["target"]
+        self.__register_aff(aff, target, "Team affliction")
+
     def __print_target_affs(self, target, effect=""):
         affs = self.__get_affs_for(target)
         self.mud.echop("@{Cgreen}%s afflictions @{Cwhite}(%s)@{Cgreen}: [@{Cred} %s @{Cgreen}]@{n}" % (target.title(), effect, ", ".join(affs.get_active())))
@@ -223,7 +231,7 @@ class AffTrackerModule(Module, PromptListener):
         elif venom == "aconite":
             self.__register_aff("stupidity", target, effect)
         elif venom == "xentio":
-            self.__register_aff("confusion", target, effect)
+            self.__register_aff("clumsiness", target, effect)
         elif venom == "kalmia":
             self.__register_aff("asthma", target, effect)
         elif venom == "gecko":

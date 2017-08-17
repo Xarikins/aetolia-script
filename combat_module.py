@@ -13,7 +13,8 @@ class CombatModule(Module):
                 }
         ALIASES_GLOB = {
                 # Bashing aliases
-                "slsl": { "fun": self.slam_slit },
+                "slsl": { "fun": self.combo, "arg": "slam slit" },
+                "twgo": { "fun": self.combo, "arg": "twirl gouge" },
                 "fight": { "fun": self.toggle_fight },
                 "oek": { "fun": self.oek },
                 "oep": "qeb order entourage passive",
@@ -108,8 +109,9 @@ class CombatModule(Module):
         self.load_crossbow()
         self.mud.send("qeb crossbow fireshoot %s %s" % (self.state["combat"]["target"], direction))
 
-    def slam_slit(self):
-        attack = "/send qeb dhuriv combo %s slam slit" % self.state["combat"]["target"]
+    def combo(self, first, second):
+        target = self.state["combat"]["target"]
+        attack = "/send qeb dhuriv combo %s %s %s" % (target, first, second)
         self.mud.eval(attack)
 
     def toggle_fight(self):
