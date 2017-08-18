@@ -56,7 +56,7 @@ ALIAS_LIST = {
         "shackle *": "qe refining shackle %2",
         "hand in mist": [ "remove gauntlet293814", "give gauntlet293814 to barakin", "qeb wear gauntlet293814"],
 
-        # Summoning
+        # Woodlore
         "nightingale": "qeb summon nightingale",
         "raloth": "qeb summon raloth",
         "cockatrice": "qeb summon cockatrice",
@@ -69,6 +69,7 @@ ALIAS_LIST = {
                 "q camo",
                 ],
         "camo": "qeb camouflage",
+        "track *": ["dis", "qmount bear", "/send track %2"],
 
         # Shopping
         "buy cask*": "buy refill from %2 into fluidcache",

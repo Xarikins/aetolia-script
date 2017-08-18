@@ -64,6 +64,10 @@ class AffTrackerModule(Module, PromptListener):
                 "fun": self.rebounding_toggle,
                 "arg": "%P1 up",
                 },
+            "^(\w+)'s .+ defence has been stripped\.$": {
+                "fun": self.rebounding_toggle,
+                "arg": "%P1 down",
+                },
             })
         self.state["trigger_builder"].build({
             "^You discern that (\w+) has cured the effects of (.+)\.$": {
@@ -122,7 +126,7 @@ class AffTrackerModule(Module, PromptListener):
             self.mud.warn("Rebounding down: %s" % target)
             self.target_rebounding[target.lower()] = False
 
-        if target == self.state["combat"]["target"]:
+        if target.lower() == self.state["combat"]["target"].lower():
             self.state["combat"]["target_rebounding"] = status == "up"
 
     def register_focus(self, target):

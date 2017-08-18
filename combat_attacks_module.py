@@ -83,7 +83,7 @@ class CombatAttacksModule(Module, PromptListener):
             commands = [
                     "qeb wipe dhurive",
                     "envenom dhurive with %s" % affs[0][1],
-                    "dhuriv combo %s reave thrust" % self.state["combat"]["target"]
+                    "dhuriv combo %s reave stab" % self.state["combat"]["target"]
                     ]
             self.mud.send(";".join(commands))
         elif len(affs) > 1:

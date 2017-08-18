@@ -17,8 +17,6 @@ class HiliteModule(Module):
                     self.__info_definition("'Sentinel signal:'"),
             "^(\w+) appears suddenly in your location, looking disoriented\.$": \
                     self.__info_definition("'%P1 summoned'"),
-            "^Your pipe is now empty\.$": \
-                    self.__warn_definition("'PIPE EMPTY'"),
             "^You raise your gauntlet, extending your fingers and allowing the latent ylem around you to absorb into the reserve chambers\.$": \
                     self.__info_definition("'ABSORBED YLEM'"),
             "^You infuse .+ with \d+ doses of (.+) from your fluidcache\.$": \

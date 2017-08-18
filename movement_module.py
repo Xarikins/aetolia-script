@@ -55,6 +55,9 @@ class MovementModule(Module):
             "pt *": "/send path track %2",
             "pf *": "/send path find %2",
 
+            # Rescue
+            "revive *": ["go %2", "mq get body;say duanathar;scent", "q path find lleistear;path go gallop", "mq bathe body"],
+
             # Recording
             "recpath": self.toggle_recording,
             "savepath *": {

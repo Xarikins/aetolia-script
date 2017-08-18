@@ -13,12 +13,12 @@ class PathQueueModule(Module):
             })
 
         self.state["alias_builder"].build({
-            "mq *": {
+            "^mq (.*)$": {
                 "fun": self.store_command,
-                "arg": "'%2'",
+                "arg": "'%P1'",
                 },
-            "mqc": self.clear_queue,
-            })
+            "^mqc$": self.clear_queue,
+            }, "regexp")
 
     def pop_command(self):
         if self.commands:

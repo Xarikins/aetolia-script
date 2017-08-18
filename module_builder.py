@@ -21,6 +21,7 @@ import composer_module
 import wield_module
 import path_queue_module
 import refining_module
+import trigger_module
 import settings_module
 
 def build_modules(state):
@@ -46,6 +47,7 @@ def build_modules(state):
     reload(path_queue_module)
     reload(refining_module)
     reload(settings_module)
+    reload(trigger_module)
 
     modules = []
     modules.append(settings_module.Settings(state)) # Needs to be first
@@ -70,6 +72,7 @@ def build_modules(state):
     modules.append(queue_module.QueueModule(state))
     modules.append(path_queue_module.PathQueueModule(state))
     modules.append(refining_module.RefiningModule(state))
+    modules.append(trigger_module.TriggerModule(state))
     #modules.append(affliction_parser.AfflictionParser(state))
 
     return modules
